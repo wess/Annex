@@ -24,6 +24,12 @@
 		08F6B82516D56C54006F12EB /* NSDictionary+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564616D52CA0006A16D2 /* NSDictionary+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82616D56C54006F12EB /* UIColor+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564916D52CB3006A16D2 /* UIColor+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564C16D52CBD006A16D2 /* UIView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08F6B86216D56FED006F12EB /* NSObject+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08BE564016D52C87006A16D2 /* NSObject+Annex.h */; };
+		08F6B86316D56FED006F12EB /* NSDate+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08BE565616D550EE006A16D2 /* NSDate+Annex.h */; };
+		08F6B86416D56FED006F12EB /* NSString+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08BE564316D52C95006A16D2 /* NSString+Annex.h */; };
+		08F6B86516D56FED006F12EB /* NSDictionary+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08BE564616D52CA0006A16D2 /* NSDictionary+Annex.h */; };
+		08F6B86616D56FED006F12EB /* UIColor+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08BE564916D52CB3006A16D2 /* UIColor+Annex.h */; };
+		08F6B86716D56FED006F12EB /* UIView+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08BE564C16D52CBD006A16D2 /* UIView+Annex.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +39,12 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				08F6B86216D56FED006F12EB /* NSObject+Annex.h in CopyFiles */,
+				08F6B86316D56FED006F12EB /* NSDate+Annex.h in CopyFiles */,
+				08F6B86416D56FED006F12EB /* NSString+Annex.h in CopyFiles */,
+				08F6B86516D56FED006F12EB /* NSDictionary+Annex.h in CopyFiles */,
+				08F6B86616D56FED006F12EB /* UIColor+Annex.h in CopyFiles */,
+				08F6B86716D56FED006F12EB /* UIView+Annex.h in CopyFiles */,
 				08BE563216D52C32006A16D2 /* Annex.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
