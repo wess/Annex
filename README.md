@@ -16,4 +16,4 @@ Annex is just a little collections of categories I use when developing iOS appli
 - Foundation.framework
 
 # Usage:
-Include the Annex project in your project, then link to the Annex static lib. Follow up with a little *#include<Annex/Annex.h>*
+Include the Annex project in your project, then link to the Annex static lib.
