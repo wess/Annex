@@ -1,14 +1,14 @@
 //
-//  UIColor+Annex.m
+//  NSColor+Annex.m
 //  Annex
 //
 //  Created by Wess Cope on 2/20/13.
 //  Copyright (c) 2013 Wess Cope. All rights reserved.
 //
 
-#import "UIColor+Annex.h"
+#import "NSColor+Annex.h"
 
-@implementation UIColor (Annex)
+@implementation NSColor (Annex)
 @dynamic colorSpaceModel;
 @dynamic canProvideRGBComponents;
 @dynamic red;
@@ -121,7 +121,7 @@
     return w;
 }
 
-+ (UIColor *)colorFromHexString:(NSString *)hexString
++ (NSColor *)colorFromHexString:(NSString *)hexString
 {
     hexString = [hexString stringByReplacingOccurrencesOfString:@"#" withString:@""];
     
@@ -132,7 +132,7 @@
         hexString = [NSString stringWithCharacters:t length:6];
     }
     
-	UIColor *result = nil;
+	NSColor *result = nil;
 	unsigned int colorCode = 0;
 	unsigned char redByte, greenByte, blueByte;
 	
@@ -141,88 +141,25 @@
 		NSScanner *scanner = [NSScanner scannerWithString:hexString];
 		(void) [scanner scanHexInt:&colorCode];	// ignore error
 	}
+    
 	redByte		= (unsigned char) (colorCode >> 16);
 	greenByte	= (unsigned char) (colorCode >> 8);
 	blueByte	= (unsigned char) (colorCode);	// masks off high bits
 	
-    result      = [UIColor
-                   colorWithRed: (float)redByte	 / 0xff
-                   green:        (float)greenByte / 0xff
-                   blue:         (float)blueByte	 / 0xff
-                   alpha:1.0];
-    
+    result      = [NSColor colorWithDeviceRed:(float)redByte / 0xff
+                                        green:(float)greenByte / 0xff
+                                         blue:(float)blueByte / 0xff
+                                        alpha:1.0f];
 	return result;
 }
 
-+ (UIColor *)randomColor
++ (NSColor *)randomColor
 {
-    return [UIColor
-            colorWithRed:((CGFloat)random()/(CGFloat)RAND_MAX)
-            green:((CGFloat)random()/(CGFloat)RAND_MAX)
-            blue:((CGFloat)random()/(CGFloat)RAND_MAX)
-            alpha:1.0f];
-}
-
-- (UIColor *)colorByChangingAlphaTo:(CGFloat)alpha
-{
-    CGFloat *oldComponents  = (CGFloat *)CGColorGetComponents([self CGColor]);
-	int numComponents       = CGColorGetNumberOfComponents([self CGColor]);
-	CGFloat newComponents[4];
+    return [NSColor colorWithDeviceRed:((float)random()/(float)RAND_MAX)
+                                 green:((float)random()/(float)RAND_MAX)
+                                  blue:((float)random()/(float)RAND_MAX)
+                                 alpha:1.0f];
     
-	switch (numComponents)
-	{
-		case 2:
-		{
-			//grayscale
-			newComponents[0] = oldComponents[0];
-			newComponents[1] = oldComponents[0];
-			newComponents[2] = oldComponents[0];
-			newComponents[3] = alpha;
-			break;
-		}
-		case 4:
-		{
-			//RGBA
-			newComponents[0] = oldComponents[0];
-			newComponents[1] = oldComponents[1];
-			newComponents[2] = oldComponents[2];
-			newComponents[3] = alpha;
-			break;
-		}
-	}
-    
-	CGColorSpaceRef colorSpace  = CGColorSpaceCreateDeviceRGB();
-	CGColorRef newColor         = CGColorCreate(colorSpace, newComponents);
-	CGColorSpaceRelease(colorSpace);
-    
-	UIColor *color = [UIColor colorWithCGColor:newColor];
-	CGColorRelease(newColor);
-    
-	return color;
-}
-
-- (UIColor *)invertColor
-{
-    CGColorRef oldCGColor   = self.CGColor;
-    int numberOfComponents  = CGColorGetNumberOfComponents(oldCGColor);
-    
-    if (numberOfComponents == 1)
-        return [UIColor colorWithCGColor:oldCGColor];
-    
-    const CGFloat *oldComponentColors = CGColorGetComponents(oldCGColor);
-    CGFloat newComponentColors[numberOfComponents];
-    
-    int i = numberOfComponents - 1;
-    newComponentColors[i] = oldComponentColors[i];
-    
-    while (--i >= 0)
-        newComponentColors[i] = 1 - oldComponentColors[i];
-    
-    CGColorRef newCGColor   = CGColorCreate(CGColorGetColorSpace(oldCGColor), newComponentColors);
-    UIColor *newColor       = [UIColor colorWithCGColor:newCGColor];
-    CGColorRelease(newCGColor);
-    
-    return newColor;    
 }
 
 @end

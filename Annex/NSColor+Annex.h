@@ -1,14 +1,13 @@
 //
-//  UIColor+Annex.h
+//  NSColor+Annex.h
 //  Annex
 //
 //  Created by Wess Cope on 2/20/13.
 //  Copyright (c) 2013 Wess Cope. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface UIColor (Annex)
+@interface NSColor (Annex)
 /**
  `UIColor(Annex)` is an extension to UIColor with additional functionality.
  
@@ -68,21 +67,13 @@
  @param hexString   CSS Style hex string
  @return            Color created from CSS style hex string.
  */
-+ (UIColor *)colorFromHexString:(NSString *)hexString;
++ (NSColor *)colorFromHexString:(NSString *)hexString;
 
 /**
  Generates a random color
  
  @return Random color.
  */
-+ (UIColor *)randomColor;
-
-/**
- Takes current color and changes it's alpha to create a new color
- 
- @param alpha   Value used to change the color's alpha channel.
- @return        Color created from current color with new alpha value.
- */
-- (UIColor *)colorByChangingAlphaTo:(CGFloat)alpha;
++ (NSColor *)randomColor;
 
 @end
