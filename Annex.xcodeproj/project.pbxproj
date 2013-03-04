@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */; };
+		08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ACF0CA16E4F8D000A491AD /* UITextView+Annex.m */; };
 		08BE562D16D52C32006A16D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE562C16D52C32006A16D2 /* Foundation.framework */; };
 		08BE563216D52C32006A16D2 /* Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08BE563116D52C32006A16D2 /* Annex.h */; };
 		08BE564216D52C87006A16D2 /* NSObject+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE564116D52C87006A16D2 /* NSObject+Annex.m */; };
@@ -52,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Annex.h"; sourceTree = "<group>"; };
+		08ACF0CA16E4F8D000A491AD /* UITextView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Annex.m"; sourceTree = "<group>"; };
 		08BE562916D52C32006A16D2 /* libAnnex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAnnex.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		08BE562C16D52C32006A16D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08BE563016D52C32006A16D2 /* Annex-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Annex-Prefix.pch"; sourceTree = "<group>"; };
@@ -88,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08ACF0C816E4F8B900A491AD /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */,
+				08ACF0CA16E4F8D000A491AD /* UITextView+Annex.m */,
+			);
+			name = UITextView;
+			sourceTree = "<group>";
+		};
 		08BE562016D52C32006A16D2 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 				08BE563E16D52C67006A16D2 /* NSString */,
 				08BE563D16D52C60006A16D2 /* NSDictionary */,
 				08BE563C16D52C5C006A16D2 /* UIColor */,
+				08ACF0C816E4F8B900A491AD /* UITextView */,
 				08BE563B16D52C52006A16D2 /* UIView */,
 			);
 			name = Categories;
@@ -214,6 +228,7 @@
 				08F6B82516D56C54006F12EB /* NSDictionary+Annex.h in Headers */,
 				08F6B82616D56C54006F12EB /* UIColor+Annex.h in Headers */,
 				08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */,
+				08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +290,7 @@
 				08BE564B16D52CB3006A16D2 /* UIColor+Annex.m in Sources */,
 				08BE564E16D52CBD006A16D2 /* UIView+Annex.m in Sources */,
 				08BE565816D550EE006A16D2 /* NSDate+Annex.m in Sources */,
+				08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
