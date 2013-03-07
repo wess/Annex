@@ -16,6 +16,8 @@
 #import "NSDictionary+Annex.h"
 #import "UIColor+Annex.h"
 #import "UIView+Annex.h"
+#import "UIButton+Annex.h"
+#import "UITextView+Annex.h"
 
 // Shortcuts
 #define APP_VERSION         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
