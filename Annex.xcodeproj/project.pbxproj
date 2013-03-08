@@ -11,6 +11,8 @@
 		083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 083F8D9D16E917FF0025A312 /* UIButton+Annex.m */; };
 		083F8DA016E91A5D0025A312 /* UITextView+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */; };
 		083F8DA116E91A5D0025A312 /* UIButton+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 083F8D9C16E917FF0025A312 /* UIButton+Annex.h */; };
+		083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 083F8DB416EA2F8B0025A312 /* AnnexKeyChain.h */; };
+		083F8DB716EA2F8B0025A312 /* AnnexKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 083F8DB516EA2F8B0025A312 /* AnnexKeyChain.m */; };
 		08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ACF0CA16E4F8D000A491AD /* UITextView+Annex.m */; };
 		08BE562D16D52C32006A16D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE562C16D52C32006A16D2 /* Foundation.framework */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		083F8D9C16E917FF0025A312 /* UIButton+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Annex.h"; sourceTree = "<group>"; };
 		083F8D9D16E917FF0025A312 /* UIButton+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Annex.m"; sourceTree = "<group>"; };
+		083F8DB416EA2F8B0025A312 /* AnnexKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexKeyChain.h; sourceTree = "<group>"; };
+		083F8DB516EA2F8B0025A312 /* AnnexKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexKeyChain.m; sourceTree = "<group>"; };
 		08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Annex.h"; sourceTree = "<group>"; };
 		08ACF0CA16E4F8D000A491AD /* UITextView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Annex.m"; sourceTree = "<group>"; };
 		08BE562916D52C32006A16D2 /* libAnnex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAnnex.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +113,23 @@
 			name = UIButton;
 			sourceTree = "<group>";
 		};
+		083F8DB216EA2F6F0025A312 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				083F8DB316EA2F720025A312 /* Keychain */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		083F8DB316EA2F720025A312 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				083F8DB416EA2F8B0025A312 /* AnnexKeyChain.h */,
+				083F8DB516EA2F8B0025A312 /* AnnexKeyChain.m */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
 		08ACF0C816E4F8B900A491AD /* UITextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +170,7 @@
 		08BE562E16D52C32006A16D2 /* Annex */ = {
 			isa = PBXGroup;
 			children = (
+				083F8DB216EA2F6F0025A312 /* Classes */,
 				08BE563A16D52C3A006A16D2 /* Categories */,
 				08BE563116D52C32006A16D2 /* Annex.h */,
 				08BE562F16D52C32006A16D2 /* Supporting Files */,
@@ -248,6 +270,7 @@
 				08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */,
 				08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */,
 				083F8D9E16E917FF0025A312 /* UIButton+Annex.h in Headers */,
+				083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +334,7 @@
 				08BE565816D550EE006A16D2 /* NSDate+Annex.m in Sources */,
 				08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */,
 				083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */,
+				083F8DB716EA2F8B0025A312 /* AnnexKeyChain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
