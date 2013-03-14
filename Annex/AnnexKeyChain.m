@@ -39,7 +39,7 @@ OSStatus valueStatusForKey(NSString *key, NSString *service)
 
 - (void)setup
 {
-    defaultService = [NSString stringWithFormat:@"com.%@", APP_NAME];
+    defaultService = [NSString stringWithFormat:@"com.%@", AnnexAppName];
 }
 
 - (instancetype)initWithService:(NSString *)service
