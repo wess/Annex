@@ -38,4 +38,41 @@
     
     return [self textInRange:textRange];
 }
+
+- (NSDictionary *)attributesForTextAtPoint:(CGPoint)point
+{
+    if(!self.attributedText || ![self textAtPoint:point])
+        return nil;
+    
+    UITextPosition *textPosition    = [self closestPositionToPoint:point];
+    UITextRange *textRange          = [self.tokenizer rangeEnclosingPosition:textPosition withGranularity:UITextGranularityWord inDirection:UITextLayoutDirectionRight];
+
+    NSInteger start = [self offsetFromPosition:self.beginningOfDocument toPosition:textRange.start];
+    NSInteger end   = [self offsetFromPosition:self.beginningOfDocument toPosition:textRange.end];
+    NSRange range   = NSMakeRange(start, (end - start));
+
+    if(end < self.attributedText.length)
+    {
+    
+        NSAttributedString *attributedSubString = [self.attributedText attributedSubstringFromRange:range];
+        NSDictionary *attributes                = [attributedSubString attributesAtIndex:0 longestEffectiveRange:NULL inRange:NSMakeRange(0, attributedSubString.length)];
+        
+        return attributes;
+    }
+    
+    return nil;
+}
+
+- (NSRange)rangeOfTextAtPoint:(CGPoint)point
+{
+    UITextPosition *textPosition    = [self closestPositionToPoint:point];
+    UITextRange *textRange          = [self.tokenizer rangeEnclosingPosition:textPosition withGranularity:UITextGranularityWord inDirection:UITextLayoutDirectionRight];
+    
+    NSInteger start = [self offsetFromPosition:self.beginningOfDocument toPosition:textRange.start];
+    NSInteger end   = [self offsetFromPosition:self.beginningOfDocument toPosition:textRange.end];
+    NSRange range   = NSMakeRange(start, (end - start));
+
+    return range;
+}
+
 @end
