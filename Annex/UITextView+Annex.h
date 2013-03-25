@@ -37,16 +37,6 @@
 - (NSString *)textAtPoint:(CGPoint)point;
 
 /**
- Finds and returns attributes for the attributed substring.
- 
- @param point   Point inside the text view for text.
- 
- @return        Dictionary of attributes associated with attributed substring at point.
- */
-- (NSDictionary *)attributesForTextAtPoint:(CGPoint)point;
-
-
-/**
  Finds and returns range of text for a given point
  
  @param point   Point inside the text view for text.
