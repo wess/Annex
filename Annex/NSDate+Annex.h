@@ -318,4 +318,45 @@
  */
 - (NSDate *) dateBySubtractingMinutes: (NSInteger) dMinutes;
 
+/**
+ Creates a date object from a string with provided date format.
+ 
+ @param string  String representation of date.
+ 
+ @param format  Date format used against string date.
+ 
+ @return date   Date object created from string.
+ **/
++ (NSDate *)dateFromString:(NSString *)string withFormat:(NSString *)format;
+
+/**
+ Creates a date from a month day and year.
+ 
+ @param month   Number for month.
+ 
+ @param day     Number for day.
+ 
+ @param year    Number for year.
+ 
+ @return Date object created from provided month, day, and year.
+ **/
++ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year;
+
+/**
+ Creates a date from a month, day, year and calendar type.
+ 
+ @param month       Number for month.
+ 
+ @param day         Number for day.
+ 
+ @param year        Number for year.
+ 
+ @param calendar    Calendar to use for date.
+ 
+ @return Date object created from provided month, day, year and calendar.
+ **/
++ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year calendar:(NSString *)calendar;
+
 @end
+
+

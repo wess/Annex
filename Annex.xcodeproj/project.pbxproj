@@ -11,7 +11,7 @@
 		083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 083F8D9D16E917FF0025A312 /* UIButton+Annex.m */; };
 		083F8DA016E91A5D0025A312 /* UITextView+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */; };
 		083F8DA116E91A5D0025A312 /* UIButton+Annex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 083F8D9C16E917FF0025A312 /* UIButton+Annex.h */; };
-		083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 083F8DB416EA2F8B0025A312 /* AnnexKeyChain.h */; };
+		083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 083F8DB416EA2F8B0025A312 /* AnnexKeyChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		083F8DB716EA2F8B0025A312 /* AnnexKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 083F8DB516EA2F8B0025A312 /* AnnexKeyChain.m */; };
 		08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ACF0CA16E4F8D000A491AD /* UITextView+Annex.m */; };
@@ -26,6 +26,7 @@
 		08BE565216D52D31006A16D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE565016D52D31006A16D2 /* UIKit.framework */; };
 		08BE565416D530F0006A16D2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE565316D530F0006A16D2 /* Security.framework */; };
 		08BE565816D550EE006A16D2 /* NSDate+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE565716D550EE006A16D2 /* NSDate+Annex.m */; };
+		08E8F2E116EA91AD0057ACA0 /* AnnexKeyChain.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 083F8DB416EA2F8B0025A312 /* AnnexKeyChain.h */; };
 		08F6B82216D56C54006F12EB /* NSObject+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564016D52C87006A16D2 /* NSObject+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82316D56C54006F12EB /* NSDate+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE565616D550EE006A16D2 /* NSDate+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82416D56C54006F12EB /* NSString+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564316D52C95006A16D2 /* NSString+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +48,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				08E8F2E116EA91AD0057ACA0 /* AnnexKeyChain.h in CopyFiles */,
 				083F8DA016E91A5D0025A312 /* UITextView+Annex.h in CopyFiles */,
 				083F8DA116E91A5D0025A312 /* UIButton+Annex.h in CopyFiles */,
 				08F6B86216D56FED006F12EB /* NSObject+Annex.h in CopyFiles */,

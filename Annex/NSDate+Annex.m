@@ -353,4 +353,29 @@
 	return components.year;
 }
 
++ (NSDate *)dateFromString:(NSString *)string withFormat:(NSString *)format
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = format;
+
+    return [formatter dateFromString:string];
+}
+
++ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year
+{
+    return [NSDate dateWithMonth:month day:day year:year calendar:NSGregorianCalendar];
+}
+
++ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year calendar:(NSString *)calendar
+{
+    NSDateComponents *dateComponents    = [[NSDateComponents alloc] init];
+    dateComponents.year                 = year;
+    dateComponents.month                = month;
+    dateComponents.day                  = day;
+    
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:calendar];
+    
+    return [cal dateFromComponents:dateComponents];
+}
+
 @end
