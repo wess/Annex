@@ -20,12 +20,12 @@
 #import "UITextView+Annex.h"
 
 // Shortcuts
-#define APP_VERSION         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
-#define APP_BUNDLE_VERSION  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
-#define APP_EXECUTABLE      [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleExecutable"]
-#define APP_NAME            [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"]
-#define SYSTEM_NAME         [[UIDevice currentDevice] systemName]
-#define SYSTEM_VERSION      [[UIDevice currentDevice] systemVersion]
-#define DEVICE_TYPE         [[UIDevice currentDevice] model]
+#define AnnexAppVersion         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define AnnexAppBundleVersion   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+#define AnnexAppExecutable      [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleExecutable"]
+#define AnnexAppName            [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"]
+#define AnnexSystemName         [[UIDevice currentDevice] systemName]
+#define AnnexSystemVersion      [[UIDevice currentDevice] systemVersion]
+#define AnnexDeviceType         [[UIDevice currentDevice] model]
 
 #endif
