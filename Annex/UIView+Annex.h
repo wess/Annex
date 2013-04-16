@@ -105,4 +105,10 @@
  */
 + (UIView *)viewWithFrame:(CGRect)rect drawRect:(void(^)(CGRect rect))block;
 
++ (UIView *)viewFromNib:(UINib *)nib withOwner:(id)owner options:(NSDictionary *)options;
++ (UIView *)viewFromNib:(UINib *)nib withOwner:(id)owner;
++ (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner bundle:(NSBundle *)bundle options:(NSDictionary *)options;
++ (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner bundle:(NSBundle *)bundle;
++ (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner;
+
 @end

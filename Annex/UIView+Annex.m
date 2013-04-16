@@ -213,5 +213,31 @@
     return view;
 }
 
++ (UIView *)viewFromNib:(UINib *)nib withOwner:(id)owner options:(NSDictionary *)options
+{
+    return [[nib instantiateWithOwner:owner options:options] objectAtIndex:0];
+}
+
++ (UIView *)viewFromNib:(UINib *)nib withOwner:(id)owner
+{
+    return [UIView viewFromNib:nib withOwner:owner];
+}
+
++ (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner bundle:(NSBundle *)bundle options:(NSDictionary *)options
+{
+    return [UIView viewFromNib:[UINib nibWithNibName:nibName bundle:bundle] withOwner:owner options:options];
+}
+
++ (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner bundle:(NSBundle *)bundle
+{
+    return [UIView viewFromNibWithName:nibName withOwner:owner bundle:bundle options:nil];
+}
+
++ (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner
+{
+    return [UIView viewFromNibWithName:nibName withOwner:owner bundle:nil];
+}
+
+
 
 @end
