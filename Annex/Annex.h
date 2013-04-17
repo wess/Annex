@@ -28,4 +28,6 @@
 #define AnnexSystemVersion      [[UIDevice currentDevice] systemVersion]
 #define AnnexDeviceType         [[UIDevice currentDevice] model]
 
+#define IS_IPHONE_5             (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)568 ) < DBL_EPSILON)
+
 #endif
