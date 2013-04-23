@@ -23,6 +23,27 @@
 @dynamic nthWeekday;
 @dynamic year;
 
++ (NSDate *)firstDayOfCurrentMonth
+{
+    NSCalendar *calendar            = [NSCalendar currentCalendar];
+    NSDateComponents *components    = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
+    [components setDay:1];
+
+    return [calendar dateFromComponents:components];
+}
+
++ (NSDate *)lastDayOfCurrentMonth
+{
+    NSDate *today                   = [NSDate date];
+    NSCalendar *calendar            = [NSCalendar currentCalendar];
+    NSDateComponents *components    = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    NSRange calendarRange           = [calendar rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:[calendar dateFromComponents:components]];
+    
+    [components setDay:calendarRange.length];
+    
+    return [calendar dateFromComponents:components];
+}
+
 + (NSDate *) dateWithDaysFromNow: (NSInteger) days
 {
 	NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + AnnexDay * days;

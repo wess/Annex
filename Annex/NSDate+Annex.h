@@ -73,6 +73,19 @@
  */
 @property (readonly) NSInteger year;
 
+/**
+ Gets first day of current month.
+ 
+ @return First day of current month.
+ */
++ (NSDate *)firstDayOfCurrentMonth;
+
+/**
+ Gets last day of current month.
+ 
+ @return last day of current month.
+ */
++ (NSDate *)lastDayOfCurrentMonth;
 
 /**
  Gets tomorrow's date
