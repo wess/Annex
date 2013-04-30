@@ -35,6 +35,14 @@
 - (NSString *)URLEncoded;
 
 /**
+ Strips HTML from string.
+ 
+ @return String with no HTML tags
+ */
+- (NSString*)stringByRemovingHTML;
+
+
+/**
  Creates an MD5 Hash from a given string.
  
  @param string  The string to create MD5 hash from.
