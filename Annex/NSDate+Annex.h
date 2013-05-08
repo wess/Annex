@@ -332,6 +332,13 @@
 - (NSDate *) dateBySubtractingMinutes: (NSInteger) dMinutes;
 
 /**
+ Creates a date for the start of the current day.
+
+ @return          New date.
+ */
+- (NSDate *) dateAtStartOfDay;
+
+/**
  Creates a date object from a string with provided date format.
  
  @param string  String representation of date.
