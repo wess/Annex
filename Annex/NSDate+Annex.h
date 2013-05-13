@@ -27,9 +27,19 @@
 @property (readonly) NSInteger nearestHour;
 
 /**
+ Provides a short cut to get to get the next, closest, hour with a calendar.
+ */
+- (NSInteger) nearestHourWithCalendar:(NSCalendar *)calendar;
+
+/**
  Provides a short cut to get a date's hour.
  */
 @property (readonly) NSInteger hour;
+
+/**
+ Provides a short cut to get a date's hour with a calendar.
+ */
+- (NSInteger) hourWithCalendar:(NSCalendar *)calendar;
 
 /**
  Provides a short cut to get a date's minute.
@@ -37,9 +47,19 @@
 @property (readonly) NSInteger minute;
 
 /**
+ Provides a short cut to get a date's minute with a calendar.
+ */
+- (NSInteger) minuteWithCalendar:(NSCalendar *)calendar;
+
+/**
  Provides a short cut to get a date's seconds.
  */
 @property (readonly) NSInteger seconds;
+
+/**
+ Provides a short cut to get a date's seconds with a calendar.
+ */
+- (NSInteger) secondsWithCalendar:(NSCalendar *)calendar;
 
 /**
  Provides a short cut to get date's day.
@@ -47,9 +67,19 @@
 @property (readonly) NSInteger day;
 
 /**
+ Provides a short cut to get date's day with a calendar.
+ */
+- (NSInteger) dayWithCalendar:(NSCalendar *)calendar;
+
+/**
  Provides a short cut to get a date's month.
  */
 @property (readonly) NSInteger month;
+
+/**
+ Provides a short cut to get a date's month with a calendar.
+ */
+- (NSInteger) monthWithCalendar:(NSCalendar *)calendar;
 
 /**
  Provides a short cut to get a date's week.
@@ -57,9 +87,19 @@
 @property (readonly) NSInteger week;
 
 /**
+ Provides a short cut to get a date's week with a calendar.
+ */
+- (NSInteger) weekWithCalendar:(NSCalendar *)calendar;
+
+/**
  Provides a short cut to get to tomorrow's date object.
  */
 @property (readonly) NSInteger weekday;
+
+/**
+ Provides a short cut to get to tomorrow's date object with a calendar.
+ */
+- (NSInteger) weekdayWithCalendar:(NSCalendar *)calendar;
 
 /**
  Provides a short cut to get to tomorrow's date object.
@@ -69,9 +109,21 @@
 @property (readonly) NSInteger nthWeekday;
 
 /**
- Provides a short cut to get a date's year
+ Provides a short cut to get to tomorrow's date object with a calendar.
+
+ @discuss 2nd Tuesday of the month == 2
+ */
+- (NSInteger) nthWeekdayWithCalendar:(NSCalendar *)calendar;
+
+/**
+ Provides a short cut to get a date's year.
  */
 @property (readonly) NSInteger year;
+
+/**
+ Provides a short cut to get a date's year with a calendar.
+ */
+- (NSInteger) yearWithCalendar:(NSCalendar *)calendar;
 
 /**
  Gets first day of current month.
@@ -81,6 +133,13 @@
 + (NSDate *)firstDayOfCurrentMonth;
 
 /**
+ Gets first day of current month with a calendar.
+
+ @return First day of current month with a calendar.
+ */
++ (NSDate *)firstDayOfCurrentMonthWithCalendar:(NSCalendar *)calendar;
+
+/**
  Gets last day of current month.
  
  @return last day of current month.
@@ -88,7 +147,14 @@
 + (NSDate *)lastDayOfCurrentMonth;
 
 /**
- Gets tomorrow's date
+ Gets last day of current month with a calendar.
+
+ @return last day of current month with a calendar.
+ */
++ (NSDate *)lastDayOfCurrentMonthWithCalendar:(NSCalendar *)calendar;
+
+/**
+ Gets tomorrow's date.
  
  @return        Tomorrow's date.
  */
@@ -160,11 +226,26 @@
 - (BOOL) isEqualToDateIgnoringTime: (NSDate *) aDate;
 
 /**
+ Test to see if dates are equal, while ignoring their time with a calendar.
+
+ @param aDate   Date to compare current date with.
+ @return        YES or NO based on the date comparison.
+ */
+- (BOOL) isEqualToDateIgnoringTime: (NSDate *) aDate withCalendar:(NSCalendar *)calendar;
+
+/**
  Test to see if current date is today.
  
  @return YES or NO result from comparing current date, with today's date.
  */
 - (BOOL) isToday;
+
+/**
+ Test to see if current date is today with a calendar.
+
+ @return YES or NO result from comparing current date, with today's date.
+ */
+- (BOOL) isTodayWithCalendar:(NSCalendar *)calendar;
 
 /**
  Test to see if current date is tomorrow.
@@ -174,11 +255,25 @@
 - (BOOL) isTomorrow;
 
 /**
+ Test to see if current date is tomorrow with a calendar.
+
+ @return YES or NO result from comparing current date, with tomorrow's date.
+ */
+- (BOOL) isTomorrowWithCalendar:(NSCalendar *)calendar;
+
+/**
  Test to see if current date is yesterday.
  
  @return YES or NO result from comparing current date, with yesterday's date.
  */
 - (BOOL) isYesterday;
+
+/**
+ Test to see if current date is yesterday with a calendar.
+
+ @return YES or NO result from comparing current date, with yesterday's date.
+ */
+- (BOOL) isYesterdayWithCalendar:(NSCalendar *)calendar;
 
 /**
  Test to see if current date is in the same week as another date.
@@ -189,11 +284,26 @@
 - (BOOL) isSameWeekAsDate: (NSDate *) aDate;
 
 /**
+ Test to see if current date is in the same week as another date with a calendar.
+
+ @param aDate   Date used to test current date against.
+ @return        YES or NO based on if current date is in the same week as aDate.
+ */
+- (BOOL) isSameWeekAsDate: (NSDate *) aDate withCalendar:(NSCalendar *)calendar;
+
+/**
  Test to see if current date part of this week.
  
  @return        YES or NO based on if current date is in this week.
  */
 - (BOOL) isThisWeek;
+
+/**
+ Test to see if current date part of this week with a calendar.
+
+ @return        YES or NO based on if current date is in this week.
+ */
+- (BOOL) isThisWeekWithCalendar:(NSCalendar *)calendar;
 
 /**
  Test to see if current date part of next week.
@@ -203,11 +313,25 @@
 - (BOOL) isNextWeek;
 
 /**
+ Test to see if current date part of next week with a calendar.
+
+ @return        YES or NO based on if current date is in next week.
+ */
+- (BOOL) isNextWeekWithCalendar:(NSCalendar *)calendar;
+
+/**
  Test to see if current date part of last week.
  
  @return        YES or NO based on if current date is in last week.
  */
 - (BOOL) isLastWeek;
+
+/**
+ Test to see if current date part of last week with a calendar.
+
+ @return        YES or NO based on if current date is in last week.
+ */
+- (BOOL) isLastWeekWithCalendar:(NSCalendar *)calendar;
 
 /**
  Test to see if current date is in the same month as another date.
@@ -218,11 +342,26 @@
 - (BOOL) isSameMonthAsDate: (NSDate *) aDate;
 
 /**
+ Test to see if current date is in the same month as another date with a calendar.
+
+ @param aDate   Date used to test current date against.
+ @return        YES or NO based on if current date is in the same month as aDate.
+ */
+- (BOOL) isSameMonthAsDate: (NSDate *) aDate withCalendar:(NSCalendar *)calendar;
+
+/**
  Test to see if current date part of this month.
  
  @return        YES or NO based on if current date is in this month.
  */
 - (BOOL) isThisMonth;
+
+/**
+ Test to see if current date part of this month with a calendar.
+
+ @return        YES or NO based on if current date is in this month.
+ */
+- (BOOL) isThisMonthWithCalendar:(NSCalendar *)calendar;
 
 /**
  Test to see if current date is in the same year as another date.
@@ -233,11 +372,26 @@
 - (BOOL) isSameYearAsDate: (NSDate *) aDate;
 
 /**
+ Test to see if current date is in the same year as another date with a calendar.
+
+ @param aDate   Date used to test current date against.
+ @return        YES or NO based on if current date is in the same year as aDate.
+ */
+- (BOOL) isSameYearAsDate: (NSDate *) aDate withCalendar:(NSCalendar *)calendar;
+
+/**
  Test to see if current date part of this year.
  
  @return        YES or NO based on if current date is in this year.
  */
 - (BOOL) isThisYear;
+
+/**
+ Test to see if current date part of this year with a calendar.
+
+ @return        YES or NO based on if current date is in this year.
+ */
+- (BOOL) isThisYearWithCalendar:(NSCalendar *)calendar;
 
 /**
  Test to see if current date part of next year.
@@ -247,11 +401,25 @@
 - (BOOL) isNextYear;
 
 /**
+ Test to see if current date part of next year with a calendar.
+
+ @return        YES or NO based on if current date is in next year.
+ */
+- (BOOL) isNextYearWithCalendar:(NSCalendar *)calendar;
+
+/**
  Test to see if current date part of last year.
  
  @return        YES or NO based on if current date is last year.
  */
 - (BOOL) isLastYear;
+
+/**
+ Test to see if current date part of last year with a calendar.
+
+ @return        YES or NO based on if current date is last year.
+ */
+- (BOOL) isLastYearWithCalendar:(NSCalendar *)calendar;
 
 /**
  Test to see if current date is before another date.
@@ -277,11 +445,25 @@
 - (BOOL) isTypicallyWorkday;
 
 /**
+ Test to see if current date is a typical work workday with a calendar.
+
+ @return        YES or NO based on if current date is a typical work workday.
+ */
+- (BOOL) isTypicallyWorkdayWithCalendar:(NSCalendar *)calendar;
+
+/**
  Test to see if current date is a typical weekend.
  
  @return        YES or NO based on if current date is a typical weekend.
  */
 - (BOOL) isTypicallyWeekend;
+
+/**
+ Test to see if current date is a typical weekend with a calendar.
+
+ @return        YES or NO based on if current date is a typical weekend.
+ */
+- (BOOL) isTypicallyWeekendWithCalendar:(NSCalendar *)calendar;
 
 /**
  Creates a new date by adding dates to current date.
@@ -339,6 +521,17 @@
 - (NSDate *) dateAtStartOfDay;
 
 /**
+ Creates a date for the start of the current day with a calendar.
+
+ @return          New date.
+ */
+- (NSDate *) dateAtStartOfDayWithCalendar:(NSCalendar *)calendar;
+
+- (NSDateComponents *) componentsWithOffsetFromDate: (NSDate *) aDate;
+
+- (NSDateComponents *) componentsWithOffsetFromDate: (NSDate *) aDate withCalendar:(NSCalendar *)calendar;
+
+/**
  Creates a date object from a string with provided date format.
  
  @param string  String representation of date.
@@ -348,6 +541,17 @@
  @return date   Date object created from string.
  **/
 + (NSDate *)dateFromString:(NSString *)string withFormat:(NSString *)format;
+
+/**
+ Creates a date object from a string with provided date format with a timezone.
+
+ @param string  String representation of date.
+
+ @param format  Date format used against string date.
+
+ @return date   Date object created from string.
+ **/
++ (NSDate *)dateFromString:(NSString *)string withFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone;
 
 /**
  Creates a date from a month day and year.
@@ -361,6 +565,21 @@
  @return Date object created from provided month, day, and year.
  **/
 + (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year;
+
+/**
+ Creates a date from a month day and year with a calendar.
+
+ @param month   Number for month.
+
+ @param day     Number for day.
+
+ @param year    Number for year.
+ 
+ @param calendar    Calendar to use for date.
+
+ @return Date object created from provided month, day, and year.
+ **/
++ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year withCalendar:(NSCalendar *)calendar;
 
 /**
  Creates a date from a month, day, year and calendar type.
