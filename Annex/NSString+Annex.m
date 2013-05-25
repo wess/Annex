@@ -103,4 +103,13 @@
     return [dateFormatter stringFromDate:date];
 }
 
++ (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeZone   = timeZone;
+    dateFormatter.dateFormat = format;
+
+    return [dateFormatter stringFromDate:date];
+}
+
 @end

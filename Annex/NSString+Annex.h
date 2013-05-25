@@ -82,4 +82,6 @@
  */
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format;
 
++ (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone;
+
 @end
