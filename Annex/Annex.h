@@ -14,6 +14,7 @@
 #import "NSDate+Annex.h"
 #import "NSString+Annex.h"
 #import "NSDictionary+Annex.h"
+#import "CAAnimation+Annex.h"
 #import "UIColor+Annex.h"
 #import "UIView+Annex.h"
 #import "UIButton+Annex.h"

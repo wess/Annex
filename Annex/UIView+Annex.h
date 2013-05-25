@@ -94,6 +94,16 @@
  */
 - (UIImage *)rasterizedToImage;
 
+
+/**
+ */
+- (void)removeFromSuperviewWithTransition:(UIViewAnimationTransition)transition duration:(NSTimeInterval)duration;
+
+/**
+ */
+- (void)addSubview:(UIView *)view withTransition:(UIViewAnimationTransition)transition duration:(NSTimeInterval)duration;
+
+
 #endif
 
 /**
@@ -105,10 +115,53 @@
  */
 + (UIView *)viewWithFrame:(CGRect)rect drawRect:(void(^)(CGRect rect))block;
 
+/**
+ Convience method for loading a UIView from a nib file.
+ 
+ @param nib     Nib object loaded from view's nib file.
+ @param owner   Loaded view's owner
+ @param options Options for when loading the nib file.
+ @return        UIView based object loaded from a nib.
+ */
 + (UIView *)viewFromNib:(UINib *)nib withOwner:(id)owner options:(NSDictionary *)options;
+
+/**
+ Convience method for loading a UIView from a nib file.
+ 
+ @param nib     Nib object loaded from view's nib file.
+ @param owner   Loaded view's owner
+ @return        UIView based object loaded from a nib.
+ */
 + (UIView *)viewFromNib:(UINib *)nib withOwner:(id)owner;
+
+/**
+ Convience method for loading a UIView from a nib file.
+ 
+ @param nibName     Name of nib file to load view from.
+ @param owner       Loaded view's owner
+ @param bundle      Bundle that conains nib file.
+ @param options     Options for when loading the nib file.
+ @return            UIView based object loaded from a nib.
+ */
 + (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner bundle:(NSBundle *)bundle options:(NSDictionary *)options;
+
+/**
+ Convience method for loading a UIView from a nib file.
+ 
+ @param nibName     Name of nib file to load view from.
+ @param owner       Loaded view's owner
+ @param bundle      Bundle that conains nib file.
+ @return            UIView based object loaded from a nib.
+ */
 + (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner bundle:(NSBundle *)bundle;
+
+/**
+ Convience method for loading a UIView from a nib file.
+ 
+ @param nibName     Name of nib file to load view from.
+ @param owner       Loaded view's owner
+ @return            UIView based object loaded from a nib.
+ */
 + (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner;
 
 @end

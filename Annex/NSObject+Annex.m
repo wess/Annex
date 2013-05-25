@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+Annex.h"
+#import <objc/runtime.h>
 
 @implementation NSObject (Annex)
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (Annex)
+
 /** 
  `NSObject(Annex)` is an extension to NSObject with additional functionality.
  */
