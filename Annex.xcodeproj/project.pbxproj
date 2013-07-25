@@ -29,6 +29,8 @@
 		08F6B82516D56C54006F12EB /* NSDictionary+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564616D52CA0006A16D2 /* NSDictionary+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82616D56C54006F12EB /* UIColor+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564916D52CB3006A16D2 /* UIColor+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564C16D52CBD006A16D2 /* UIView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D743B05D17A1C8710068D596 /* NSArray+Annex.h */; };
+		D743B06017A1C8710068D596 /* NSArray+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D743B05E17A1C8710068D596 /* NSArray+Annex.m */; };
 		D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = D771BDDD17A16367005F9845 /* AnnexImageCache.h */; };
 		D771BDE017A16367005F9845 /* AnnexImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D771BDDE17A16367005F9845 /* AnnexImageCache.m */; };
 		D771BDE417A17E6C005F9845 /* UIImageView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D771BDE217A17E6C005F9845 /* UIImageView+Annex.h */; };
@@ -81,6 +83,8 @@
 		08BE565316D530F0006A16D2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		08BE565616D550EE006A16D2 /* NSDate+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Annex.h"; sourceTree = "<group>"; };
 		08BE565716D550EE006A16D2 /* NSDate+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Annex.m"; sourceTree = "<group>"; };
+		D743B05D17A1C8710068D596 /* NSArray+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Annex.h"; sourceTree = "<group>"; };
+		D743B05E17A1C8710068D596 /* NSArray+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Annex.m"; sourceTree = "<group>"; };
 		D771BDDD17A16367005F9845 /* AnnexImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexImageCache.h; sourceTree = "<group>"; };
 		D771BDDE17A16367005F9845 /* AnnexImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexImageCache.m; sourceTree = "<group>"; };
 		D771BDE217A17E6C005F9845 /* UIImageView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Annex.h"; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		08BE563A16D52C3A006A16D2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D743B05C17A1C8660068D596 /* NSArray */,
 				D771BDE117A17E58005F9845 /* UIImageView */,
 				D7E71B1B1796EAB1005A76AB /* NSManagedObjectContext */,
 				D7A3370117500B2E00EE6277 /* CAAnimation */,
@@ -268,6 +273,15 @@
 			name = NSDate;
 			sourceTree = "<group>";
 		};
+		D743B05C17A1C8660068D596 /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				D743B05D17A1C8710068D596 /* NSArray+Annex.h */,
+				D743B05E17A1C8710068D596 /* NSArray+Annex.m */,
+			);
+			name = NSArray;
+			sourceTree = "<group>";
+		};
 		D771BDDA17A16349005F9845 /* ImageCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +350,7 @@
 				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
 				D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */,
 				D771BDE417A17E6C005F9845 /* UIImageView+Annex.h in Headers */,
+				D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +420,7 @@
 				D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */,
 				D771BDE017A16367005F9845 /* AnnexImageCache.m in Sources */,
 				D771BDE517A17E6C005F9845 /* UIImageView+Annex.m in Sources */,
+				D743B06017A1C8710068D596 /* NSArray+Annex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
