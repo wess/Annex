@@ -78,10 +78,18 @@
  
  @param date    The date to convert to a string
  @param format  The format to convert the date to.
- @return        MD5 Hash created from current string.
+ @return            String created from date using format.
  */
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format;
 
+/**
+ Converts an NSDate to a string with a given format.
+ 
+ @param date        The date to convert to a string
+ @param format      The format to convert the date to.
+ @param timeZone    Timezone used when converting date to string.
+ @return            String created from date using format.
+ */
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone;
 
 @end

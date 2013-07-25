@@ -19,10 +19,21 @@
 @property (strong, nonatomic) NSMutableDictionary *backgroundColors;
 
 /**
+ Placeholder image to used when image hasn't been loaded yet.
+ */
+@property (strong, nonatomic) UIImage *placeholderImage;
+
+/**
  Sets the button background color for specific control states.
  
  @param backgroundColor Color for the background
  @param state           Control state that indicates when background color is used.
  */
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
+
+/**
+ 
+ */
+- (void)setImageForURL:(NSURL *)url forState:(UIControlState)state;
+
 @end

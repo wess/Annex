@@ -29,11 +29,18 @@
 		08F6B82516D56C54006F12EB /* NSDictionary+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564616D52CA0006A16D2 /* NSDictionary+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82616D56C54006F12EB /* UIColor+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564916D52CB3006A16D2 /* UIColor+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564C16D52CBD006A16D2 /* UIView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = D771BDDD17A16367005F9845 /* AnnexImageCache.h */; };
+		D771BDE017A16367005F9845 /* AnnexImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D771BDDE17A16367005F9845 /* AnnexImageCache.m */; };
+		D771BDE417A17E6C005F9845 /* UIImageView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D771BDE217A17E6C005F9845 /* UIImageView+Annex.h */; };
+		D771BDE517A17E6C005F9845 /* UIImageView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D771BDE317A17E6C005F9845 /* UIImageView+Annex.m */; };
 		D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D782F7F5173E87CE0070F967 /* UIAlertView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D782F7F6173E87CE0070F967 /* UIAlertView+Annex.m */; };
 		D7A3370417500B3C00EE6277 /* CAAnimation+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A3370217500B3C00EE6277 /* CAAnimation+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7A3370517500B3C00EE6277 /* CAAnimation+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A3370317500B3C00EE6277 /* CAAnimation+Annex.m */; };
 		D7A3373E175052E700EE6277 /* AnnexEasingBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A3373D175052E700EE6277 /* AnnexEasingBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */; };
+		D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E71B1D1796EAF4005A76AB /* NSManagedObjectContext+Annex.m */; };
+		D7E71B211796EDC6005A76AB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7E71B201796EDC6005A76AB /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,11 +81,18 @@
 		08BE565316D530F0006A16D2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		08BE565616D550EE006A16D2 /* NSDate+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Annex.h"; sourceTree = "<group>"; };
 		08BE565716D550EE006A16D2 /* NSDate+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Annex.m"; sourceTree = "<group>"; };
+		D771BDDD17A16367005F9845 /* AnnexImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexImageCache.h; sourceTree = "<group>"; };
+		D771BDDE17A16367005F9845 /* AnnexImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexImageCache.m; sourceTree = "<group>"; };
+		D771BDE217A17E6C005F9845 /* UIImageView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Annex.h"; sourceTree = "<group>"; };
+		D771BDE317A17E6C005F9845 /* UIImageView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Annex.m"; sourceTree = "<group>"; };
 		D782F7F5173E87CE0070F967 /* UIAlertView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Annex.h"; sourceTree = "<group>"; };
 		D782F7F6173E87CE0070F967 /* UIAlertView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Annex.m"; sourceTree = "<group>"; };
 		D7A3370217500B3C00EE6277 /* CAAnimation+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Annex.h"; sourceTree = "<group>"; };
 		D7A3370317500B3C00EE6277 /* CAAnimation+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Annex.m"; sourceTree = "<group>"; };
 		D7A3373D175052E700EE6277 /* AnnexEasingBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexEasingBlocks.h; sourceTree = "<group>"; };
+		D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Annex.h"; sourceTree = "<group>"; };
+		D7E71B1D1796EAF4005A76AB /* NSManagedObjectContext+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Annex.m"; sourceTree = "<group>"; };
+		D7E71B201796EDC6005A76AB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E71B211796EDC6005A76AB /* CoreData.framework in Frameworks */,
 				08BE565416D530F0006A16D2 /* Security.framework in Frameworks */,
 				08BE565116D52D31006A16D2 /* QuartzCore.framework in Frameworks */,
 				08BE565216D52D31006A16D2 /* UIKit.framework in Frameworks */,
@@ -108,6 +123,7 @@
 		083F8DB216EA2F6F0025A312 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D771BDDA17A16349005F9845 /* ImageCache */,
 				083F8DB316EA2F720025A312 /* Keychain */,
 			);
 			name = Classes;
@@ -151,6 +167,7 @@
 		08BE562B16D52C32006A16D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7E71B201796EDC6005A76AB /* CoreData.framework */,
 				08BE565316D530F0006A16D2 /* Security.framework */,
 				08BE564F16D52D31006A16D2 /* QuartzCore.framework */,
 				08BE565016D52D31006A16D2 /* UIKit.framework */,
@@ -181,6 +198,8 @@
 		08BE563A16D52C3A006A16D2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D771BDE117A17E58005F9845 /* UIImageView */,
+				D7E71B1B1796EAB1005A76AB /* NSManagedObjectContext */,
 				D7A3370117500B2E00EE6277 /* CAAnimation */,
 				08BE563F16D52C6A006A16D2 /* NSObject */,
 				08BE565516D550DD006A16D2 /* NSDate */,
@@ -249,6 +268,24 @@
 			name = NSDate;
 			sourceTree = "<group>";
 		};
+		D771BDDA17A16349005F9845 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				D771BDDD17A16367005F9845 /* AnnexImageCache.h */,
+				D771BDDE17A16367005F9845 /* AnnexImageCache.m */,
+			);
+			name = ImageCache;
+			sourceTree = "<group>";
+		};
+		D771BDE117A17E58005F9845 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				D771BDE217A17E6C005F9845 /* UIImageView+Annex.h */,
+				D771BDE317A17E6C005F9845 /* UIImageView+Annex.m */,
+			);
+			name = UIImageView;
+			sourceTree = "<group>";
+		};
 		D782F7F4173E87840070F967 /* UIAlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +303,15 @@
 				D7A3370317500B3C00EE6277 /* CAAnimation+Annex.m */,
 			);
 			name = CAAnimation;
+			sourceTree = "<group>";
+		};
+		D7E71B1B1796EAB1005A76AB /* NSManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */,
+				D7E71B1D1796EAF4005A76AB /* NSManagedObjectContext+Annex.m */,
+			);
+			name = NSManagedObjectContext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +333,9 @@
 				D7A3370417500B3C00EE6277 /* CAAnimation+Annex.h in Headers */,
 				D7A3373E175052E700EE6277 /* AnnexEasingBlocks.h in Headers */,
 				083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */,
+				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
+				D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */,
+				D771BDE417A17E6C005F9845 /* UIImageView+Annex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +402,9 @@
 				083F8DB716EA2F8B0025A312 /* AnnexKeyChain.m in Sources */,
 				D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */,
 				D7A3370517500B3C00EE6277 /* CAAnimation+Annex.m in Sources */,
+				D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */,
+				D771BDE017A16367005F9845 /* AnnexImageCache.m in Sources */,
+				D771BDE517A17E6C005F9845 /* UIImageView+Annex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

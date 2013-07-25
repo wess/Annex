@@ -7,11 +7,15 @@
 //
 
 #import "UIButton+Annex.h"
+#import "AnnexImageCache.h"
 #import <objc/runtime.h>
 
 @implementation UIButton (Annex)
 static char ANNEX_BUTTON_BACKGROUNDS_KEY;
+static char ANNEX_BUTTON_PLACEHOLDER_IMAGE;
+
 @dynamic backgroundColors;
+@dynamic placeholderImage;
 
 - (void)setBackgroundColors:(NSMutableDictionary *)backgroundColors
 {
@@ -29,6 +33,39 @@ static char ANNEX_BUTTON_BACKGROUNDS_KEY;
         [self setBackgroundColors:[NSMutableDictionary new]];
     
     [[self backgroundColors] setObject:backgroundColor forKey:@(state)];
+}
+
+- (void)setPlaceholderImage:(UIImage *)placeholderImage
+{
+    objc_setAssociatedObject(self, &ANNEX_BUTTON_PLACEHOLDER_IMAGE, placeholderImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIImage *)placeholderImage
+{
+    return (UIImage *)objc_getAssociatedObject(self, &ANNEX_BUTTON_PLACEHOLDER_IMAGE);
+}
+
+- (void)setImageForURL:(NSURL *)url forState:(UIControlState)state
+{
+    if([AnnexImageCache imageForKey:url.absoluteString])
+    {
+        [self setImage:[AnnexImageCache imageForKey:url.absoluteString] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [AnnexImageCache imageFromURL:url completion:^(UIImage *image, NSError *error) {
+            if(error)
+            {
+                NSLog(@"UIButton image loading failed: %@", error.debugDescription);
+            }
+            else
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self setImage:image forState:state];                    
+                });
+            }
+        }];
+    }
 }
 
 #pragma mark - Handle Background color toggle -
