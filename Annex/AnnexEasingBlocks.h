@@ -30,6 +30,8 @@ CGFloat t = property.time,  \
 
 // Easing equations provided by: http://www.dzone.com/snippets/robert-penner-easing-equations
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wsequence-point"
 
 static AnnexEasingBlock AnnexEaseInQuad = ^CGFloat(AnnexEasingProperty property) {
     CONVERT_PROPERTY(property);
@@ -328,5 +330,7 @@ static AnnexEasingBlock AnnexEaseInOutBounce = ^CGFloat(AnnexEasingProperty prop
     
 	return AnnexEaseOutBounce(AnnexEasingPropertyCreate(t * 2 - d, 0, c, d)) * .5 + c * .5 + b;
 };
+
+#pragma clang diagnostic pop
 
 #endif

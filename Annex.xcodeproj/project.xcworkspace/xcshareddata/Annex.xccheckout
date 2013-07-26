@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AA0C139E-11D1-4B81-B501-5051D955324E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Annex</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B0BC3E0F-C884-4C68-9D49-EBA286141A94</key>
+		<string>ssh://github.com/wess/Annex.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Annex.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B0BC3E0F-C884-4C68-9D49-EBA286141A94</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/wess/Annex.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B0BC3E0F-C884-4C68-9D49-EBA286141A94</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B0BC3E0F-C884-4C68-9D49-EBA286141A94</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Annex</string>
+		</dict>
+	</array>
+</dict>
+</plist>
