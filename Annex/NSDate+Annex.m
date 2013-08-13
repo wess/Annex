@@ -625,4 +625,49 @@
     return [cal dateFromComponents:dateComponents];
 }
 
+- (NSString *)humanDateSinceDate:(NSDate *)date
+{
+    NSString *(^componentStringBlock)(NSInteger, NSString *)  =  ^(NSInteger component, NSString *name) {
+        return [NSString stringWithFormat:@"%d %@ ago", component, ((component == 1)? [name copy] : [NSString stringWithFormat:@"%@s", name])];
+    };
+    
+    NSCalendar *calendar            = [NSCalendar currentCalendar];
+    NSDate *before                  = [self earlierDate:date];
+    NSDate *after                   = (before == self)? date : self;
+    NSDateComponents *components    = [calendar components:(NSMinuteCalendarUnit | NSHourCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:before toDate:after options:0];
+    NSString *result                = @"now";
+    
+    if(components.year >= 1)
+        result = @"over a year";
+    
+    if(components.month >= 1)
+        result = componentStringBlock(components.month, @"month");
+    
+    if(components.week >= 1)
+        result = componentStringBlock(components.week, @"week");
+
+    if(components.day >= 1)
+        result = componentStringBlock(components.day, @"day");
+    
+    if(components.minute >= 1)
+        result = componentStringBlock(components.minute, @"minute");
+
+    return result;
+}
+
+- (NSString *)humanDateSinceNow
+{
+    return [self humanDateSinceDate:[NSDate date]];
+}
+
++ (NSString *)humanDateSinceDate:(NSDate *)date
+{
+    return [[NSDate date] humanDateSinceDate:date];
+}
+
++ (NSString *)humanDateFromDate:(NSDate *)date toDate:(NSDate *)toDate
+{
+    return [date humanDateSinceDate:date];
+}
+
 @end

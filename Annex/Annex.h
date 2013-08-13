@@ -31,4 +31,11 @@
 
 #define IS_IPHONE_5             (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)568 ) < DBL_EPSILON)
 
+#ifdef DEBUG
+#define ALog(fmt, ...) ({ NSLog(@"-- [%s:%d] %s: " fmt, __FILE__, __LINE__, __PRETTY_FUNCTION__, ## __VA_ARGS__); })
+#else
+#define ALog(fmt, ...)
 #endif
+
+#endif
+

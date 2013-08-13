@@ -596,6 +596,33 @@
  **/
 + (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year calendar:(NSString *)calendar;
 
+/**
+ Creates a natural language date from current date to another date.
+ 
+ @param date Date to get span from.
+ 
+ @return String representation of date span.
+ */
+- (NSString *)humanDateSinceDate:(NSDate *)date;
+
+/**
+ Creates a natural language date from current date to now.
+ 
+ @return String representation of date span.
+ */
+- (NSString *)humanDateSinceNow;
+
+/**
+ Creates a natural language date from to date to another date.
+ 
+ @param date Date to get span from.
+ 
+ @param toDate Date to get span to.
+ 
+ @return String representation of date span.
+ */
++ (NSString *)humanDateFromDate:(NSDate *)date toDate:(NSDate *)toDate;
+
 @end
 
 
