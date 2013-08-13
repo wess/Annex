@@ -19,6 +19,11 @@
 #import "UIView+Annex.h"
 #import "UIButton+Annex.h"
 #import "UITextView+Annex.h"
+#import "NSManagedObjectContext+Annex.h"
+#import "UIImage+Annex.h"
+#import "UIImageView+Annex.h"
+#import "NSArray+Annex.h"
+#import "UIAlertView+Annex.h"
 
 // Shortcuts
 #define AnnexAppVersion         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
