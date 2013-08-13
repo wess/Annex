@@ -18,12 +18,12 @@
 {
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
     CGRect rect = CGRectZero;
-    rect.size   = image.size;
+    rect.size   = self.size;
     
     [color set];
     UIRectFill(rect);
     
-    [image drawInRect:rect blendMode:kCGBlendModeDestinationIn alpha:1.0];
+    [self drawInRect:rect blendMode:kCGBlendModeDestinationIn alpha:1.0];
     
     UIImage *filledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
