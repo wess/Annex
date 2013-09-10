@@ -7,23 +7,27 @@
 //
 
 
-#ifndef __ANNEX_H__
-#define __ANNEX_H__
+#ifndef _ANNEX_H
+#define _ANNEX_H
 
 #import "NSObject+Annex.h"
 #import "NSDate+Annex.h"
 #import "NSString+Annex.h"
 #import "NSDictionary+Annex.h"
-#import "CAAnimation+Annex.h"
+#import "NSArray+Annex.h"
 #import "UIColor+Annex.h"
 #import "UIView+Annex.h"
 #import "UIButton+Annex.h"
 #import "UITextView+Annex.h"
-#import "NSManagedObjectContext+Annex.h"
 #import "UIImage+Annex.h"
 #import "UIImageView+Annex.h"
-#import "NSArray+Annex.h"
 #import "UIAlertView+Annex.h"
+
+// If we have core data for iPhone, have at it!
+#ifdef NSCoreDataVersionNumber_iPhoneOS_5_0
+#import "NSManagedObjectContext+Annex.h"
+#endif
+
 
 // Shortcuts
 #define AnnexAppVersion         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]

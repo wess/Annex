@@ -7,6 +7,11 @@
 //
 
 #import "AnnexImageCache.h"
+#import <CoreData/CoreDataDefines.h>
+
+@interface AnnexImageCacheOperation : NSOperation
++ (instancetype)imageCacheOperationWithURL:(NSURL *)url completion:(AnnexImageCacheBlock)block;
+@end
 
 @interface AnnexImageCacheOperation()
 @property (strong, nonatomic) UIImage           *image;

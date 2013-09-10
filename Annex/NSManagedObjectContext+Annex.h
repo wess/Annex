@@ -8,11 +8,11 @@
 
 #import <CoreData/CoreData.h>
 
+
+@interface NSManagedObjectContext (Annex)
 /**
  `NSManagedObjectContext(Annex)` is helper category for simplifying Core data fetch requests.
  */
-
-@interface NSManagedObjectContext (Annex)
 
 /**
  Fetches all objects from Core data for specified entity

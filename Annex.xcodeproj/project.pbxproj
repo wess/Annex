@@ -37,9 +37,6 @@
 		D771BDE517A17E6C005F9845 /* UIImageView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D771BDE317A17E6C005F9845 /* UIImageView+Annex.m */; };
 		D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D782F7F5173E87CE0070F967 /* UIAlertView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D782F7F6173E87CE0070F967 /* UIAlertView+Annex.m */; };
-		D7A3370417500B3C00EE6277 /* CAAnimation+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A3370217500B3C00EE6277 /* CAAnimation+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7A3370517500B3C00EE6277 /* CAAnimation+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A3370317500B3C00EE6277 /* CAAnimation+Annex.m */; };
-		D7A3373E175052E700EE6277 /* AnnexEasingBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A3373D175052E700EE6277 /* AnnexEasingBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7E31C4817BA829700BA7AC2 /* UIImage+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E31C4617BA829700BA7AC2 /* UIImage+Annex.h */; };
 		D7E31C4917BA829700BA7AC2 /* UIImage+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E31C4717BA829700BA7AC2 /* UIImage+Annex.m */; };
 		D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */; };
@@ -93,9 +90,6 @@
 		D771BDE317A17E6C005F9845 /* UIImageView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Annex.m"; sourceTree = "<group>"; };
 		D782F7F5173E87CE0070F967 /* UIAlertView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Annex.h"; sourceTree = "<group>"; };
 		D782F7F6173E87CE0070F967 /* UIAlertView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Annex.m"; sourceTree = "<group>"; };
-		D7A3370217500B3C00EE6277 /* CAAnimation+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Annex.h"; sourceTree = "<group>"; };
-		D7A3370317500B3C00EE6277 /* CAAnimation+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Annex.m"; sourceTree = "<group>"; };
-		D7A3373D175052E700EE6277 /* AnnexEasingBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexEasingBlocks.h; sourceTree = "<group>"; };
 		D7E31C4617BA829700BA7AC2 /* UIImage+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Annex.h"; sourceTree = "<group>"; };
 		D7E31C4717BA829700BA7AC2 /* UIImage+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Annex.m"; sourceTree = "<group>"; };
 		D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Annex.h"; sourceTree = "<group>"; };
@@ -210,7 +204,6 @@
 				D743B05C17A1C8660068D596 /* NSArray */,
 				D771BDE117A17E58005F9845 /* UIImageView */,
 				D7E71B1B1796EAB1005A76AB /* NSManagedObjectContext */,
-				D7A3370117500B2E00EE6277 /* CAAnimation */,
 				08BE563F16D52C6A006A16D2 /* NSObject */,
 				08BE565516D550DD006A16D2 /* NSDate */,
 				08BE563E16D52C67006A16D2 /* NSString */,
@@ -314,16 +307,6 @@
 			name = UIAlertView;
 			sourceTree = "<group>";
 		};
-		D7A3370117500B2E00EE6277 /* CAAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				D7A3373D175052E700EE6277 /* AnnexEasingBlocks.h */,
-				D7A3370217500B3C00EE6277 /* CAAnimation+Annex.h */,
-				D7A3370317500B3C00EE6277 /* CAAnimation+Annex.m */,
-			);
-			name = CAAnimation;
-			sourceTree = "<group>";
-		};
 		D7E31C4517BA828C00BA7AC2 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,8 +341,6 @@
 				08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */,
 				083F8D9E16E917FF0025A312 /* UIButton+Annex.h in Headers */,
 				D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */,
-				D7A3370417500B3C00EE6277 /* CAAnimation+Annex.h in Headers */,
-				D7A3373E175052E700EE6277 /* AnnexEasingBlocks.h in Headers */,
 				083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */,
 				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
 				D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */,
@@ -431,7 +412,6 @@
 				083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */,
 				083F8DB716EA2F8B0025A312 /* AnnexKeyChain.m in Sources */,
 				D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */,
-				D7A3370517500B3C00EE6277 /* CAAnimation+Annex.m in Sources */,
 				D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */,
 				D771BDE017A16367005F9845 /* AnnexImageCache.m in Sources */,
 				D771BDE517A17E6C005F9845 /* UIImageView+Annex.m in Sources */,
