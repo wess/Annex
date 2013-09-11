@@ -20,8 +20,9 @@
 
 - (NSArray *)mapObjectsWithBlock:(id (^)(id object))block
 {
-    return [[self combineWithObject:[NSMutableArray arrayWithCapacity:[self count]] block:^(NSMutableArray *acc, id value) {
+    return [[self combineWithObject:[NSMutableArray arrayWithCapacity:[self count]] block:^NSMutableArray *(NSMutableArray *acc, id value) {
         [acc addObject:block(value)];
+        return acc;
     }] copy];
 }
 
