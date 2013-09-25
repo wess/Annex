@@ -53,7 +53,7 @@ static char ANNEX_BUTTON_PLACEHOLDER_IMAGE;
     }
     else
     {
-        [AnnexImageCache imageFromURL:url onCompletion:^(UIImage *image, NSError *error) {
+        [AnnexImageCache imageFromURL:url completionHandler:^(UIImage *image, NSError *error) {
             if(error)
             {
                 NSLog(@"UIButton image loading failed: %@", error.debugDescription);
