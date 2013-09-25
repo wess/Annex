@@ -33,6 +33,8 @@
 		4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */; };
 		D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D743B05D17A1C8710068D596 /* NSArray+Annex.h */; };
 		D743B06017A1C8710068D596 /* NSArray+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D743B05E17A1C8710068D596 /* NSArray+Annex.m */; };
+		D743ED6017F33D9100EB5AFB /* AnnexRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = D743ED5E17F33D9100EB5AFB /* AnnexRequestOperation.h */; };
+		D743ED6117F33D9100EB5AFB /* AnnexRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D743ED5F17F33D9100EB5AFB /* AnnexRequestOperation.m */; };
 		D753C22C17ECBEE9009852F8 /* NSNumber+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D753C22A17ECBEE9009852F8 /* NSNumber+Annex.h */; };
 		D753C22D17ECBEE9009852F8 /* NSNumber+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D753C22B17ECBEE9009852F8 /* NSNumber+Annex.m */; };
 		D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = D771BDDD17A16367005F9845 /* AnnexImageCache.h */; };
@@ -90,6 +92,8 @@
 		4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Annex.m"; sourceTree = "<group>"; };
 		D743B05D17A1C8710068D596 /* NSArray+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Annex.h"; sourceTree = "<group>"; };
 		D743B05E17A1C8710068D596 /* NSArray+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Annex.m"; sourceTree = "<group>"; };
+		D743ED5E17F33D9100EB5AFB /* AnnexRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexRequestOperation.h; sourceTree = "<group>"; };
+		D743ED5F17F33D9100EB5AFB /* AnnexRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexRequestOperation.m; sourceTree = "<group>"; };
 		D753C22A17ECBEE9009852F8 /* NSNumber+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Annex.h"; sourceTree = "<group>"; };
 		D753C22B17ECBEE9009852F8 /* NSNumber+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Annex.m"; sourceTree = "<group>"; };
 		D771BDDD17A16367005F9845 /* AnnexImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexImageCache.h; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		083F8DB216EA2F6F0025A312 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D743ED5D17F33D7100EB5AFB /* RequestOperation */,
 				D771BDDA17A16349005F9845 /* ImageCache */,
 				083F8DB316EA2F720025A312 /* Keychain */,
 			);
@@ -299,6 +304,15 @@
 			name = NSArray;
 			sourceTree = "<group>";
 		};
+		D743ED5D17F33D7100EB5AFB /* RequestOperation */ = {
+			isa = PBXGroup;
+			children = (
+				D743ED5E17F33D9100EB5AFB /* AnnexRequestOperation.h */,
+				D743ED5F17F33D9100EB5AFB /* AnnexRequestOperation.m */,
+			);
+			name = RequestOperation;
+			sourceTree = "<group>";
+		};
 		D753C22917ECBEDE009852F8 /* NSNumber */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +383,7 @@
 				08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */,
 				08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */,
 				083F8D9E16E917FF0025A312 /* UIButton+Annex.h in Headers */,
+				D743ED6017F33D9100EB5AFB /* AnnexRequestOperation.h in Headers */,
 				D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */,
 				083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */,
 				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
@@ -444,6 +459,7 @@
 				083F8DB716EA2F8B0025A312 /* AnnexKeyChain.m in Sources */,
 				D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */,
 				4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */,
+				D743ED6117F33D9100EB5AFB /* AnnexRequestOperation.m in Sources */,
 				D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */,
 				D771BDE017A16367005F9845 /* AnnexImageCache.m in Sources */,
 				D771BDE517A17E6C005F9845 /* UIImageView+Annex.m in Sources */,

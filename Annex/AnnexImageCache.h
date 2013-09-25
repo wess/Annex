@@ -12,8 +12,6 @@
 /**
  Callback used when image request has been completed.
  */
-typedef void(^AnnexImageCacheBlock)(UIImage *, NSError *);
-
 @interface AnnexImageCache : NSObject
 /**
  `AnnexImageCache` is a lightweight class for managing image requests and caching.
@@ -33,7 +31,7 @@ typedef void(^AnnexImageCacheBlock)(UIImage *, NSError *);
  @param NSURL                   URL of image to load.
  @param AnnexImageCacheBlock    Block called when request has completed.
  */
-+ (void)imageFromURL:(NSURL *)url completionHandler:(AnnexImageCacheBlock)block;
++ (void)imageFromURL:(NSURL *)url completionHandler:(void(^)(UIImage *, NSError *))block;
 
 /**
  Inserts or overwrites image in cache for provided key.
