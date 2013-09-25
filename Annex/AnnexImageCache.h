@@ -33,7 +33,7 @@ typedef void(^AnnexImageCacheBlock)(UIImage *, NSError *);
  @param NSURL                   URL of image to load.
  @param AnnexImageCacheBlock    Block called when request has completed.
  */
-+ (void)imageFromURL:(NSURL *)url onCompletion:(AnnexImageCacheBlock)block;
++ (void)imageFromURL:(NSURL *)url completionHandler:(AnnexImageCacheBlock)block;
 
 /**
  Inserts or overwrites image in cache for provided key.

@@ -95,7 +95,7 @@ static NSString        *const AnnexImageCacheURLKey             = @"AnnexImageCa
     return nil;
 }
 
-+ (void)imageFromURL:(NSURL *)url completion:(AnnexImageCacheBlock)block
++ (void)imageFromURL:(NSURL *)url completionHandler:(AnnexImageCacheBlock)block
 {
     AnnexImageCacheOperation *operation = [AnnexImageCacheOperation imageCacheOperationWithURL:url completion:block];
     [[AnnexImageCache instance].queue addOperation:operation];
