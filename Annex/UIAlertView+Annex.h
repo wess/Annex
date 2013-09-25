@@ -24,7 +24,7 @@
  */
 - (instancetype)initWithTitle:(NSString *)title
                       message:(NSString *)message
-                   onComplete:(void(^)(BOOL didCancel, NSInteger buttonIndex))callback
+           completionHandler:(void(^)(BOOL didCancel, NSInteger buttonIndex))callback
             cancelButtonTitle:(NSString *)cancelButtonTitle
             otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 

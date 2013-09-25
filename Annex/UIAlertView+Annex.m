@@ -14,7 +14,7 @@ static NSString *const AnnexAlertViewBlock = @"AnnexAlertViewBlock";
 
 - (instancetype)initWithTitle:(NSString *)title
                       message:(NSString *)message
-                   onComplete:(void(^)(BOOL didCancel, NSInteger buttonIndex))callback
+            completionHandler:(void(^)(BOOL didCancel, NSInteger buttonIndex))callback
             cancelButtonTitle:(NSString *)cancelButtonTitle
             otherButtonTitles:(NSString *)otherButtonTitles, ...
 {
