@@ -43,7 +43,7 @@ static char ANNEX_PLACEHOLDER_IMAGE;
             else
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.image = self.image;
+                    self.image = image;
                 });
             }
         }];
