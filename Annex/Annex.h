@@ -45,6 +45,5 @@
 #else
 #define ALog(fmt, ...)
 #endif
-
 #endif
 

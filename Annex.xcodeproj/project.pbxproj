@@ -43,6 +43,13 @@
 		D771BDE517A17E6C005F9845 /* UIImageView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D771BDE317A17E6C005F9845 /* UIImageView+Annex.m */; };
 		D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D782F7F5173E87CE0070F967 /* UIAlertView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D782F7F6173E87CE0070F967 /* UIAlertView+Annex.m */; };
+		D7D6AFB017FB309A00BCBD78 /* AnnexController.h in Headers */ = {isa = PBXBuildFile; fileRef = D7D6AFAE17FB309A00BCBD78 /* AnnexController.h */; };
+		D7D6AFB117FB309A00BCBD78 /* AnnexController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D6AFAF17FB309A00BCBD78 /* AnnexController.m */; };
+		D7D6AFB417FB30A700BCBD78 /* AnnexArrayController.h in Headers */ = {isa = PBXBuildFile; fileRef = D7D6AFB217FB30A700BCBD78 /* AnnexArrayController.h */; };
+		D7D6AFB517FB30A700BCBD78 /* AnnexArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D6AFB317FB30A700BCBD78 /* AnnexArrayController.m */; };
+		D7D6AFB917FB398B00BCBD78 /* Exception.h in Headers */ = {isa = PBXBuildFile; fileRef = D7D6AFB817FB398B00BCBD78 /* Exception.h */; };
+		D7D6AFBD17FB3E1500BCBD78 /* AnnexObjectController.h in Headers */ = {isa = PBXBuildFile; fileRef = D7D6AFBB17FB3E1500BCBD78 /* AnnexObjectController.h */; };
+		D7D6AFBE17FB3E1500BCBD78 /* AnnexObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D6AFBC17FB3E1500BCBD78 /* AnnexObjectController.m */; };
 		D7E31C4817BA829700BA7AC2 /* UIImage+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E31C4617BA829700BA7AC2 /* UIImage+Annex.h */; };
 		D7E31C4917BA829700BA7AC2 /* UIImage+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E31C4717BA829700BA7AC2 /* UIImage+Annex.m */; };
 		D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */; };
@@ -102,6 +109,13 @@
 		D771BDE317A17E6C005F9845 /* UIImageView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Annex.m"; sourceTree = "<group>"; };
 		D782F7F5173E87CE0070F967 /* UIAlertView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Annex.h"; sourceTree = "<group>"; };
 		D782F7F6173E87CE0070F967 /* UIAlertView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Annex.m"; sourceTree = "<group>"; };
+		D7D6AFAE17FB309A00BCBD78 /* AnnexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexController.h; sourceTree = "<group>"; };
+		D7D6AFAF17FB309A00BCBD78 /* AnnexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexController.m; sourceTree = "<group>"; };
+		D7D6AFB217FB30A700BCBD78 /* AnnexArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexArrayController.h; sourceTree = "<group>"; };
+		D7D6AFB317FB30A700BCBD78 /* AnnexArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexArrayController.m; sourceTree = "<group>"; };
+		D7D6AFB817FB398B00BCBD78 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		D7D6AFBB17FB3E1500BCBD78 /* AnnexObjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexObjectController.h; sourceTree = "<group>"; };
+		D7D6AFBC17FB3E1500BCBD78 /* AnnexObjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexObjectController.m; sourceTree = "<group>"; };
 		D7E31C4617BA829700BA7AC2 /* UIImage+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Annex.h"; sourceTree = "<group>"; };
 		D7E31C4717BA829700BA7AC2 /* UIImage+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Annex.m"; sourceTree = "<group>"; };
 		D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Annex.h"; sourceTree = "<group>"; };
@@ -137,6 +151,9 @@
 		083F8DB216EA2F6F0025A312 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D7D6AFBA17FB3DFA00BCBD78 /* ObjectController */,
+				D7D6AFAD17FB309100BCBD78 /* Controller */,
+				D7D6AFAC17FB303400BCBD78 /* ArrayController */,
 				D743ED5D17F33D7100EB5AFB /* RequestOperation */,
 				D771BDDA17A16349005F9845 /* ImageCache */,
 				083F8DB316EA2F720025A312 /* Keychain */,
@@ -194,6 +211,7 @@
 		08BE562E16D52C32006A16D2 /* Annex */ = {
 			isa = PBXGroup;
 			children = (
+				D7D6AFB717FB395500BCBD78 /* Exception */,
 				083F8DB216EA2F6F0025A312 /* Classes */,
 				08BE563A16D52C3A006A16D2 /* Categories */,
 				08BE563116D52C32006A16D2 /* Annex.h */,
@@ -349,6 +367,41 @@
 			name = UIAlertView;
 			sourceTree = "<group>";
 		};
+		D7D6AFAC17FB303400BCBD78 /* ArrayController */ = {
+			isa = PBXGroup;
+			children = (
+				D7D6AFB217FB30A700BCBD78 /* AnnexArrayController.h */,
+				D7D6AFB317FB30A700BCBD78 /* AnnexArrayController.m */,
+			);
+			name = ArrayController;
+			sourceTree = "<group>";
+		};
+		D7D6AFAD17FB309100BCBD78 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D7D6AFAE17FB309A00BCBD78 /* AnnexController.h */,
+				D7D6AFAF17FB309A00BCBD78 /* AnnexController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D7D6AFB717FB395500BCBD78 /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				D7D6AFB817FB398B00BCBD78 /* Exception.h */,
+			);
+			name = Exception;
+			sourceTree = "<group>";
+		};
+		D7D6AFBA17FB3DFA00BCBD78 /* ObjectController */ = {
+			isa = PBXGroup;
+			children = (
+				D7D6AFBB17FB3E1500BCBD78 /* AnnexObjectController.h */,
+				D7D6AFBC17FB3E1500BCBD78 /* AnnexObjectController.m */,
+			);
+			name = ObjectController;
+			sourceTree = "<group>";
+		};
 		D7E31C4517BA828C00BA7AC2 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +427,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D6AFBD17FB3E1500BCBD78 /* AnnexObjectController.h in Headers */,
 				08F6B82216D56C54006F12EB /* NSObject+Annex.h in Headers */,
 				08F6B82316D56C54006F12EB /* NSDate+Annex.h in Headers */,
 				08F6B82416D56C54006F12EB /* NSString+Annex.h in Headers */,
@@ -383,13 +437,16 @@
 				08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */,
 				08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */,
 				083F8D9E16E917FF0025A312 /* UIButton+Annex.h in Headers */,
+				D7D6AFB017FB309A00BCBD78 /* AnnexController.h in Headers */,
 				D743ED6017F33D9100EB5AFB /* AnnexRequestOperation.h in Headers */,
 				D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */,
+				D7D6AFB917FB398B00BCBD78 /* Exception.h in Headers */,
 				083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */,
 				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
 				D753C22C17ECBEE9009852F8 /* NSNumber+Annex.h in Headers */,
 				D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */,
 				D771BDE417A17E6C005F9845 /* UIImageView+Annex.h in Headers */,
+				D7D6AFB417FB30A700BCBD78 /* AnnexArrayController.h in Headers */,
 				D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */,
 				D7E31C4817BA829700BA7AC2 /* UIImage+Annex.h in Headers */,
 			);
@@ -449,15 +506,18 @@
 			files = (
 				08BE564216D52C87006A16D2 /* NSObject+Annex.m in Sources */,
 				08BE564516D52C95006A16D2 /* NSString+Annex.m in Sources */,
+				D7D6AFB517FB30A700BCBD78 /* AnnexArrayController.m in Sources */,
 				08BE564816D52CA0006A16D2 /* NSDictionary+Annex.m in Sources */,
 				08BE564B16D52CB3006A16D2 /* UIColor+Annex.m in Sources */,
 				08BE564E16D52CBD006A16D2 /* UIView+Annex.m in Sources */,
 				D753C22D17ECBEE9009852F8 /* NSNumber+Annex.m in Sources */,
 				08BE565816D550EE006A16D2 /* NSDate+Annex.m in Sources */,
+				D7D6AFB117FB309A00BCBD78 /* AnnexController.m in Sources */,
 				08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */,
 				083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */,
 				083F8DB716EA2F8B0025A312 /* AnnexKeyChain.m in Sources */,
 				D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */,
+				D7D6AFBE17FB3E1500BCBD78 /* AnnexObjectController.m in Sources */,
 				4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */,
 				D743ED6117F33D9100EB5AFB /* AnnexRequestOperation.m in Sources */,
 				D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */,
