@@ -66,7 +66,7 @@
     }] copy];
 }
 
-- (instancetype)withoutNulls
+- (NSDictionary *)withoutNulls
 {
     NSMutableDictionary* replaced = [NSMutableDictionary dictionaryWithDictionary:self];
     NSString* blank = @"";
