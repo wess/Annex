@@ -112,4 +112,37 @@
     return [dateFormatter stringFromDate:date];
 }
 
+- (id)objectAtIndexedSubscript:(NSUInteger)index
+{
+    if(index > self.length-1)
+        return nil;
+
+    unichar character = [self characterAtIndex:index];
+    return [NSString stringWithCharacters:&character length:1];
+}
+
+- (id)objectForKeyedSubscript:(id)key
+{
+    if([key isKindOfClass:[NSString class]])
+    {
+        NSError *error = nil;
+        NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:key options:0 error:&error];
+
+        if(error)
+            return nil;
+        
+        NSTextCheckingResult *result = [regex firstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
+
+        if(result)
+            return [self substringWithRange:result.range];
+    }
+    else if([key isKindOfClass:[NSArray class]])
+    {
+        NSInteger loc = [key[0] intValue];
+        NSInteger len = [key[1] intValue];
+        return [self substringWithRange:NSMakeRange((loc > 0) ? loc:self.length - labs(loc), len)];
+    }
+    
+    return nil;
+}
 @end
