@@ -43,6 +43,11 @@
 	return html;
 }
 
+- (NSString *)stringByDecodingHTMLEntities
+{
+    
+}
+
 + (NSString *)md5HashWithString:(NSString *)string
 {
     const char *cStr = [string UTF8String];
@@ -145,4 +150,6 @@
     
     return nil;
 }
+
+
 @end

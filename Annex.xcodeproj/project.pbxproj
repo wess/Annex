@@ -31,6 +31,8 @@
 		08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564C16D52CBD006A16D2 /* UIView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E00082417E0BC2B00BBBE9C /* NSSet+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */; };
 		4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */; };
+		D742334A18219D3500A33E4E /* NSURL+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D742334818219D3500A33E4E /* NSURL+Annex.h */; };
+		D742334B18219D3500A33E4E /* NSURL+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D742334918219D3500A33E4E /* NSURL+Annex.m */; };
 		D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D743B05D17A1C8710068D596 /* NSArray+Annex.h */; };
 		D743B06017A1C8710068D596 /* NSArray+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D743B05E17A1C8710068D596 /* NSArray+Annex.m */; };
 		D743ED6017F33D9100EB5AFB /* AnnexRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = D743ED5E17F33D9100EB5AFB /* AnnexRequestOperation.h */; };
@@ -101,6 +103,8 @@
 		08BE565716D550EE006A16D2 /* NSDate+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Annex.m"; sourceTree = "<group>"; };
 		4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Annex.h"; sourceTree = "<group>"; };
 		4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Annex.m"; sourceTree = "<group>"; };
+		D742334818219D3500A33E4E /* NSURL+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Annex.h"; sourceTree = "<group>"; };
+		D742334918219D3500A33E4E /* NSURL+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Annex.m"; sourceTree = "<group>"; };
 		D743B05D17A1C8710068D596 /* NSArray+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Annex.h"; sourceTree = "<group>"; };
 		D743B05E17A1C8710068D596 /* NSArray+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Annex.m"; sourceTree = "<group>"; };
 		D743ED5E17F33D9100EB5AFB /* AnnexRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexRequestOperation.h; sourceTree = "<group>"; };
@@ -240,21 +244,22 @@
 		08BE563A16D52C3A006A16D2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				D753C22917ECBEDE009852F8 /* NSNumber */,
-				D7E31C4517BA828C00BA7AC2 /* UIImage */,
+				D742334718219D2000A33E4E /* NSURL */,
 				D743B05C17A1C8660068D596 /* NSArray */,
-				D771BDE117A17E58005F9845 /* UIImageView */,
 				D7E71B1B1796EAB1005A76AB /* NSManagedObjectContext */,
 				08BE563F16D52C6A006A16D2 /* NSObject */,
 				08BE565516D550DD006A16D2 /* NSDate */,
 				08BE563E16D52C67006A16D2 /* NSString */,
 				08BE563D16D52C60006A16D2 /* NSDictionary */,
 				4E00082117E0BC1300BBBE9C /* NSSet */,
+				D7E31C4517BA828C00BA7AC2 /* UIImage */,
+				D771BDE117A17E58005F9845 /* UIImageView */,
 				08BE563C16D52C5C006A16D2 /* UIColor */,
 				08ACF0C816E4F8B900A491AD /* UITextView */,
 				08BE563B16D52C52006A16D2 /* UIView */,
 				083F8D9B16E917E40025A312 /* UIButton */,
 				D782F7F4173E87840070F967 /* UIAlertView */,
+				D753C22917ECBEDE009852F8 /* NSNumber */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -320,6 +325,15 @@
 				4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */,
 			);
 			name = NSSet;
+			sourceTree = "<group>";
+		};
+		D742334718219D2000A33E4E /* NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				D742334818219D3500A33E4E /* NSURL+Annex.h */,
+				D742334918219D3500A33E4E /* NSURL+Annex.m */,
+			);
+			name = NSURL;
 			sourceTree = "<group>";
 		};
 		D743B05C17A1C8660068D596 /* NSArray */ = {
@@ -469,6 +483,7 @@
 				D7D6AFB017FB309A00BCBD78 /* AnnexController.h in Headers */,
 				D743ED6017F33D9100EB5AFB /* AnnexRequestOperation.h in Headers */,
 				D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */,
+				D742334A18219D3500A33E4E /* NSURL+Annex.h in Headers */,
 				D7D6AFB917FB398B00BCBD78 /* Exception.h in Headers */,
 				083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */,
 				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
@@ -535,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08BE564216D52C87006A16D2 /* NSObject+Annex.m in Sources */,
+				D742334B18219D3500A33E4E /* NSURL+Annex.m in Sources */,
 				08BE564516D52C95006A16D2 /* NSString+Annex.m in Sources */,
 				D7D6AFB517FB30A700BCBD78 /* AnnexArrayController.m in Sources */,
 				08BE564816D52CA0006A16D2 /* NSDictionary+Annex.m in Sources */,
