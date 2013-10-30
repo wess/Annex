@@ -39,8 +39,14 @@
  
  @return String with no HTML tags
  */
-- (NSString*)stringByRemovingHTML;
+- (NSString *)stringByRemovingHTML;
 
+/**
+ Converts html entities to valid characters.
+ 
+ @return String with html entities decoded.
+ */
+- (NSString *)stringByDecodingHTMLEntities;
 
 /**
  Creates an MD5 Hash from a given string.
@@ -91,5 +97,15 @@
  @return            String created from date using format.
  */
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone;
+
+
+
+/**
+ */
++ (NSString *)formatString:(NSString *)string withPattern:(NSString *)pattern;
+
+/**
+ */
+- (NSString *)formatWithPattern:(NSString *)pattern;
 
 @end
