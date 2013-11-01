@@ -42,13 +42,6 @@
 - (NSString *)stringByRemovingHTML;
 
 /**
- Converts html entities to valid characters.
- 
- @return String with html entities decoded.
- */
-- (NSString *)stringByDecodingHTMLEntities;
-
-/**
  Creates an MD5 Hash from a given string.
  
  @param string  The string to create MD5 hash from.
@@ -98,14 +91,5 @@
  */
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone;
 
-
-
-/**
- */
-+ (NSString *)formatString:(NSString *)string withPattern:(NSString *)pattern;
-
-/**
- */
-- (NSString *)formatWithPattern:(NSString *)pattern;
 
 @end

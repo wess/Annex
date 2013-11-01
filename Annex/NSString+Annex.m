@@ -43,10 +43,6 @@
 	return html;
 }
 
-- (NSString *)stringByDecodingHTMLEntities
-{
-    
-}
 
 + (NSString *)md5HashWithString:(NSString *)string
 {
@@ -151,6 +147,4 @@
     return nil;
 }
 
-
->>>>>>> 4434898... Adds NSURL category
 @end
