@@ -42,6 +42,23 @@
 - (NSString *)stringByRemovingHTML;
 
 /**
+ */
+- (NSString *)formatStringWithRegex:(NSRegularExpression *)expression;
+
+/**
+ */
+- (NSString *)formatStringWithRegex:(NSRegularExpression *)expression placeholder:(NSString *)placeholder;
+
+/**
+ */
+- (NSString *)formatStringWithPattern:(NSString *)pattern;
+
+/**
+ */
+- (NSString *)formatStringWithPattern:(NSString *)pattern placeholder:(NSString *)placeholder;
+
+
+/**
  Creates an MD5 Hash from a given string.
  
  @param string  The string to create MD5 hash from.
@@ -90,6 +107,7 @@
  @return            String created from date using format.
  */
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone;
+
 
 
 @end
