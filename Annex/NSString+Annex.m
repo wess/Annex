@@ -8,173 +8,173 @@
 
 #import "NSString+Annex.h"
 #import <CommonCrypto/CommonCrypto.h>
+#import "Annex.h"
 
 @implementation NSString (Annex)
 
 typedef struct
 {
-    __unsafe_unretained NSString *string;
+    __unsafe_unretained NSString *result;
     NSUInteger length;
 
-} NSStringPatternResult;
+} PatternResult;
 
-static void throwStringError(NSError *error)
-{
-    NSException *exception = [NSException exceptionWithName:@"NSString format with pattern error" reason:error.debugDescription userInfo:nil];
-    @throw exception;
-}
 
-static NSStringPatternResult adaptInitialPattern(NSString *string, NSUInteger subtract)
+static NSString *validCharactersForString(NSString *string, NSRegularExpression *regex)
 {
-    NSError *error                  = nil;
-    NSRegularExpression *pattern    = [NSRegularExpression regularExpressionWithPattern:@"\\{((\\d+)?(?:,(\\d+)?)?)\\}" options:NSRegularExpressionCaseInsensitive error:&error];
-    NSTextCheckingResult *result    = [pattern firstMatchInString:string options:NSMatchingWithoutAnchoringBounds range:NSMakeRange(0, string.length)];
-    NSRange range                   = [result rangeAtIndex:3];
-    
-    if(range.location == NSNotFound)
-        range = [result rangeAtIndex:2];
-    
-    NSInteger repeats = [[string substringWithRange:range] integerValue];
-    if(repeats > 0)
-        string = [string stringByReplacingCharactersInRange:[result rangeAtIndex:1] withString:[NSString stringWithFormat:@"1,%d", (repeats - subtract)]];
-    else
-        repeats = INFINITY;
-    
-    return ((NSStringPatternResult){.string = string, .length = repeats});
-}
-
-static NSString *stepPattern(NSMutableString **pattern, long step)
-{
-    NSError *error              = nil;
-    NSRegularExpression *regex  = [NSRegularExpression regularExpressionWithPattern:@"(?<!\\\\)\\(([^)(]*)(?<!\\\\)\\)" options:NSRegularExpressionCaseInsensitive error:&error];
-    
-    if(error)
-    {
-        throwStringError(error);
-        return @"";
-    }
-    
-    NSTextCheckingResult *matches = [regex firstMatchInString:*pattern options:NSMatchingWithoutAnchoringBounds range:NSMakeRange(0, (*pattern).length)];
-    
-    if(!matches || matches.range.location == NSNotFound)
+    if (string == nil || !regex)
         return nil;
     
-    NSString *result        = [*pattern substringWithRange:[matches rangeAtIndex:1]];
-    NSString *indexString   = [NSString stringWithFormat:@"$%ld", step];
+    NSMutableString *pattern = [NSMutableString stringWithString:regex.pattern];
     
-    [*pattern replaceCharactersInRange:matches.range withString:indexString];
+    NSError *error = nil;
     
-    return result;
-}
-
-static NSString *validCharactersInString(NSString *string, NSRegularExpression *pattern)
-{
-    if(!string || !pattern)
-        return nil;
+    NSString *firstGroupPattern         = getStepPattern(&pattern, 1);
+    NSMutableString *validCharacters    = [NSMutableString new];
     
-    NSError *error                      = nil;
-    NSMutableString *patternString      = [pattern.pattern mutableCopy];
-    NSString *firstPattern              = stepPattern(&patternString, 1);
-    NSMutableString *validCharacters    = [[NSMutableString alloc] init];
-    
-    for(NSInteger i = 2; firstPattern != nil; i++)
+    for (int i = 2; firstGroupPattern != nil; i++)
     {
-        NSUInteger step = 0;
-        NSStringPatternResult patternResult;
+        NSUInteger n = 0;
+        
+        PatternResult adaptingResult;
         NSTextCheckingResult *result;
         
-        do {
-            
-            patternResult   = adaptInitialPattern(firstPattern, i);
+        do
+        {
+            adaptingResult = adaptsFirstGroupPattern(firstGroupPattern, n);
 
-            if(patternResult.length == 0)
+            if (adaptingResult.length == 0)
                 break;
             
-            firstPattern = patternResult.string;
+            firstGroupPattern = adaptingResult.result;
             
-            NSRegularExpression *pattern = [NSRegularExpression regularExpressionWithPattern:patternResult.string options:NSRegularExpressionCaseInsensitive error:&error];
+            // Try to match the pattern
+            NSRegularExpression *patternRegex = [NSRegularExpression regularExpressionWithPattern:firstGroupPattern
+                                                                                   options:NSRegularExpressionCaseInsensitive
+                                                                                     error:&error];
+            if (error) NSLog(@"%@", error);
+            
+            result = [patternRegex firstMatchInString:string options:NSMatchingWithoutAnchoringBounds range:NSMakeRange(0, string.length)];
 
-            if(error)
-            {
-                throwStringError(error);
-                break;
-            }
-
-            result = [pattern firstMatchInString:string options:NSMatchingWithoutAnchoringBounds range:NSMakeRange(0, string.length)];
-
-            if(!result)
+            if (! result)
                 break;
             
-            NSString *match = [string substringWithRange:result.range];
-            string          = [string stringByReplacingCharactersInRange:result.range withString:@""];
+            NSString *matchedString = [string substringWithRange:result.range];
             
-            [validCharacters appendString:match];
+            string = [string stringByReplacingCharactersInRange:result.range withString:@""];
             
-            step += result.range.length;
+            [validCharacters appendString:matchedString];
             
-        } while(result.range.length != patternResult.length);
+            n += result.range.length;
+        }
+        while (result.range.length != adaptingResult.length);
         
-        firstPattern = stepPattern(&patternString, (long)i);
+        firstGroupPattern = getStepPattern(&pattern, i);
     }
     
     return validCharacters;
 }
 
-//- (NSString *)patternStep:(NSMutableString **)pattern onString:(NSString *)string iterCount:(long)i resultFetcher:(NSMutableString **)mutableResult range:(NSRange)range placeholder:(NSString *)placeholder
-static NSString *stepStringWithPattern(NSMutableString **pattern, NSString *string, long count, NSString **result, NSRange range, NSString *placeholder)
+static PatternResult adaptsFirstGroupPattern(NSString *group,  NSUInteger subtractBy)
 {
-    NSString *firstPattern = stepPattern(pattern, count);
-    
-    if(!firstPattern)
-        return @"";
-    
     NSError *error = nil;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:firstPattern options:NSRegularExpressionCaseInsensitive error:&error];
     
-    if(error)
+    // Gets the expected maximum repetition for the current group
+    NSRegularExpression *maxRepetEx = [NSRegularExpression regularExpressionWithPattern:@"\\{((\\d+)?(?:,(\\d+)?)?)\\}" options:0 error:&error];
+    NSTextCheckingResult *numRep = [maxRepetEx firstMatchInString:group options:NSMatchingWithoutAnchoringBounds range:NSMakeRange(0, group.length)];
+    
+    // Tries to get the maximum
+    NSRange range = [numRep rangeAtIndex:3];
+    if (range.location == NSNotFound)
     {
-        throwStringError(error);
-        return @"";
+        // Goes for the minimum
+        range = [numRep rangeAtIndex:2];
     }
     
-    NSTextCheckingResult *matchResult = [regex firstMatchInString:string options:NSMatchingWithoutAnchoringBounds range:range];
+    NSInteger numberOfRepetitions = [group substringWithRange:range].integerValue;
+    
+    // Replaces the the content of braces with {1, numberOfRepetitions}
+    if (numberOfRepetitions > 0)
+        group = [group stringByReplacingCharactersInRange:[numRep rangeAtIndex:1] withString:[NSString stringWithFormat:@"1,%d", numberOfRepetitions - subtractBy]];
+    else
+        numberOfRepetitions = INFINITY;
+    
+    PatternResult result = (PatternResult){.result = group, .length = numberOfRepetitions};
+    
+    result.result = group;
+    result.length = numberOfRepetitions;
+    
+    return result;
+}
+
+// Recursive method to format the given string based on the given pattern and placeholder, returning the new regex pattern to be used on NSMutableString's replaceOccurrencesOfString:withString:options:range: and editing the pattern to match this method's replacement string.
+static NSString *patternStepOnString(NSMutableString **pattern, NSString *string, long i, NSMutableString **mutableResult, NSRange range, NSString *placeholder)
+{
+    NSString *firstGroupPattern = getStepPattern(pattern, i);
+    
+    if (! firstGroupPattern)
+        return @"";
+    
+    NSError *error                  = nil;
+    NSRegularExpression *regex      = [NSRegularExpression regularExpressionWithPattern:firstGroupPattern options:0 error:&error];
+    NSTextCheckingResult *result    = [regex firstMatchInString:string options:NSMatchingWithoutAnchoringBounds range:range];
+
     long num = 0;
     
-    if(!matchResult || matchResult.range.location == NSNotFound)
+    if ((! result || result.range.location == NSNotFound))
     {
-        NSRegularExpression *numRepetEx = [NSRegularExpression regularExpressionWithPattern:@"\\{(\\d+)?(?:,(\\d+)?)?\\}" options:NSRegularExpressionCaseInsensitive error:&error];
-        NSTextCheckingResult *numRep    = [numRepetEx firstMatchInString:firstPattern options:NSMatchingWithoutAnchoringBounds range:NSMakeRange(0, firstPattern.length)];
+        NSRegularExpression *numRepetEx = [NSRegularExpression regularExpressionWithPattern:@"\\{(\\d+)?(?:,(\\d+)?)?\\}" options:0 error:&error];
+        NSTextCheckingResult *numRep    = [numRepetEx firstMatchInString:firstGroupPattern options:NSMatchingWithoutAnchoringBounds range:NSMakeRange(0, firstGroupPattern.length)];
         NSRange numRange                = [numRep rangeAtIndex:2];
         
         if (numRange.location == NSNotFound)
             numRange = [numRep rangeAtIndex:1];
         
-        num = [firstPattern substringWithRange:numRange].integerValue;
+        num = [firstGroupPattern substringWithRange:numRange].integerValue;
         
-        // Replaces the expected repetition on the group pattern with "+".
-        firstPattern    = [firstPattern stringByReplacingCharactersInRange:numRep.range withString:@"+"];
-        regex           = [NSRegularExpression regularExpressionWithPattern:firstPattern options:NSRegularExpressionCaseInsensitive error:&error];
-        matchResult     = [regex firstMatchInString:string options:NSMatchingWithoutAnchoringBounds range:range];
+        firstGroupPattern = [firstGroupPattern stringByReplacingCharactersInRange:numRep.range withString:@"+"];
+        
+        regex   = [NSRegularExpression regularExpressionWithPattern:firstGroupPattern options:0 error:&error];
+        result  = [regex firstMatchInString:string options:NSMatchingWithoutAnchoringBounds range:range];
     }
     
-    NSString *stringMatched = [string substringWithRange:matchResult.range];
-    *result = [*result stringByAppendingString:stringMatched];
+    NSString *stringMatched = [string substringWithRange:result.range];
+    
+    [*mutableResult appendString:stringMatched];
+    
+    if (num > 0 && placeholder)
+    {
+        NSString *placeholderRepetition = [@"" stringByPaddingToLength:num-stringMatched.length withString:placeholder startingAtIndex:0];
+        [*mutableResult appendString:placeholderRepetition];
 
-    if(num > 0 && placeholder)
-    {
-        NSString *placeholderRepeat = [@"" stringByPaddingToLength:(num - stringMatched.length) withString:placeholder startingAtIndex:0];
-        *result                     = [*result stringByAppendingString:placeholderRepeat];
-        firstPattern                = [NSString stringWithFormat:@"[%@%@]{%ld}", firstPattern, placeholder, num];
+        firstGroupPattern = [NSString stringWithFormat:@"[%@%@]{%ld}", firstGroupPattern, placeholder, num];
     }
     
-    if(matchResult)
+    if (result)
     {
-        range.location  = matchResult.range.location + matchResult.range.length;
+        range.location = result.range.location + result.range.length;
         range.length    = string.length - range.location;
     }
     
-    return [NSString stringWithFormat:@"(%@)%@", firstPattern, stepStringWithPattern(pattern, string, ++count, result, range, placeholder)];
+    return [NSString stringWithFormat:@"(%@)%@", firstGroupPattern, patternStepOnString(pattern, string, ++i, mutableResult, range, placeholder)];
 }
+
+static NSString *getStepPattern(NSMutableString **pattern, long i)
+{
+    NSError *error                          = nil;
+    NSRegularExpression *regex              = [NSRegularExpression regularExpressionWithPattern:@"(?<!\\\\)\\(([^)(]*)(?<!\\\\)\\)" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSTextCheckingResult *checkingResult    = [regex firstMatchInString:*pattern options:NSMatchingWithoutAnchoringBounds range:NSMakeRange(0, (*pattern).length)];
+    
+    if (! checkingResult || checkingResult.range.location == NSNotFound)
+        return nil;
+    
+    NSString *result = [*pattern substringWithRange:[checkingResult rangeAtIndex:1]];
+
+    [*pattern replaceCharactersInRange:checkingResult.range withString:[NSString stringWithFormat:@"$%ld", i]];
+    
+    return result;
+}
+
 
 - (NSString *)md5
 {
@@ -215,12 +215,14 @@ static NSString *stepStringWithPattern(NSMutableString **pattern, NSString *stri
 
 - (NSString *)formatStringWithRegex:(NSRegularExpression *)expression placeholder:(NSString *)placeholder
 {
+    
     placeholder = placeholder?: @"";
     
-    NSString *validCharacters           = validCharactersInString(self, expression);
-    NSMutableString *pattern            = [expression.pattern mutableCopy];
+    NSString *validCharacters           = validCharactersForString(self, expression);
+    NSMutableString *pattern            = [NSMutableString stringWithString:expression.pattern];
     NSMutableString *formattedString    = [[NSMutableString alloc] init];
-    NSString *newPattern                = stepStringWithPattern(&pattern, validCharacters, 1, &formattedString, NSMakeRange(0, validCharacters.length), placeholder);
+    NSString *newPattern                = patternStepOnString(&pattern, validCharacters, 1, &formattedString, NSMakeRange(0, validCharacters.length), placeholder);
+
     
     [formattedString replaceOccurrencesOfString:newPattern withString:pattern options:NSRegularExpressionSearch range:NSMakeRange(0, formattedString.length)];
     
@@ -234,13 +236,7 @@ static NSString *stepStringWithPattern(NSMutableString **pattern, NSString *stri
 
 - (NSString *)formatStringWithPattern:(NSString *)pattern placeholder:(NSString *)placeholder
 {
-    NSError *error              = nil;
-    NSRegularExpression *regex  = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
-    
-    throwStringError(error);
-    
-    
-    return [self formatStringWithRegex:regex placeholder:placeholder];
+    return @"";
 }
 
 
