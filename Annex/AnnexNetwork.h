@@ -10,9 +10,9 @@
 #import "AnnexRequestOperation.h"
 
 @interface AnnexNetwork : NSObject
-+ (void)getRequestWithURLString:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
-+ (void)postRequestWithURLString:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
-+ (void)deleteRequestWithURLString:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
-+ (void)putRequestWithURLString:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
++ (void)getRequestWithURL:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
++ (void)postRequestWithURL:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
++ (void)deleteRequestWithURL:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
++ (void)putRequestWithURL:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
 
 @end

@@ -10,7 +10,6 @@
 #import "NSURL+Annex.h"
 
 @interface AnnexNetwork()
-
 @end
 
 @implementation AnnexNetwork
@@ -30,7 +29,7 @@ static NSString *httpQueryFromDictionary(NSDictionary *dict)
     [operation start];
 }
 
-+ (void)getRequestWithURLString:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
++ (void)getRequestWithURL:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
 {
     url = params? [url URLByAppendingParameters:params] : url;
     
@@ -39,7 +38,7 @@ static NSString *httpQueryFromDictionary(NSDictionary *dict)
     [AnnexNetwork addRequest:request completionHandler:handler];
 }
 
-+ (void)postRequestWithURLString:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
++ (void)postRequestWithURL:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
 {
     NSString *bodyString            = httpQueryFromDictionary(params);
     NSMutableURLRequest *request    = [NSMutableURLRequest requestWithURL:url];
@@ -50,7 +49,7 @@ static NSString *httpQueryFromDictionary(NSDictionary *dict)
     [AnnexNetwork addRequest:request completionHandler:handler];
 }
 
-+ (void)deleteRequestWithURLString:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
++ (void)deleteRequestWithURL:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
 {
     url = params? [url URLByAppendingParameters:params] : url;
     
@@ -61,7 +60,7 @@ static NSString *httpQueryFromDictionary(NSDictionary *dict)
     [AnnexNetwork addRequest:request completionHandler:handler];
 }
 
-+ (void)putRequestWithURLString:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
++ (void)putRequestWithURL:(NSURL *)url params:(NSDictionary *)params completionHandler:(AnnexRequestResponseBlock)handler;
 {
     NSString *bodyString            = httpQueryFromDictionary(params);
     NSMutableURLRequest *request    = [NSMutableURLRequest requestWithURL:url];
