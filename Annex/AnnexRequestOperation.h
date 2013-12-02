@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^AnnexRequestResponseBlock)(NSHTTPURLResponse *, NSData *, NSError *);
+
 @interface AnnexRequestOperation : NSOperation
-- (instancetype)initWithRequest:(NSURLRequest *)request completionHandler:(void(^)(NSHTTPURLResponse *, NSData *, NSError *))handler;
-+ (instancetype)operationWithRequest:(NSURLRequest *)request completionHandler:(void(^)(NSHTTPURLResponse *, NSData *, NSError *))handler;
+- (instancetype)initWithRequest:(NSURLRequest *)request completionHandler:(AnnexRequestResponseBlock)handler;
++ (instancetype)operationWithRequest:(NSURLRequest *)request completionHandler:(AnnexRequestResponseBlock)handler;
 @end

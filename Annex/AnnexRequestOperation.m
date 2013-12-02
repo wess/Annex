@@ -9,12 +9,12 @@
 #import "AnnexRequestOperation.h"
 
 @interface AnnexRequestOperation()
-@property (strong, nonatomic)   NSURLConnection         *connection;
-@property (strong, nonatomic)   NSURLRequest            *request;
-@property (strong, nonatomic)   NSHTTPURLResponse       *response;
-@property (strong, nonatomic)   NSError                 *error;
-@property (strong, nonatomic)   NSMutableData           *receivedData;
-
+@property (strong, nonatomic)   NSURLConnection             *connection;
+@property (strong, nonatomic)   NSURLRequest                *request;
+@property (strong, nonatomic)   NSHTTPURLResponse           *response;
+@property (strong, nonatomic)   NSError                     *error;
+@property (strong, nonatomic)   NSMutableData               *receivedData;
+@property (copy, nonatomic)     AnnexRequestResponseBlock   handler;
 @property BOOL isExecuting;
 @property BOOL isFinished;
 
@@ -23,11 +23,8 @@
 @end
 
 @implementation AnnexRequestOperation
-{
-    void(^_handler)(NSHTTPURLResponse *, NSData *, NSError *);
-}
 
-+ (instancetype)operationWithRequest:(NSURLRequest *)request completionHandler:(void(^)(NSHTTPURLResponse *, NSData *, NSError *))handler
++ (instancetype)operationWithRequest:(NSURLRequest *)request completionHandler:(AnnexRequestResponseBlock)handler;
 {
     return [[AnnexRequestOperation alloc] initWithRequest:request completionHandler:handler];
 }
@@ -37,7 +34,7 @@
     return ([key isEqualToString:@"isExecuting"] || [key isEqualToString:@"isFinished"])? YES : [super automaticallyNotifiesObserversForKey:key];
 }
 
-- (instancetype)initWithRequest:(NSURLRequest *)request completionHandler:(void(^)(NSHTTPURLResponse *, NSData *, NSError *))handler
+- (instancetype)initWithRequest:(NSURLRequest *)request completionHandler:(AnnexRequestResponseBlock)handler;
 {
     self = [super init];
     if(self)
@@ -45,8 +42,7 @@
         self.request    = request;
         self.error      = nil;
         self.response   = nil;
-    
-        _handler = [handler copy];
+        self.handler    = handler;
     }
     return self;
 }
