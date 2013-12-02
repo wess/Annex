@@ -31,6 +31,8 @@
 		08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564C16D52CBD006A16D2 /* UIView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E00082417E0BC2B00BBBE9C /* NSSet+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */; };
 		4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */; };
+		D722FC31184CEF48004638DF /* AnnexNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = D722FC2F184CEF48004638DF /* AnnexNetwork.h */; };
+		D722FC32184CEF48004638DF /* AnnexNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D722FC30184CEF48004638DF /* AnnexNetwork.m */; };
 		D742334A18219D3500A33E4E /* NSURL+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D742334818219D3500A33E4E /* NSURL+Annex.h */; };
 		D742334B18219D3500A33E4E /* NSURL+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D742334918219D3500A33E4E /* NSURL+Annex.m */; };
 		D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D743B05D17A1C8710068D596 /* NSArray+Annex.h */; };
@@ -94,6 +96,8 @@
 		08BE565716D550EE006A16D2 /* NSDate+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Annex.m"; sourceTree = "<group>"; };
 		4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Annex.h"; sourceTree = "<group>"; };
 		4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Annex.m"; sourceTree = "<group>"; };
+		D722FC2F184CEF48004638DF /* AnnexNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexNetwork.h; sourceTree = "<group>"; };
+		D722FC30184CEF48004638DF /* AnnexNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexNetwork.m; sourceTree = "<group>"; };
 		D742334818219D3500A33E4E /* NSURL+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Annex.h"; sourceTree = "<group>"; };
 		D742334918219D3500A33E4E /* NSURL+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Annex.m"; sourceTree = "<group>"; };
 		D743B05D17A1C8710068D596 /* NSArray+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Annex.h"; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				D7AC4E61184CD4B90037F120 /* JSONObject */,
+				D722FC2E184CEF2F004638DF /* Network */,
 				D743ED5D17F33D7100EB5AFB /* RequestOperation */,
 				D771BDDA17A16349005F9845 /* ImageCache */,
 				083F8DB316EA2F720025A312 /* Keychain */,
@@ -305,6 +310,15 @@
 			name = NSSet;
 			sourceTree = "<group>";
 		};
+		D722FC2E184CEF2F004638DF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D722FC2F184CEF48004638DF /* AnnexNetwork.h */,
+				D722FC30184CEF48004638DF /* AnnexNetwork.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		D742334718219D2000A33E4E /* NSURL */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +434,7 @@
 				D753C22C17ECBEE9009852F8 /* NSNumber+Annex.h in Headers */,
 				D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */,
 				D771BDE417A17E6C005F9845 /* UIImageView+Annex.h in Headers */,
+				D722FC31184CEF48004638DF /* AnnexNetwork.h in Headers */,
 				D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */,
 				D7E31C4817BA829700BA7AC2 /* UIImage+Annex.h in Headers */,
 			);
@@ -478,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08BE564216D52C87006A16D2 /* NSObject+Annex.m in Sources */,
+				D722FC32184CEF48004638DF /* AnnexNetwork.m in Sources */,
 				D742334B18219D3500A33E4E /* NSURL+Annex.m in Sources */,
 				08BE564516D52C95006A16D2 /* NSString+Annex.m in Sources */,
 				08BE564816D52CA0006A16D2 /* NSDictionary+Annex.m in Sources */,
