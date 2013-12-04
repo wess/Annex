@@ -31,14 +31,24 @@
 		08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564C16D52CBD006A16D2 /* UIView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E00082417E0BC2B00BBBE9C /* NSSet+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */; };
 		4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */; };
+		D722FC31184CEF48004638DF /* AnnexNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = D722FC2F184CEF48004638DF /* AnnexNetwork.h */; };
+		D722FC32184CEF48004638DF /* AnnexNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D722FC30184CEF48004638DF /* AnnexNetwork.m */; };
+		D742334A18219D3500A33E4E /* NSURL+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D742334818219D3500A33E4E /* NSURL+Annex.h */; };
+		D742334B18219D3500A33E4E /* NSURL+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D742334918219D3500A33E4E /* NSURL+Annex.m */; };
 		D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D743B05D17A1C8710068D596 /* NSArray+Annex.h */; };
 		D743B06017A1C8710068D596 /* NSArray+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D743B05E17A1C8710068D596 /* NSArray+Annex.m */; };
+		D743ED6017F33D9100EB5AFB /* AnnexRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = D743ED5E17F33D9100EB5AFB /* AnnexRequestOperation.h */; };
+		D743ED6117F33D9100EB5AFB /* AnnexRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D743ED5F17F33D9100EB5AFB /* AnnexRequestOperation.m */; };
+		D753C22C17ECBEE9009852F8 /* NSNumber+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D753C22A17ECBEE9009852F8 /* NSNumber+Annex.h */; };
+		D753C22D17ECBEE9009852F8 /* NSNumber+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D753C22B17ECBEE9009852F8 /* NSNumber+Annex.m */; };
 		D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = D771BDDD17A16367005F9845 /* AnnexImageCache.h */; };
 		D771BDE017A16367005F9845 /* AnnexImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D771BDDE17A16367005F9845 /* AnnexImageCache.m */; };
 		D771BDE417A17E6C005F9845 /* UIImageView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D771BDE217A17E6C005F9845 /* UIImageView+Annex.h */; };
 		D771BDE517A17E6C005F9845 /* UIImageView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D771BDE317A17E6C005F9845 /* UIImageView+Annex.m */; };
 		D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D782F7F5173E87CE0070F967 /* UIAlertView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D782F7F6173E87CE0070F967 /* UIAlertView+Annex.m */; };
+		D7AC4E64184CD4EA0037F120 /* AnnexJSONObject.h in Headers */ = {isa = PBXBuildFile; fileRef = D7AC4E62184CD4EA0037F120 /* AnnexJSONObject.h */; };
+		D7AC4E65184CD4EA0037F120 /* AnnexJSONObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AC4E63184CD4EA0037F120 /* AnnexJSONObject.m */; };
 		D7E31C4817BA829700BA7AC2 /* UIImage+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E31C4617BA829700BA7AC2 /* UIImage+Annex.h */; };
 		D7E31C4917BA829700BA7AC2 /* UIImage+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E31C4717BA829700BA7AC2 /* UIImage+Annex.m */; };
 		D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */; };
@@ -86,14 +96,24 @@
 		08BE565716D550EE006A16D2 /* NSDate+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Annex.m"; sourceTree = "<group>"; };
 		4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Annex.h"; sourceTree = "<group>"; };
 		4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Annex.m"; sourceTree = "<group>"; };
+		D722FC2F184CEF48004638DF /* AnnexNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexNetwork.h; sourceTree = "<group>"; };
+		D722FC30184CEF48004638DF /* AnnexNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexNetwork.m; sourceTree = "<group>"; };
+		D742334818219D3500A33E4E /* NSURL+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Annex.h"; sourceTree = "<group>"; };
+		D742334918219D3500A33E4E /* NSURL+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Annex.m"; sourceTree = "<group>"; };
 		D743B05D17A1C8710068D596 /* NSArray+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Annex.h"; sourceTree = "<group>"; };
 		D743B05E17A1C8710068D596 /* NSArray+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Annex.m"; sourceTree = "<group>"; };
+		D743ED5E17F33D9100EB5AFB /* AnnexRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexRequestOperation.h; sourceTree = "<group>"; };
+		D743ED5F17F33D9100EB5AFB /* AnnexRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexRequestOperation.m; sourceTree = "<group>"; };
+		D753C22A17ECBEE9009852F8 /* NSNumber+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Annex.h"; sourceTree = "<group>"; };
+		D753C22B17ECBEE9009852F8 /* NSNumber+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Annex.m"; sourceTree = "<group>"; };
 		D771BDDD17A16367005F9845 /* AnnexImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexImageCache.h; sourceTree = "<group>"; };
 		D771BDDE17A16367005F9845 /* AnnexImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexImageCache.m; sourceTree = "<group>"; };
 		D771BDE217A17E6C005F9845 /* UIImageView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Annex.h"; sourceTree = "<group>"; };
 		D771BDE317A17E6C005F9845 /* UIImageView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Annex.m"; sourceTree = "<group>"; };
 		D782F7F5173E87CE0070F967 /* UIAlertView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Annex.h"; sourceTree = "<group>"; };
 		D782F7F6173E87CE0070F967 /* UIAlertView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Annex.m"; sourceTree = "<group>"; };
+		D7AC4E62184CD4EA0037F120 /* AnnexJSONObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexJSONObject.h; sourceTree = "<group>"; };
+		D7AC4E63184CD4EA0037F120 /* AnnexJSONObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexJSONObject.m; sourceTree = "<group>"; };
 		D7E31C4617BA829700BA7AC2 /* UIImage+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Annex.h"; sourceTree = "<group>"; };
 		D7E31C4717BA829700BA7AC2 /* UIImage+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Annex.m"; sourceTree = "<group>"; };
 		D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Annex.h"; sourceTree = "<group>"; };
@@ -129,6 +149,9 @@
 		083F8DB216EA2F6F0025A312 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D7AC4E61184CD4B90037F120 /* JSONObject */,
+				D722FC2E184CEF2F004638DF /* Network */,
+				D743ED5D17F33D7100EB5AFB /* RequestOperation */,
 				D771BDDA17A16349005F9845 /* ImageCache */,
 				083F8DB316EA2F720025A312 /* Keychain */,
 			);
@@ -204,15 +227,17 @@
 		08BE563A16D52C3A006A16D2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				D7E31C4517BA828C00BA7AC2 /* UIImage */,
+				D753C22917ECBEDE009852F8 /* NSNumber */,
+				D742334718219D2000A33E4E /* NSURL */,
 				D743B05C17A1C8660068D596 /* NSArray */,
-				D771BDE117A17E58005F9845 /* UIImageView */,
 				D7E71B1B1796EAB1005A76AB /* NSManagedObjectContext */,
 				08BE563F16D52C6A006A16D2 /* NSObject */,
 				08BE565516D550DD006A16D2 /* NSDate */,
 				08BE563E16D52C67006A16D2 /* NSString */,
 				08BE563D16D52C60006A16D2 /* NSDictionary */,
 				4E00082117E0BC1300BBBE9C /* NSSet */,
+				D7E31C4517BA828C00BA7AC2 /* UIImage */,
+				D771BDE117A17E58005F9845 /* UIImageView */,
 				08BE563C16D52C5C006A16D2 /* UIColor */,
 				08ACF0C816E4F8B900A491AD /* UITextView */,
 				08BE563B16D52C52006A16D2 /* UIView */,
@@ -285,6 +310,24 @@
 			name = NSSet;
 			sourceTree = "<group>";
 		};
+		D722FC2E184CEF2F004638DF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D722FC2F184CEF48004638DF /* AnnexNetwork.h */,
+				D722FC30184CEF48004638DF /* AnnexNetwork.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		D742334718219D2000A33E4E /* NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				D742334818219D3500A33E4E /* NSURL+Annex.h */,
+				D742334918219D3500A33E4E /* NSURL+Annex.m */,
+			);
+			name = NSURL;
+			sourceTree = "<group>";
+		};
 		D743B05C17A1C8660068D596 /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +335,24 @@
 				D743B05E17A1C8710068D596 /* NSArray+Annex.m */,
 			);
 			name = NSArray;
+			sourceTree = "<group>";
+		};
+		D743ED5D17F33D7100EB5AFB /* RequestOperation */ = {
+			isa = PBXGroup;
+			children = (
+				D743ED5E17F33D9100EB5AFB /* AnnexRequestOperation.h */,
+				D743ED5F17F33D9100EB5AFB /* AnnexRequestOperation.m */,
+			);
+			name = RequestOperation;
+			sourceTree = "<group>";
+		};
+		D753C22917ECBEDE009852F8 /* NSNumber */ = {
+			isa = PBXGroup;
+			children = (
+				D753C22A17ECBEE9009852F8 /* NSNumber+Annex.h */,
+				D753C22B17ECBEE9009852F8 /* NSNumber+Annex.m */,
+			);
+			name = NSNumber;
 			sourceTree = "<group>";
 		};
 		D771BDDA17A16349005F9845 /* ImageCache */ = {
@@ -319,6 +380,15 @@
 				D782F7F6173E87CE0070F967 /* UIAlertView+Annex.m */,
 			);
 			name = UIAlertView;
+			sourceTree = "<group>";
+		};
+		D7AC4E61184CD4B90037F120 /* JSONObject */ = {
+			isa = PBXGroup;
+			children = (
+				D7AC4E62184CD4EA0037F120 /* AnnexJSONObject.h */,
+				D7AC4E63184CD4EA0037F120 /* AnnexJSONObject.m */,
+			);
+			name = JSONObject;
 			sourceTree = "<group>";
 		};
 		D7E31C4517BA828C00BA7AC2 /* UIImage */ = {
@@ -352,14 +422,19 @@
 				08F6B82516D56C54006F12EB /* NSDictionary+Annex.h in Headers */,
 				08F6B82616D56C54006F12EB /* UIColor+Annex.h in Headers */,
 				4E00082417E0BC2B00BBBE9C /* NSSet+Annex.h in Headers */,
+				D7AC4E64184CD4EA0037F120 /* AnnexJSONObject.h in Headers */,
 				08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */,
 				08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */,
 				083F8D9E16E917FF0025A312 /* UIButton+Annex.h in Headers */,
+				D743ED6017F33D9100EB5AFB /* AnnexRequestOperation.h in Headers */,
 				D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */,
+				D742334A18219D3500A33E4E /* NSURL+Annex.h in Headers */,
 				083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */,
 				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
+				D753C22C17ECBEE9009852F8 /* NSNumber+Annex.h in Headers */,
 				D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */,
 				D771BDE417A17E6C005F9845 /* UIImageView+Annex.h in Headers */,
+				D722FC31184CEF48004638DF /* AnnexNetwork.h in Headers */,
 				D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */,
 				D7E31C4817BA829700BA7AC2 /* UIImage+Annex.h in Headers */,
 			);
@@ -418,16 +493,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				08BE564216D52C87006A16D2 /* NSObject+Annex.m in Sources */,
+				D722FC32184CEF48004638DF /* AnnexNetwork.m in Sources */,
+				D742334B18219D3500A33E4E /* NSURL+Annex.m in Sources */,
 				08BE564516D52C95006A16D2 /* NSString+Annex.m in Sources */,
 				08BE564816D52CA0006A16D2 /* NSDictionary+Annex.m in Sources */,
 				08BE564B16D52CB3006A16D2 /* UIColor+Annex.m in Sources */,
 				08BE564E16D52CBD006A16D2 /* UIView+Annex.m in Sources */,
+				D753C22D17ECBEE9009852F8 /* NSNumber+Annex.m in Sources */,
 				08BE565816D550EE006A16D2 /* NSDate+Annex.m in Sources */,
 				08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */,
 				083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */,
 				083F8DB716EA2F8B0025A312 /* AnnexKeyChain.m in Sources */,
+				D7AC4E65184CD4EA0037F120 /* AnnexJSONObject.m in Sources */,
 				D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */,
 				4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */,
+				D743ED6117F33D9100EB5AFB /* AnnexRequestOperation.m in Sources */,
 				D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */,
 				D771BDE017A16367005F9845 /* AnnexImageCache.m in Sources */,
 				D771BDE517A17E6C005F9845 /* UIImageView+Annex.m in Sources */,
@@ -495,6 +575,7 @@
 		08BE563816D52C32006A16D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/Annex.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Annex/Annex-Prefix.pch";
@@ -507,6 +588,7 @@
 		08BE563916D52C32006A16D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/Annex.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Annex/Annex-Prefix.pch";

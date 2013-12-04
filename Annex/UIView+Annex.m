@@ -204,15 +204,6 @@
     return rasterizedView;
 }
 
-- (void)removeFromSuperviewWithTransition:(UIViewAnimationTransition)transition duration:(NSTimeInterval)duration
-{
-}
-
-- (void)addSubview:(UIView *)view withTransition:(UIViewAnimationTransition)transition duration:(NSTimeInterval)duration
-{
-    
-}
-
 #endif
 
 + (UIView *)viewWithFrame:(CGRect)rect drawRect:(void(^)(CGRect rect))block

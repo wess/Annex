@@ -166,7 +166,8 @@
 - (UIColor *)colorByChangingAlphaTo:(CGFloat)alpha
 {
     CGFloat *oldComponents  = (CGFloat *)CGColorGetComponents([self CGColor]);
-	int numComponents       = CGColorGetNumberOfComponents([self CGColor]);
+	size_t numComponents    = CGColorGetNumberOfComponents([self CGColor]);
+    
 	CGFloat newComponents[4];
     
 	switch (numComponents)
@@ -204,7 +205,7 @@
 - (UIColor *)invertColor
 {
     CGColorRef oldCGColor   = self.CGColor;
-    int numberOfComponents  = CGColorGetNumberOfComponents(oldCGColor);
+    size_t numberOfComponents  = CGColorGetNumberOfComponents(oldCGColor);
     
     if (numberOfComponents == 1)
         return [UIColor colorWithCGColor:oldCGColor];
@@ -212,8 +213,8 @@
     const CGFloat *oldComponentColors = CGColorGetComponents(oldCGColor);
     CGFloat newComponentColors[numberOfComponents];
     
-    int i = numberOfComponents - 1;
-    newComponentColors[i] = oldComponentColors[i];
+    NSInteger i             = numberOfComponents - 1;
+    newComponentColors[i]   = oldComponentColors[i];
     
     while (--i >= 0)
         newComponentColors[i] = 1 - oldComponentColors[i];

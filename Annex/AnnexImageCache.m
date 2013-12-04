@@ -7,47 +7,14 @@
 //
 
 #import "AnnexImageCache.h"
-#import <CoreData/CoreDataDefines.h>
-
-@interface AnnexImageCacheOperation : NSOperation
-+ (instancetype)imageCacheOperationWithURL:(NSURL *)url completion:(AnnexImageCacheBlock)block;
-@end
-
-@interface AnnexImageCacheOperation()
-@property (strong, nonatomic) UIImage           *image;
-@property (strong, nonatomic) NSURL             *url;
-@property (copy, nonatomic) AnnexImageCacheBlock block;
-
-@end
-
-@implementation AnnexImageCacheOperation
-
-+ (instancetype)imageCacheOperationWithURL:(NSURL *)url completion:(AnnexImageCacheBlock)block
-{
-    AnnexImageCacheOperation *operation = [[AnnexImageCacheOperation alloc] init];
-    operation.block                     = block;
-    operation.url                       = url;
-    
-    return operation;
-}
-
-- (void)main
-{
-    NSError *error                  = nil;
-    NSMutableURLRequest *request    = [NSMutableURLRequest requestWithURL:self.url];
-    NSHTTPURLResponse *response     = [[NSHTTPURLResponse alloc] init];
-    NSData *data                    = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    UIImage *image                  = [UIImage imageWithData:data];
-    
-    self.block(image, error);
-}
-
-@end
+#import "AnnexRequestOperation.h"
 
 @interface AnnexImageCache()
-@property (strong, nonatomic) NSMutableDictionary   *dictionary;
+@property (strong, nonatomic) NSCache               *cache;
 @property (strong, nonatomic) NSOperationQueue      *queue;
 
+- (void)addOperationWithURL:(NSURL *)url completionHandler:(void(^)(UIImage *, NSError *))block;
+- (void)imageFromURL:(NSURL *)url useCache:(BOOL)useCache completionHandler:(void(^)(UIImage *, NSError *))block;
 + (instancetype)instance;
 @end
 
@@ -74,7 +41,7 @@ static NSString        *const AnnexImageCacheURLKey             = @"AnnexImageCa
     self = [super init];
     if (self)
     {
-        self.dictionary = [[NSMutableDictionary alloc] init];
+        self.cache      = [[NSCache alloc] init];
         self.queue      = [[NSOperationQueue alloc] init];
         
         [self.queue setMaxConcurrentOperationCount:AnnexImageCacheMaxConnections];
@@ -82,40 +49,51 @@ static NSString        *const AnnexImageCacheURLKey             = @"AnnexImageCa
     return self;
 }
 
-+ (UIImage *)imageForKey:(NSString *)key
+- (void)addOperationWithURL:(NSURL *)url completionHandler:(void(^)(UIImage *, NSError *))block
 {
-    AnnexImageCache *cache = [AnnexImageCache instance];
-    if(cache.dictionary[key])
-    {
-        cache.dictionary[key][AnnexImageCacheTimestampKey] = [NSDate date];
-
-        return cache.dictionary[key];
-    }
-    
-    return nil;
+    [self.queue addOperation:[AnnexRequestOperation operationWithRequest:[NSURLRequest requestWithURL:url] completionHandler:^(NSHTTPURLResponse *response, NSData *data, NSError *error) {
+        block((data? [UIImage imageWithData:data] : nil), error);
+    }]];
 }
 
-+ (void)imageFromURL:(NSURL *)url completion:(AnnexImageCacheBlock)block
+- (void)imageFromURL:(NSURL *)url useCache:(BOOL)useCache completionHandler:(void(^)(UIImage *, NSError *))block
 {
-    AnnexImageCacheOperation *operation = [AnnexImageCacheOperation imageCacheOperationWithURL:url completion:block];
-    [[AnnexImageCache instance].queue addOperation:operation];
+    if(useCache && [AnnexImageCache imageForKey:url.absoluteString])
+    {
+        block([AnnexImageCache imageForKey:url.absoluteString], nil);
+        return;
+    }
+    
+    [self addOperationWithURL:url completionHandler:block];
+}
+
++ (UIImage *)imageForKey:(NSString *)key
+{
+    return [[[self instance] cache] objectForKey:key];
+}
+
++ (void)imageFromURL:(NSURL *)url useCache:(BOOL)useCache completionHandler:(void(^)(UIImage *, NSError *))block
+{
+    [[self instance] imageFromURL:url useCache:useCache completionHandler:block];
+}
+
++ (void)imageFromURL:(NSURL *)url completionHandler:(void(^)(UIImage *, NSError *))block
+{
+    [[self instance] imageFromURL:url useCache:YES completionHandler:block];
 }
 
 + (void)setImage:(UIImage *)image forKey:(NSString *)key
 {
-    AnnexImageCache *cache          = [AnnexImageCache instance];
-    NSMutableDictionary *dictionary = [@{AnnexImageCacheImageKey: image, AnnexImageCacheTimestampKey: [NSDate date]} mutableCopy];
-    cache.dictionary[key]           = dictionary;
+    [[[self instance] cache] setObject:image forKey:key];
 }
 
 + (void)setImageFromURL:(NSURL *)url forKey:(NSString *)key
 {
-    AnnexImageCacheOperation *operation = [AnnexImageCacheOperation imageCacheOperationWithURL:url completion:^(UIImage *image, NSError *error) {
-        [AnnexImageCache setImage:image forKey:key];
+    AnnexRequestOperation *operation = [AnnexRequestOperation operationWithRequest:[NSURLRequest requestWithURL:url] completionHandler:^(NSHTTPURLResponse *response, NSData *data, NSError *error) {
+        [AnnexImageCache setImage:(data? [UIImage imageWithData:data] : nil) forKey:key];
     }];
     
-    AnnexImageCache *cache = [AnnexImageCache instance];
-    [cache.queue addOperation:operation];
+    [[[AnnexImageCache instance] queue] addOperation:operation];
 }
 
 + (void)setImageFromURL:(NSURL *)url
@@ -125,10 +103,9 @@ static NSString        *const AnnexImageCacheURLKey             = @"AnnexImageCa
 
 + (void)clearCache
 {
-    AnnexImageCache *cache  = [AnnexImageCache instance];
-    cache.dictionary        = [[NSMutableDictionary alloc] init];
-
-    [cache.dictionary removeAllObjects];
+    AnnexImageCache *this  = [AnnexImageCache instance];
+    [this.cache removeAllObjects];
+    [this.queue cancelAllOperations];
 }
 
 

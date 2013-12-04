@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Annex)
+@property (readonly, nonatomic) NSString *camelCaseString;
+@property (readonly, nonatomic) NSString *underscoreString;
+
 /**
  `NSString(Annex)` is an extension to NSString with additional functionality.
  */
@@ -39,8 +42,7 @@
  
  @return String with no HTML tags
  */
-- (NSString*)stringByRemovingHTML;
-
+- (NSString *)stringByRemovingHTML;
 
 /**
  Creates an MD5 Hash from a given string.

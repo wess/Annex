@@ -35,7 +35,8 @@ static char ANNEX_PLACEHOLDER_IMAGE;
         if(self.placeholderImage)
             self.image = self.placeholderImage;
         
-        [AnnexImageCache imageFromURL:url onCompletion:^(UIImage *image, NSError *error) {
+        __weak typeof(self) weakSelf = self;
+        [AnnexImageCache imageFromURL:url completionHandler:^(UIImage *image, NSError *error) {
             if(error)
             {
                 NSLog(@"UIButton image loading failed: %@", error.debugDescription);
@@ -43,7 +44,7 @@ static char ANNEX_PLACEHOLDER_IMAGE;
             else
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.image = self.image;
+                    weakSelf.image = image;
                 });
             }
         }];

@@ -36,3 +36,6 @@ build/
 Pods
 Podfile.lock
 .gitmodules
+# AppCode specific files
+.idea/
+*.iml
