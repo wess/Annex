@@ -227,6 +227,7 @@
 		08BE563A16D52C3A006A16D2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D753C22917ECBEDE009852F8 /* NSNumber */,
 				D742334718219D2000A33E4E /* NSURL */,
 				D743B05C17A1C8660068D596 /* NSArray */,
 				D7E71B1B1796EAB1005A76AB /* NSManagedObjectContext */,
@@ -242,7 +243,6 @@
 				08BE563B16D52C52006A16D2 /* UIView */,
 				083F8D9B16E917E40025A312 /* UIButton */,
 				D782F7F4173E87840070F967 /* UIAlertView */,
-				D753C22917ECBEDE009852F8 /* NSNumber */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -575,6 +575,7 @@
 		08BE563816D52C32006A16D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/Annex.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Annex/Annex-Prefix.pch";
@@ -587,6 +588,7 @@
 		08BE563916D52C32006A16D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/Annex.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Annex/Annex-Prefix.pch";

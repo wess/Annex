@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Annex)
+@property (readonly, nonatomic) NSString *camelCaseString;
+@property (readonly, nonatomic) NSString *underscoreString;
+
 /**
  `NSString(Annex)` is an extension to NSString with additional functionality.
  */
@@ -90,6 +93,5 @@
  @return            String created from date using format.
  */
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone;
-
 
 @end

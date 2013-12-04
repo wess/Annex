@@ -8,8 +8,48 @@
 
 #import "NSString+Annex.h"
 #import <CommonCrypto/CommonCrypto.h>
+#import "NSArray+Annex.h"
 
 @implementation NSString (Annex)
+
+- (NSString *)camelCaseString
+{
+    NSMutableArray *parts           = [[self componentsSeparatedByString:@"_"] mutableCopy];
+    __block NSMutableString *output = [[NSMutableString alloc] initWithString:[parts stringAtIndex:0]];
+    
+    [parts removeObjectAtIndex:0];
+    [parts enumerateObjectsUsingBlock:^(NSString *string, NSUInteger idx, BOOL *stop) {
+        [output appendString:string.capitalizedString];
+    }];
+    
+    return [output copy];
+}
+
+- (NSString *)underscoreString
+{
+    NSMutableString *output     = [[NSMutableString alloc] init];
+    NSString *buffer            = nil;
+    NSCharacterSet *uppercase   = [NSCharacterSet uppercaseLetterCharacterSet];
+    NSCharacterSet *lowercase   = [NSCharacterSet lowercaseLetterCharacterSet];
+    NSScanner *scanner          = [NSScanner scannerWithString:self];
+    
+    [scanner setCaseSensitive:YES];
+    
+    while(scanner.isAtEnd == NO)
+    {
+        if([scanner scanCharactersFromSet:uppercase intoString:&buffer])
+            [output appendString:[buffer lowercaseString]];
+        
+        if([scanner scanCharactersFromSet:lowercase intoString:&buffer])
+            [output appendString:buffer];
+        
+        if(!scanner.isAtEnd)
+            [output appendString:@"_"];
+    }
+    
+    return [output copy];
+}
+
 
 - (NSString *)md5
 {
@@ -48,7 +88,7 @@
 {
     const char *cStr = [string UTF8String];
 	unsigned char digest[16];
-	CC_MD5( cStr, strlen(cStr), digest);
+	CC_MD5( cStr, (CC_LONG)strlen(cStr), digest);
     
 	NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     
@@ -65,7 +105,7 @@
     
 	uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     
-	CC_SHA1(data.bytes, data.length, digest);
+	CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
     
 	NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
     
