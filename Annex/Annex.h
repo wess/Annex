@@ -24,7 +24,7 @@
 #import "UIAlertView+Annex.h"
 
 // If we have core data for iPhone, have at it!
-#ifdef NSCoreDataVersionNumber_iPhoneOS_5_0
+#ifdef ANNEX_INCLUDE_COREDATA
 #import "NSManagedObjectContext+Annex.h"
 #endif
 
