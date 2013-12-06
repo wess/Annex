@@ -32,8 +32,15 @@
 #define AnnexSystemVersion      [[UIDevice currentDevice] systemVersion]
 #define AnnexDeviceType         [[UIDevice currentDevice] model]
 
-#define IS_IPHONE_5             (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)568 ) < DBL_EPSILON)
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define ANNEX_IS_IPHONE_5             (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)568 ) < DBL_EPSILON)
+#define ANNEX_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define ANNEX_SUPPRESS_DEPRECIATED_DECLARATIONS(code) \
+do { \
+    _Pragma("clang diagnostic push") \
+    _Pragma("clang \"-Wdeprecated-declarations\""); \
+    code; \
+    _Pragma("clang diagnostic pop"); \
+} while(0);
 
 #ifdef DEBUG
 #define ALog(fmt, ...) ({ NSLog(@"-- [%s:%d] %s: " fmt, __FILE__, __LINE__, __PRETTY_FUNCTION__, ## __VA_ARGS__); })
