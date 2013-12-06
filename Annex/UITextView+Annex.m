@@ -7,6 +7,7 @@
 //
 
 #import "UITextView+Annex.h"
+#import "Annex.h"
 
 @implementation UITextView (Annex)
 @dynamic visibleTextRange;
@@ -16,8 +17,19 @@
 {
     CGRect bounds           = self.bounds;
     NSString *text          = self.text;
-    CGSize textSize         = [text sizeWithFont:self.font constrainedToSize:CGSizeMake(bounds.size.width, bounds.size.height)];
+    CGSize constraintSize   = CGSizeMake(bounds.size.width, bounds.size.height);
+    CGSize textSize;
+    if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0.0"))
+    {
+        CGRect textBound        = [text boundingRectWithSize:constraintSize options:0 attributes:nil context:nil];
+        textSize         = textBound.size;
+    }
+    else
+    {
+        textSize         = [text sizeWithFont:self.font constrainedToSize:constraintSize];
+    }
     
+
     UITextPosition *start   = [self characterRangeAtPoint:bounds.origin].start;
     UITextPosition *end     = [self closestPositionToPoint:CGPointMake(textSize.width, textSize.height)];
     NSUInteger startPoint   = [self offsetFromPosition:self.beginningOfDocument toPosition:start];
