@@ -11,50 +11,103 @@
 
 @implementation NSObject (Annex)
 
-- (void)executeBlock:(void(^)(__weak id this))block withCallback:(void(^)(__weak id this))callback
+#pragma mark -
+#pragma mark Background Methods
+
+- (void)executeBlockInBackgroundWithWeakReference:(WeakReferencedBlock)block withCallback:(WeakReferencedBlock)callback
 {
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         block(weakSelf);
         
-        dispatch_sync(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             callback(weakSelf);
         });
     });
 }
 
-+ (void)executeBlock:(void(^)())block withCallback:(void(^)())callback
++ (void)executeBlockInBackground:(VoidBlock)block withCallback:(VoidBlock)callback
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         block();
         
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            callback();
-        });
+        dispatch_async(dispatch_get_main_queue(), callback);
     });    
 }
 
-- (void)executeBlock:(void(^)(__weak id this))block afterDelay:(NSTimeInterval)delay
+#pragma mark -
+#pragma mark Background with Delay Methods
+
+- (void)executeBlockInBackgroundWithWeakReference:(WeakReferencedBlock)block afterDelay:(NSTimeInterval)delay
 {
     __weak typeof(self) weakSelf    = self;
     int64_t delta                   = (int64_t)(1.0e9 * delay);
     dispatch_time_t popTime         = dispatch_time(DISPATCH_TIME_NOW, delta);
+	dispatch_queue_t queue			= dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    dispatch_after(popTime, queue, ^(void){
         block(weakSelf);
     });
 }
 
-+ (void)executeBlock:(void(^)())block afterDelay:(NSTimeInterval)delay
++ (void)executeBlockInBackground:(VoidBlock)block afterDelay:(NSTimeInterval)delay
 {
     int64_t delta           = (int64_t)(1.0e9 * delay);
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delta);
-    
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        block();
-    });
+	dispatch_queue_t queue	= dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+	
+    dispatch_after(popTime, queue, block);
+}
+
+#pragma mark -
+#pragma mark Main Thread Methods
+
+- (void)executeBlockOnMainThreadWithWeakReference:(WeakReferencedBlock)block
+{
+	__weak typeof(self) weakSelf = self;
+	
+	if ([NSThread isMainThread]) {
+		block(weakSelf);
+	} else {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			block(weakSelf);
+		});
+	}
+}
+
++ (void)executeBlockOnMainThread:(VoidBlock)block
+{
+	if ([NSThread isMainThread]) {
+		block();
+	} else {
+		dispatch_async(dispatch_get_main_queue(), block);
+	}
+}
+
+#pragma mark -
+#pragma mark Main Thread with Delay Methods
+
+- (void)executeBlockOnMainThreadWithWeakReference:(WeakReferencedBlock)block afterDelay:(NSTimeInterval)delay
+{
+	__weak typeof(self) weakSelf    = self;
+    int64_t delta                   = (int64_t)(1.0e9 * delay);
+    dispatch_time_t popTime         = dispatch_time(DISPATCH_TIME_NOW, delta);
+	dispatch_queue_t queue			= dispatch_get_main_queue();
+	
+	dispatch_after(popTime, queue, ^(void){
+		block(weakSelf);
+	});
+}
+
++ (void)executeBlockOnMainThread:(VoidBlock)block afterDelay:(NSTimeInterval)delay
+{
+    int64_t delta                   = (int64_t)(1.0e9 * delay);
+    dispatch_time_t popTime         = dispatch_time(DISPATCH_TIME_NOW, delta);
+	dispatch_queue_t queue			= dispatch_get_main_queue();
+	
+	dispatch_after(popTime, queue, block);
 }
 
 @end

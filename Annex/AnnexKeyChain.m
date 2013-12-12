@@ -114,14 +114,14 @@ OSStatus valueStatusForKey(NSString *key, NSString *service)
         [queryDict setObject:data forKey:(__bridge id)kSecValueData];
         
         valStatus = SecItemAdd((__bridge CFDictionaryRef)queryDict, NULL);
-        NSAssert1(valStatus == errSecSuccess, @"Value add returned status: %ld", (NSInteger)valStatus);
+        NSAssert1(valStatus == errSecSuccess, @"Value add returned status: %ld", (long)valStatus);
     }
     else if(valStatus == errSecSuccess)
     {
         NSDictionary *valueDict = @{(__bridge id)kSecValueData: data};
 
         valStatus = SecItemUpdate((__bridge CFDictionaryRef)queryDict, (__bridge CFDictionaryRef)valueDict);
-        NSAssert1(valStatus == errSecSuccess, @"Value add returned status: %ld", (NSInteger)valStatus);
+        NSAssert1(valStatus == errSecSuccess, @"Value add returned status: %ld", (long)valStatus);
     }
 }
 

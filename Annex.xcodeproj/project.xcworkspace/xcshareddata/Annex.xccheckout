@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>10678944-1529-404D-801C-F677BDE8EC86</string>
+	<string>B3CCCC5D-0D46-4FD6-B3C4-0D43ECC7D5B6</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Annex</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>92B52C34-76F6-48B0-81C8-948210CD75D1</key>
-		<string>ssh://github.com/wess/Annex.git</string>
+		<key>FE6FB4C8-2B30-4EA5-8D88-C3D3F7CBC052</key>
+		<string>https://github.com/jlalvarez18/Annex.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Annex.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>92B52C34-76F6-48B0-81C8-948210CD75D1</key>
+		<key>FE6FB4C8-2B30-4EA5-8D88-C3D3F7CBC052</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/wess/Annex.git</string>
+	<string>https://github.com/jlalvarez18/Annex.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>92B52C34-76F6-48B0-81C8-948210CD75D1</string>
+	<string>FE6FB4C8-2B30-4EA5-8D88-C3D3F7CBC052</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>92B52C34-76F6-48B0-81C8-948210CD75D1</string>
+			<string>FE6FB4C8-2B30-4EA5-8D88-C3D3F7CBC052</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Annex</string>
 		</dict>
