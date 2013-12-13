@@ -83,10 +83,10 @@ typedef void(^AnnexVoidBlock)(void);
 
 @interface NSObject (AnnexDeprecatedMethods)
 
-- (void)executeBlock:(void(^)(__weak id this))block withCallback:(void(^)(__weak id this))callback __deprecated;
-+ (void)executeBlock:(void(^)())block withCallback:(void(^)())callback __deprecated;
+- (void)executeBlock:(void(^)(__weak id this))block withCallback:(void(^)(__weak id this))callback __deprecated_msg("Use -executeBlockInBackgroundWithWeakReference:withCallback: instead.");
++ (void)executeBlock:(void(^)())block withCallback:(void(^)())callback __deprecated_msg("Use +executeBlockInBackground:withCallback: instead.");
 
-- (void)executeBlock:(void(^)(__weak id this))block afterDelay:(NSTimeInterval)delay __deprecated;
-+ (void)executeBlock:(void(^)())block afterDelay:(NSTimeInterval)delay __deprecated;
+- (void)executeBlock:(void(^)(__weak id this))block afterDelay:(NSTimeInterval)delay __deprecated_msg("Use -executeBlockInBackgroundWithWeakReference:afterDelay: instead.");
++ (void)executeBlock:(void(^)())block afterDelay:(NSTimeInterval)delay __deprecated_msg("Use +executeBlockInBackground:afterDelay: instead.");
 
 @end

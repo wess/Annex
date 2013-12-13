@@ -35,6 +35,8 @@
 		0D1269F4185A27E000BF386C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D1269F2185A27E000BF386C /* InfoPlist.strings */; };
 		0D126A00185A2BBF00BF386C /* NSObject (Annex).m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1269FF185A2BBF00BF386C /* NSObject (Annex).m */; };
 		0D126A02185A2C5800BF386C /* NSObject+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE564116D52C87006A16D2 /* NSObject+Annex.m */; };
+		0D29E81E185AB02F00E5C893 /* NSStringCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29E81D185AB02F00E5C893 /* NSStringCategory.m */; };
+		0D29E81F185AB0F300E5C893 /* NSString+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE564416D52C95006A16D2 /* NSString+Annex.m */; };
 		4E00082417E0BC2B00BBBE9C /* NSSet+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */; };
 		4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */; };
 		D722FC31184CEF48004638DF /* AnnexNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = D722FC2F184CEF48004638DF /* AnnexNetwork.h */; };
@@ -116,6 +118,7 @@
 		0D1269F3185A27E000BF386C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D1269F7185A27E000BF386C /* Annex Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Annex Tests-Prefix.pch"; sourceTree = "<group>"; };
 		0D1269FF185A2BBF00BF386C /* NSObject (Annex).m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject (Annex).m"; sourceTree = "<group>"; };
+		0D29E81D185AB02F00E5C893 /* NSStringCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringCategory.m; sourceTree = "<group>"; };
 		4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Annex.h"; sourceTree = "<group>"; };
 		4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Annex.m"; sourceTree = "<group>"; };
 		D722FC2F184CEF48004638DF /* AnnexNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexNetwork.h; sourceTree = "<group>"; };
@@ -339,6 +342,7 @@
 		0D1269EF185A27E000BF386C /* Annex Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0D29E81D185AB02F00E5C893 /* NSStringCategory.m */,
 				0D1269FF185A2BBF00BF386C /* NSObject (Annex).m */,
 				0D1269F0185A27E000BF386C /* Supporting Files */,
 			);
@@ -609,8 +613,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D29E81F185AB0F300E5C893 /* NSString+Annex.m in Sources */,
 				0D126A02185A2C5800BF386C /* NSObject+Annex.m in Sources */,
 				0D126A00185A2BBF00BF386C /* NSObject (Annex).m in Sources */,
+				0D29E81E185AB02F00E5C893 /* NSStringCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,6 +806,7 @@
 				0D1269FB185A27E000BF386C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
