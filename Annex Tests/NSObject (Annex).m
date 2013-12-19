@@ -28,11 +28,11 @@ while(condition) { \
 } \
 } while(0)
 
-@interface NSObjectCategoryTestCase : XCTestCase
+@interface NSObjectCategory : XCTestCase
 
 @end
 
-@implementation NSObjectCategoryTestCase
+@implementation NSObjectCategory
 
 - (void)setUp
 {
