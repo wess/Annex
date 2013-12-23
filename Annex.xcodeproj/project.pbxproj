@@ -29,6 +29,14 @@
 		08F6B82516D56C54006F12EB /* NSDictionary+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564616D52CA0006A16D2 /* NSDictionary+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82616D56C54006F12EB /* UIColor+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564916D52CB3006A16D2 /* UIColor+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08F6B82716D56C54006F12EB /* UIView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE564C16D52CBD006A16D2 /* UIView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D1269EC185A27E000BF386C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1269EB185A27E000BF386C /* XCTest.framework */; };
+		0D1269ED185A27E000BF386C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE562C16D52C32006A16D2 /* Foundation.framework */; };
+		0D1269EE185A27E000BF386C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE565016D52D31006A16D2 /* UIKit.framework */; };
+		0D1269F4185A27E000BF386C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D1269F2185A27E000BF386C /* InfoPlist.strings */; };
+		0D126A00185A2BBF00BF386C /* NSObject (Annex).m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1269FF185A2BBF00BF386C /* NSObject (Annex).m */; };
+		0D126A02185A2C5800BF386C /* NSObject+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE564116D52C87006A16D2 /* NSObject+Annex.m */; };
+		0D29E81E185AB02F00E5C893 /* NSStringCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29E81D185AB02F00E5C893 /* NSStringCategory.m */; };
+		0D29E81F185AB0F300E5C893 /* NSString+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE564416D52C95006A16D2 /* NSString+Annex.m */; };
 		4E00082417E0BC2B00BBBE9C /* NSSet+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */; };
 		4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */; };
 		D722FC31184CEF48004638DF /* AnnexNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = D722FC2F184CEF48004638DF /* AnnexNetwork.h */; };
@@ -54,6 +62,16 @@
 		D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E71B1C1796EAF4005A76AB /* NSManagedObjectContext+Annex.h */; };
 		D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E71B1D1796EAF4005A76AB /* NSManagedObjectContext+Annex.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D1269F8185A27E000BF386C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08BE562116D52C32006A16D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08BE562816D52C32006A16D2;
+			remoteInfo = Annex;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		08BE562716D52C32006A16D2 /* CopyFiles */ = {
@@ -93,6 +111,13 @@
 		08BE565316D530F0006A16D2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		08BE565616D550EE006A16D2 /* NSDate+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Annex.h"; sourceTree = "<group>"; };
 		08BE565716D550EE006A16D2 /* NSDate+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Annex.m"; sourceTree = "<group>"; };
+		0D1269EA185A27E000BF386C /* Annex Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Annex Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D1269EB185A27E000BF386C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0D1269F1185A27E000BF386C /* Annex Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Annex Tests-Info.plist"; sourceTree = "<group>"; };
+		0D1269F3185A27E000BF386C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D1269F7185A27E000BF386C /* Annex Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Annex Tests-Prefix.pch"; sourceTree = "<group>"; };
+		0D1269FF185A2BBF00BF386C /* NSObject (Annex).m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject (Annex).m"; sourceTree = "<group>"; };
+		0D29E81D185AB02F00E5C893 /* NSStringCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringCategory.m; sourceTree = "<group>"; };
 		4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Annex.h"; sourceTree = "<group>"; };
 		4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Annex.m"; sourceTree = "<group>"; };
 		D722FC2F184CEF48004638DF /* AnnexNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexNetwork.h; sourceTree = "<group>"; };
@@ -128,6 +153,16 @@
 				08BE565116D52D31006A16D2 /* QuartzCore.framework in Frameworks */,
 				08BE565216D52D31006A16D2 /* UIKit.framework in Frameworks */,
 				08BE562D16D52C32006A16D2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D1269E7185A27E000BF386C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1269EC185A27E000BF386C /* XCTest.framework in Frameworks */,
+				0D1269EE185A27E000BF386C /* UIKit.framework in Frameworks */,
+				0D1269ED185A27E000BF386C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				08BE562E16D52C32006A16D2 /* Annex */,
+				0D1269EF185A27E000BF386C /* Annex Tests */,
 				08BE562B16D52C32006A16D2 /* Frameworks */,
 				08BE562A16D52C32006A16D2 /* Products */,
 			);
@@ -186,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				08BE562916D52C32006A16D2 /* libAnnex.a */,
+				0D1269EA185A27E000BF386C /* Annex Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +234,7 @@
 				08BE564F16D52D31006A16D2 /* QuartzCore.framework */,
 				08BE565016D52D31006A16D2 /* UIKit.framework */,
 				08BE562C16D52C32006A16D2 /* Foundation.framework */,
+				0D1269EB185A27E000BF386C /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -295,6 +333,26 @@
 				08BE565716D550EE006A16D2 /* NSDate+Annex.m */,
 			);
 			name = NSDate;
+			sourceTree = "<group>";
+		};
+		0D1269EF185A27E000BF386C /* Annex Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0D29E81D185AB02F00E5C893 /* NSStringCategory.m */,
+				0D1269FF185A2BBF00BF386C /* NSObject (Annex).m */,
+				0D1269F0185A27E000BF386C /* Supporting Files */,
+			);
+			path = "Annex Tests";
+			sourceTree = "<group>";
+		};
+		0D1269F0185A27E000BF386C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D1269F1185A27E000BF386C /* Annex Tests-Info.plist */,
+				0D1269F2185A27E000BF386C /* InfoPlist.strings */,
+				0D1269F7185A27E000BF386C /* Annex Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4E00082117E0BC1300BBBE9C /* NSSet */ = {
@@ -457,6 +515,24 @@
 			productReference = 08BE562916D52C32006A16D2 /* libAnnex.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		0D1269E9185A27E000BF386C /* Annex Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D1269FC185A27E000BF386C /* Build configuration list for PBXNativeTarget "Annex Tests" */;
+			buildPhases = (
+				0D1269E6185A27E000BF386C /* Sources */,
+				0D1269E7185A27E000BF386C /* Frameworks */,
+				0D1269E8185A27E000BF386C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D1269F9185A27E000BF386C /* PBXTargetDependency */,
+			);
+			name = "Annex Tests";
+			productName = "Annex Tests";
+			productReference = 0D1269EA185A27E000BF386C /* Annex Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -465,6 +541,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Wess Cope";
+				TargetAttributes = {
+					0D1269E9185A27E000BF386C = {
+						TestTargetID = 08BE562816D52C32006A16D2;
+					};
+				};
 			};
 			buildConfigurationList = 08BE562416D52C32006A16D2 /* Build configuration list for PBXProject "Annex" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -479,9 +560,21 @@
 			projectRoot = "";
 			targets = (
 				08BE562816D52C32006A16D2 /* Annex */,
+				0D1269E9185A27E000BF386C /* Annex Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D1269E8185A27E000BF386C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1269F4185A27E000BF386C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		08BE562516D52C32006A16D2 /* Sources */ = {
@@ -512,7 +605,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0D1269E6185A27E000BF386C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D29E81F185AB0F300E5C893 /* NSString+Annex.m in Sources */,
+				0D126A02185A2C5800BF386C /* NSObject+Annex.m in Sources */,
+				0D126A00185A2BBF00BF386C /* NSObject (Annex).m in Sources */,
+				0D29E81E185AB02F00E5C893 /* NSStringCategory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D1269F9185A27E000BF386C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08BE562816D52C32006A16D2 /* Annex */;
+			targetProxy = 0D1269F8185A27E000BF386C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D1269F2185A27E000BF386C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D1269F3185A27E000BF386C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		08BE563516D52C32006A16D2 /* Debug */ = {
@@ -594,6 +717,63 @@
 			};
 			name = Release;
 		};
+		0D1269FA185A27E000BF386C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Annex Tests/Annex Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Annex Tests/Annex Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		0D1269FB185A27E000BF386C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Annex Tests/Annex Tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Annex Tests/Annex Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -611,6 +791,15 @@
 			buildConfigurations = (
 				08BE563816D52C32006A16D2 /* Debug */,
 				08BE563916D52C32006A16D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D1269FC185A27E000BF386C /* Build configuration list for PBXNativeTarget "Annex Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D1269FA185A27E000BF386C /* Debug */,
+				0D1269FB185A27E000BF386C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
