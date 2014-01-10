@@ -21,8 +21,8 @@ static NSString *const AnnexAlertViewBlock = @"AnnexAlertViewBlock";
     self = [self initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil];
     if(self)
     {
-
-        objc_setAssociatedObject(self, [AnnexAlertViewBlock UTF8String], callback, OBJC_ASSOCIATION_COPY);
+		if (callback != NULL)
+			objc_setAssociatedObject(self, [AnnexAlertViewBlock UTF8String], callback, OBJC_ASSOCIATION_COPY);
         
         va_list args;
         va_start(args, otherButtonTitles);
@@ -39,9 +39,11 @@ static NSString *const AnnexAlertViewBlock = @"AnnexAlertViewBlock";
     BOOL didCancel                      = (buttonIndex == self.cancelButtonIndex);
     void(^callback)(BOOL, NSInteger)    = objc_getAssociatedObject(self, [AnnexAlertViewBlock UTF8String]);
 
-    callback(didCancel, buttonIndex);
-    
-    objc_removeAssociatedObjects(callback);
+	if (callback != NULL) {
+		callback(didCancel, buttonIndex);
+		
+		objc_removeAssociatedObjects(callback);
+	}
 }
 
 @end
