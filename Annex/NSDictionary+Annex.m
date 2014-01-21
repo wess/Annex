@@ -69,13 +69,12 @@
 - (NSDictionary *)withoutNulls
 {
     NSMutableDictionary* replaced = [NSMutableDictionary dictionaryWithDictionary:self];
-    NSString* blank = @"";
 
     for(NSString* key in self)
     {
         id object = [self objectForKey:key];
         if([object isKindOfClass:[NSNull class]] == YES)
-            [replaced setObject:blank forKey:key];
+            continue;
         else if([object isKindOfClass:[NSDictionary class]] == YES)
             [replaced setObject:[(NSDictionary*)object withoutNulls] forKey:key];
     }
