@@ -37,6 +37,9 @@
 		0D126A02185A2C5800BF386C /* NSObject+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE564116D52C87006A16D2 /* NSObject+Annex.m */; };
 		0D29E81E185AB02F00E5C893 /* NSStringCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29E81D185AB02F00E5C893 /* NSStringCategory.m */; };
 		0D29E81F185AB0F300E5C893 /* NSString+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE564416D52C95006A16D2 /* NSString+Annex.m */; };
+		0D8E2056187DBBFB00DAA08D /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E2054187DBBFB00DAA08D /* UIImage+ImageEffects.h */; };
+		0D8E2057187DBBFB00DAA08D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E2055187DBBFB00DAA08D /* UIImage+ImageEffects.m */; };
+		0D8E2059187DBC4200DAA08D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8E2058187DBC4200DAA08D /* Accelerate.framework */; };
 		4E00082417E0BC2B00BBBE9C /* NSSet+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */; };
 		4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */; };
 		D722FC31184CEF48004638DF /* AnnexNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = D722FC2F184CEF48004638DF /* AnnexNetwork.h */; };
@@ -118,6 +121,9 @@
 		0D1269F7185A27E000BF386C /* Annex Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Annex Tests-Prefix.pch"; sourceTree = "<group>"; };
 		0D1269FF185A2BBF00BF386C /* NSObject (Annex).m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject (Annex).m"; sourceTree = "<group>"; };
 		0D29E81D185AB02F00E5C893 /* NSStringCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringCategory.m; sourceTree = "<group>"; };
+		0D8E2054187DBBFB00DAA08D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		0D8E2055187DBBFB00DAA08D /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		0D8E2058187DBC4200DAA08D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Annex.h"; sourceTree = "<group>"; };
 		4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Annex.m"; sourceTree = "<group>"; };
 		D722FC2F184CEF48004638DF /* AnnexNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexNetwork.h; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D8E2059187DBC4200DAA08D /* Accelerate.framework in Frameworks */,
+				D7E71B211796EDC6005A76AB /* CoreData.framework in Frameworks */,
 				08BE565416D530F0006A16D2 /* Security.framework in Frameworks */,
 				08BE565116D52D31006A16D2 /* QuartzCore.framework in Frameworks */,
 				08BE565216D52D31006A16D2 /* UIKit.framework in Frameworks */,
@@ -230,6 +238,8 @@
 		08BE562B16D52C32006A16D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D8E2058187DBC4200DAA08D /* Accelerate.framework */,
+				D7E71B201796EDC6005A76AB /* CoreData.framework */,
 				08BE565316D530F0006A16D2 /* Security.framework */,
 				08BE564F16D52D31006A16D2 /* QuartzCore.framework */,
 				08BE565016D52D31006A16D2 /* UIKit.framework */,
@@ -450,6 +460,8 @@
 			children = (
 				D7E31C4617BA829700BA7AC2 /* UIImage+Annex.h */,
 				D7E31C4717BA829700BA7AC2 /* UIImage+Annex.m */,
+				0D8E2054187DBBFB00DAA08D /* UIImage+ImageEffects.h */,
+				0D8E2055187DBBFB00DAA08D /* UIImage+ImageEffects.m */,
 			);
 			name = UIImage;
 			sourceTree = "<group>";
@@ -471,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08F6B82216D56C54006F12EB /* NSObject+Annex.h in Headers */,
+				0D8E2056187DBBFB00DAA08D /* UIImage+ImageEffects.h in Headers */,
 				08F6B82316D56C54006F12EB /* NSDate+Annex.h in Headers */,
 				08F6B82416D56C54006F12EB /* NSString+Annex.h in Headers */,
 				08F6B82516D56C54006F12EB /* NSDictionary+Annex.h in Headers */,
@@ -539,7 +552,7 @@
 		08BE562116D52C32006A16D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Wess Cope";
 				TargetAttributes = {
 					0D1269E9185A27E000BF386C = {
@@ -585,6 +598,7 @@
 				D722FC32184CEF48004638DF /* AnnexNetwork.m in Sources */,
 				D742334B18219D3500A33E4E /* NSURL+Annex.m in Sources */,
 				08BE564516D52C95006A16D2 /* NSString+Annex.m in Sources */,
+				0D8E2057187DBBFB00DAA08D /* UIImage+ImageEffects.m in Sources */,
 				08BE564816D52CA0006A16D2 /* NSDictionary+Annex.m in Sources */,
 				08BE564B16D52CB3006A16D2 /* UIColor+Annex.m in Sources */,
 				08BE564E16D52CBD006A16D2 /* UIView+Annex.m in Sources */,
@@ -694,7 +708,6 @@
 		08BE563816D52C32006A16D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/Annex.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Annex/Annex-Prefix.pch";
@@ -707,7 +720,6 @@
 		08BE563916D52C32006A16D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/Annex.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Annex/Annex-Prefix.pch";
@@ -720,7 +732,6 @@
 		0D1269FA185A27E000BF386C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -750,7 +761,6 @@
 		0D1269FB185A27E000BF386C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
