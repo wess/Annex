@@ -50,6 +50,24 @@
     return [output copy];
 }
 
+- (BOOL)isNotEqualToString:(NSString *)aString
+{
+	return ![self isEqualToString:aString];
+}
+
+- (BOOL)isEqualToStringCaseInsensitive:(NSString *)aString
+{
+	NSComparisonResult result = [self caseInsensitiveCompare:aString];
+	
+	return (result == NSOrderedSame);
+}
+
+- (BOOL)isEqualToStringDiacriticallyInsensitive:(NSString *)aString
+{
+	NSComparisonResult result = [self compare:aString options:NSDiacriticInsensitiveSearch];
+	
+	return (result == NSOrderedSame);
+}
 
 - (NSString *)md5
 {
@@ -124,16 +142,19 @@
     return returnString;
 }
 
-+ (NSString *)uuid
++ (NSString *)UUIDString
 {
-    CFUUIDRef puuid         = CFUUIDCreate( nil );
-    CFStringRef uuidString  = CFUUIDCreateString( nil, puuid );
-    NSString *result        = (__bridge NSString *)CFStringCreateCopy( NULL, uuidString);
+	// since the iOS Deployment target is iOS 6.1 we don't have to check for version compatibility
+	NSUUID *uuid = [NSUUID UUID];
+	
+    return uuid.UUIDString;
+}
 
-    CFRelease(puuid);
-    CFRelease(uuidString);
-
-    return result;
+- (NSUUID *)UUIDRepresentation
+{
+	NSUUID *uuid = [[NSUUID alloc] initWithUUIDString: self];
+	
+	return uuid;
 }
 
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format
@@ -185,6 +206,15 @@
     }
     
     return nil;
+}
+
+@end
+
+@implementation NSString (DeprecatedMethods)
+
++ (NSString *)uuid
+{
+    return [self UUIDString];
 }
 
 @end
