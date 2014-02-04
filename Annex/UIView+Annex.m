@@ -7,6 +7,7 @@
 //
 
 #import "UIView+Annex.h"
+#import "UIImage+ImageEffects.h"
 
 @interface AnnexProxyView : UIView
 @property (copy, nonatomic) void(^drawBlock)(CGRect);
@@ -194,14 +195,48 @@
     [self.layer addSublayer:gradientLayer];
 }
 
-- (UIImage *)rasterizedToImage
+- (UIImage *)snapshotImage
 {
-    UIGraphicsBeginImageContext(self.size);
-    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIGraphicsBeginImageContextWithOptions(self.size, YES, 0);
+	[self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
     UIImage *rasterizedView = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return rasterizedView;
+}
+
+- (UIImage *)blurredSnapshotWithType:(AnnexSnapshotBlurType)type
+{
+	UIImage *image = [self snapshotImage];
+	
+	switch (type) {
+		case AnnexSnapshotBlurTypeLightEffect:
+			image = [image applyLightEffect];
+			break;
+			
+		case AnnexSnapshotBlurTypeExtraLightEffect:
+			image = [image applyExtraLightEffect];
+			break;
+			
+		case AnnexSnapshotBlurTypeDarkEffect:
+			image = [image applyDarkEffect];
+			break;
+			
+		default:
+			image = nil;
+			break;
+	}
+	
+	return image;
+}
+
+- (UIImage *)blurredSnapshotWithTintColor:(UIColor *)color
+{
+	UIImage *image = [self snapshotImage];
+	
+	image = [image applyTintEffectWithColor:color];
+	
+	return image;
 }
 
 #endif
@@ -240,5 +275,15 @@
 }
 
 
+
+@end
+
+
+@implementation UIView (AnnexDeprecatedMethods)
+
+- (UIImage *)rasterizedToImage
+{
+    return [self snapshotImage];
+}
 
 @end

@@ -628,7 +628,7 @@
 - (NSString *)humanDateSinceDate:(NSDate *)date
 {
     NSString *(^componentStringBlock)(NSInteger, NSString *)  =  ^(NSInteger component, NSString *name) {
-        return [NSString stringWithFormat:@"%ld %@ ago", (long)component, ((component == 1)? [name copy] : [NSString stringWithFormat:@"%@s", name])];
+        return [NSString stringWithFormat:@"%zd %@ ago", component, ((component == 1)? [name copy] : [NSString stringWithFormat:@"%@s", name])];
     };
     
     NSCalendar *calendar            = [NSCalendar currentCalendar];

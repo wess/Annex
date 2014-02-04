@@ -26,7 +26,7 @@
     }] copy];
 }
 
-- (instancetype)withoutNulls
+- (NSArray *)withoutNulls
 {
     NSArray* temp = [self arrayByRemovingObjectsOfClass:[NSNull class]];
     NSMutableArray* result = [NSMutableArray arrayWithCapacity:[temp count]];
@@ -41,7 +41,7 @@
     return [result copy];
 }
 
-- (instancetype)arrayByRemovingObjectsOfClass:(Class)aClass
+- (NSArray *)arrayByRemovingObjectsOfClass:(Class)aClass
 {
     NSMutableArray* results = [NSMutableArray array];
 

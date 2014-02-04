@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+typedef NS_ENUM(NSInteger, AnnexSnapshotBlurType) {
+	AnnexSnapshotBlurTypeLightEffect,
+	AnnexSnapshotBlurTypeExtraLightEffect,
+	AnnexSnapshotBlurTypeDarkEffect
+};
+
 @interface UIView (Annex)
 /**
  `UIView(Annex)` is an extension to UIView with additional functionality.
@@ -92,9 +98,23 @@
  Creates an image from the current view.
  @return Image created from a view.
  */
-- (UIImage *)rasterizedToImage;
+- (UIImage *)snapshotImage;
 
 #endif
+
+/**
+ Creates an image from the current view with AnnexSnapshotBlurType type.
+ @param type AnnexSnapshotBlurType type.
+ @return Image created from a view with blur.
+ */
+- (UIImage *)blurredSnapshotWithType:(AnnexSnapshotBlurType)type;
+
+/**
+ Creates an image from the current view.
+ @param Color a UIColor to blur the snapshot image with.
+ @return Image created from a view.
+ */
+- (UIImage *)blurredSnapshotWithTintColor:(UIColor *)color;
 
 /**
  Creates a new view with a block based drawRect.
@@ -157,7 +177,14 @@
 
 @end
 
+@interface UIView (AnnexDeprecatedMethods)
 
+/**
+ Creates an image from the current view.
+ @return Image created from a view.
+ */
+- (UIImage *)rasterizedToImage __deprecated_msg("Use -snapshotImage instead.");
 
+@end
 
 
