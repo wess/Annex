@@ -677,6 +677,8 @@
 
 + (NSDate *)dateWithRFC3339String:(NSString *)dateString forLocal:(NSLocale *)locale
 {
+    NSParameterAssert(dateString);
+
     NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
     formatter.locale            = locale;
     formatter.dateFormat        = @"yyyy-MM-dd'T'HH:mm:ssZ";
