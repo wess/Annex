@@ -683,7 +683,7 @@
     formatter.timeZone          = [NSTimeZone timeZoneWithName:@"UTC"];
     
     NSDate *date;
-    [formatter getObjectValue:&dateString forString:dateString range:nil error:nil];
+    [formatter getObjectValue:&date forString:dateString range:nil error:nil];
     
     return date;
 }
