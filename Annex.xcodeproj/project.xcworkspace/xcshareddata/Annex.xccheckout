@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B5997234-5CBD-4233-B94B-7529AFC0B999</string>
+	<string>5F687C56-FB89-4FAA-BF96-6B30771F95EA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Annex</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B875833B-7DB7-4673-B0C4-CC8EA67D548D</key>
-		<string>ssh://github.com/NudgeApps/Annex.git</string>
+		<key>32D4BA88-88A9-401A-9C49-3AFE71AB774E</key>
+		<string>ssh://github.com/quirkyinc/Annex.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Annex.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B875833B-7DB7-4673-B0C4-CC8EA67D548D</key>
+		<key>32D4BA88-88A9-401A-9C49-3AFE71AB774E</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/NudgeApps/Annex.git</string>
+	<string>ssh://github.com/quirkyinc/Annex.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B875833B-7DB7-4673-B0C4-CC8EA67D548D</string>
+	<string>32D4BA88-88A9-401A-9C49-3AFE71AB774E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B875833B-7DB7-4673-B0C4-CC8EA67D548D</string>
+			<string>32D4BA88-88A9-401A-9C49-3AFE71AB774E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Annex</string>
 		</dict>
