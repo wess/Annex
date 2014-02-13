@@ -39,6 +39,8 @@
 		0D126A02185A2C5800BF386C /* NSObject+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE564116D52C87006A16D2 /* NSObject+Annex.m */; };
 		0D29E81E185AB02F00E5C893 /* NSStringCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29E81D185AB02F00E5C893 /* NSStringCategory.m */; };
 		0D29E81F185AB0F300E5C893 /* NSString+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BE564416D52C95006A16D2 /* NSString+Annex.m */; };
+		0D35259118AD444800DACE4E /* UIActionSheet+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D35258F18AD444800DACE4E /* UIActionSheet+Annex.h */; };
+		0D35259218AD444800DACE4E /* UIActionSheet+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D35259018AD444800DACE4E /* UIActionSheet+Annex.m */; };
 		0D8E2056187DBBFB00DAA08D /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E2054187DBBFB00DAA08D /* UIImage+ImageEffects.h */; };
 		0D8E2057187DBBFB00DAA08D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E2055187DBBFB00DAA08D /* UIImage+ImageEffects.m */; };
 		0D8E2059187DBC4200DAA08D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8E2058187DBC4200DAA08D /* Accelerate.framework */; };
@@ -125,6 +127,8 @@
 		0D1269F7185A27E000BF386C /* Annex Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Annex Tests-Prefix.pch"; sourceTree = "<group>"; };
 		0D1269FF185A2BBF00BF386C /* NSObject (Annex).m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject (Annex).m"; sourceTree = "<group>"; };
 		0D29E81D185AB02F00E5C893 /* NSStringCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringCategory.m; sourceTree = "<group>"; };
+		0D35258F18AD444800DACE4E /* UIActionSheet+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Annex.h"; sourceTree = "<group>"; };
+		0D35259018AD444800DACE4E /* UIActionSheet+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Annex.m"; sourceTree = "<group>"; };
 		0D8E2054187DBBFB00DAA08D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		0D8E2055187DBBFB00DAA08D /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		0D8E2058187DBC4200DAA08D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -290,6 +294,7 @@
 				08BE563B16D52C52006A16D2 /* UIView */,
 				083F8D9B16E917E40025A312 /* UIButton */,
 				D782F7F4173E87840070F967 /* UIAlertView */,
+				0D35258E18AD443300DACE4E /* UIActionSheet */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -375,6 +380,15 @@
 				0D1269F7185A27E000BF386C /* Annex Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D35258E18AD443300DACE4E /* UIActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				0D35258F18AD444800DACE4E /* UIActionSheet+Annex.h */,
+				0D35259018AD444800DACE4E /* UIActionSheet+Annex.m */,
+			);
+			name = UIActionSheet;
 			sourceTree = "<group>";
 		};
 		4E00082117E0BC1300BBBE9C /* NSSet */ = {
@@ -507,6 +521,7 @@
 				083F8D9E16E917FF0025A312 /* UIButton+Annex.h in Headers */,
 				D743ED6017F33D9100EB5AFB /* AnnexRequestOperation.h in Headers */,
 				D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */,
+				0D35259118AD444800DACE4E /* UIActionSheet+Annex.h in Headers */,
 				D742334A18219D3500A33E4E /* NSURL+Annex.h in Headers */,
 				083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */,
 				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
@@ -617,6 +632,7 @@
 				08BE564E16D52CBD006A16D2 /* UIView+Annex.m in Sources */,
 				08FCE45118A196E400F9B131 /* UIBarButtonItem+Annex.m in Sources */,
 				D753C22D17ECBEE9009852F8 /* NSNumber+Annex.m in Sources */,
+				0D35259218AD444800DACE4E /* UIActionSheet+Annex.m in Sources */,
 				08BE565816D550EE006A16D2 /* NSDate+Annex.m in Sources */,
 				08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */,
 				083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */,

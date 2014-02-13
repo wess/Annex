@@ -67,13 +67,13 @@ static NSString *const AnnexAlertViewWithContextBlockKey	= @"AnnexAlertViewWithC
 	if (callback != NULL) {
 		callback(didCancel, buttonIndex);
 		
-		objc_removeAssociatedObjects(callback);
+        objc_setAssociatedObject(self, [AnnexAlertViewBlockKey UTF8String], nil, OBJC_ASSOCIATION_COPY);
 	}
 	
 	else if (callbackWithContext != NULL) {
 		callbackWithContext(alertView, didCancel, buttonIndex);
 		
-		objc_removeAssociatedObjects(callback);
+		objc_setAssociatedObject(self, [AnnexAlertViewWithContextBlockKey UTF8String], nil, OBJC_ASSOCIATION_COPY);
 	}
 }
 
