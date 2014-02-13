@@ -19,7 +19,11 @@ static NSString *const AnnexActionSheetBlockKey = @"AnnexActionSheetBlock";
        destructiveButtonTitle:(NSString *)destructiveButtonTitle
             otherButtonTitles:(NSString *)otherButtonTitles, ...
 {
-    self = [self initWithTitle:title delegate:self cancelButtonTitle:cancelButtonTitle destructiveButtonTitle:destructiveButtonTitle otherButtonTitles:nil];
+    self = [self initWithTitle:title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    
+    if (destructiveButtonTitle) {
+        self.destructiveButtonIndex = [self addButtonWithTitle:destructiveButtonTitle];
+    }
     
     va_list args;
     va_start(args, otherButtonTitles);
@@ -29,6 +33,10 @@ static NSString *const AnnexActionSheetBlockKey = @"AnnexActionSheetBlock";
     }
     
     va_end(args);
+    
+    if (cancelButtonTitle) {
+        self.cancelButtonIndex = [self addButtonWithTitle:cancelButtonTitle];
+    }
     
     return self;
 }
