@@ -22,6 +22,10 @@
 #import "UIImage+Annex.h"
 #import "UIImageView+Annex.h"
 #import "UIAlertView+Annex.h"
+#import "UITableView+Annex.h"
+#import "UIBarButtonItem+Annex.h"
+#import "UIActionSheet+Annex.h"
+
 
 // Shortcuts
 #define AnnexAppVersion         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]

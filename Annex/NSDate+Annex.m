@@ -670,4 +670,26 @@
     return [date humanDateSinceDate:date];
 }
 
++ (NSDate *)dateWithRFC3339String:(NSString *)dateString
+{
+    return [NSDate dateWithRFC3339String:dateString forLocal:[NSLocale currentLocale]];
+}
+
++ (NSDate *)dateWithRFC3339String:(NSString *)dateString forLocal:(NSLocale *)locale
+{
+    if(!dateString)
+        return nil;
+
+    NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
+    formatter.locale            = locale;
+    formatter.dateFormat        = @"yyyy-MM-dd'T'HH:mm:ssZ";
+    formatter.timeZone          = [NSTimeZone timeZoneWithName:@"UTC"];
+    
+    NSDate *date;
+    [formatter getObjectValue:&date forString:dateString range:nil error:nil];
+    
+    return date;
+}
+
+
 @end

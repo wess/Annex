@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.source                  = {:git => "https://github.com/wess/Annex.git", :tag => "1.0"}
   s.source_files            = "Annex/*.{h,m}"
   s.requires_arc            = true
-  s.frameworks              = "Foundation", "UIKit", "QuartzCore", "Security"
+  s.frameworks              = "Foundation", "UIKit", "QuartzCore", "Security", "Accelerate"
 end

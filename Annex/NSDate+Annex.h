@@ -623,6 +623,22 @@
  */
 + (NSString *)humanDateFromDate:(NSDate *)date toDate:(NSDate *)toDate;
 
+/**
+ Creates a date object from an RFC3339 specific string format.
+ 
+ @param dateString String representation of RFC3339 date.
+ */
++ (NSDate *)dateWithRFC3339String:(NSString *)dateString;
+
+/**
+ Creates a date object from an RFC3339 specific string format.
+ 
+ @param dateString String representation of RFC3339 date.
+ 
+ @param locale The local to use when formatting the date.
+ */
++ (NSDate *)dateWithRFC3339String:(NSString *)dateString forLocal:(NSLocale *)locale;
+
 @end
 
 
