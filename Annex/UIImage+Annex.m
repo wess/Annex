@@ -32,4 +32,22 @@
 
 }
 
+- (UIImage *)imageScaledToSize:(CGSize)size
+{
+    return [self imageScaledToSize:size opaque:NO];
+}
+
+- (UIImage *)imageScaledToSize:(CGSize)size opaque:(BOOL)opaque
+{
+    UIGraphicsBeginImageContextWithOptions(size, opaque, 0.0);
+    
+    [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 @end
