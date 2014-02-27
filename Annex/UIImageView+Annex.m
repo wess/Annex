@@ -82,7 +82,7 @@ static char ANNEX_PLACEHOLDER_IMAGE;
             }];
         }
     } else {
-        [self setImageForURL:url completion:^(UIImage *image, NSError *error) {
+        [AnnexImageCache imageFromURL:url completionHandler:^(UIImage *image, NSError *error) {
             if (error) {
                 NSLog(@"UIButton image loading failed: %@", error.debugDescription);
             }
