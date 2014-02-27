@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^AnnexImageViewCompletionBlock)(UIImage *image, NSError *error);
+
 @interface UIImageView (Annex)
 /**
  `UIImageView(Annex)` is an extension to UIImageView with additional functionality.
@@ -33,4 +35,20 @@
  */
 - (void)setImageForURL:(NSURL *)url withPlaceholderImage:(UIImage *)image;
 
+/**
+ Loads image for image view asyncronously from a URL and scale.
+ 
+ @param NSURL URL of image.
+ @param CGSize the size of the image you want scaled in post processing
+ */
+- (void)setImageForURL:(NSURL *)url scaledToSize:(CGSize)size;
+
+/**
+ Returns image for image view asyncronously from a URL with completion block for post processing.
+ This method does not set the image automatically. Must be performed in the completion block.
+ 
+ @param NSURL URL of image.
+ @param AnnexImageViewCompletionBlock completion block
+ */
+- (void)setImageForURL:(NSURL *)url completion:(AnnexImageViewCompletionBlock)completion;
 @end

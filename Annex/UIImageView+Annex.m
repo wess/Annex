@@ -26,35 +26,94 @@ static char ANNEX_PLACEHOLDER_IMAGE;
 
 - (void)setImageForURL:(NSURL *)url
 {
-    if([AnnexImageCache imageForKey:url.absoluteString])
-    {
-        self.image = [AnnexImageCache imageForKey:url.absoluteString];
-    }
-    else
-    {
-        if(self.placeholderImage)
-            self.image = self.placeholderImage;
-        
-        __weak typeof(self) weakSelf = self;
-        [AnnexImageCache imageFromURL:url completionHandler:^(UIImage *image, NSError *error) {
-            if(error)
-            {
-                NSLog(@"UIButton image loading failed: %@", error.debugDescription);
-            }
-            else
-            {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    weakSelf.image = image;
-                });
-            }
-        }];
-    }
+    if (self.placeholderImage)
+        self.image = self.placeholderImage;
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [self setImageForURL:url completion:^(UIImage *image, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.image = image;
+        });
+    }];
 }
 
 - (void)setImageForURL:(NSURL *)url withPlaceholderImage:(UIImage *)image
 {
     self.placeholderImage = image;
     [self setImageForURL:url];
+}
+
+- (void)setImageForURL:(NSURL *)url scaledToSize:(CGSize)size
+{
+    if (self.placeholderImage)
+        self.image = self.placeholderImage;
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [self setImageForURL:url completion:^(UIImage *image, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                NSLog(@"UIButton image loading failed: %@", error.debugDescription);
+            }
+            
+            __block UIImage *imageResult = image;
+            
+            if (image) {
+                if (CGSizeEqualToSize(size, CGSizeZero)) {
+                    imageResult = image;
+                } else {
+                    NSString *kScaledImageKey = [url.absoluteString stringByAppendingFormat:@"_size_%f_%f", size.width, size.height];
+                    
+                    if ([AnnexImageCache imageForKey:kScaledImageKey]) {
+                        imageResult = [AnnexImageCache imageForKey:kScaledImageKey];
+                    } else {
+                        UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+                        
+                        [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+                        
+                        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+                        
+                        UIGraphicsEndImageContext();
+                        
+                        imageResult = newImage;
+                        
+                        if (imageResult) {
+                            [AnnexImageCache setImage:imageResult forKey:kScaledImageKey];
+                        }
+                    }
+                }
+            }
+            
+            weakSelf.image = imageResult;
+        });
+    }];
+}
+
+- (void)setImageForURL:(NSURL *)url completion:(AnnexImageViewCompletionBlock)completion
+{
+    if([AnnexImageCache imageForKey:url.absoluteString])
+    {
+        if (completion != NULL) {
+            completion([AnnexImageCache imageForKey:url.absoluteString], nil);
+        }
+    }
+    else
+    {
+        [AnnexImageCache imageFromURL:url completionHandler:^(UIImage *image, NSError *error) {
+            if (error) {
+                NSLog(@"UIButton image loading failed: %@", error.debugDescription);
+            }
+            
+            if (image) {
+                [AnnexImageCache setImage:image forKey:url.absoluteString];
+            }
+            
+            if (completion != NULL) {
+                completion(image, error);
+            }
+        }];
+    }
 }
 
 @end
