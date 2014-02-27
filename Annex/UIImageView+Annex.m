@@ -67,6 +67,16 @@ static char ANNEX_PLACEHOLDER_IMAGE;
 
 - (void)setImageForURL:(NSURL *)url scaledToSize:(CGSize)size completion:(AnnexImageViewCompletionBlock)completion
 {
+    if (url == nil) {
+        if (completion != NULL) {
+            [NSObject executeBlockOnMainThread:^{
+                completion(nil, nil);
+            }];
+        }
+        
+        return;
+    }
+    
     NSString *kImageKey;
     
     if (CGSizeEqualToSize(size, CGSizeZero)) {
