@@ -51,4 +51,14 @@ typedef void(^AnnexImageViewCompletionBlock)(UIImage *image, NSError *error);
  @param AnnexImageViewCompletionBlock completion block
  */
 - (void)setImageForURL:(NSURL *)url completion:(AnnexImageViewCompletionBlock)completion;
+
+/**
+ Returns image for image view asyncronously from a URL with completion block for post processing.
+ This method does not set the image automatically. Must be performed in the completion block.
+ 
+ @param NSURL URL of image.
+ @param CGSize size to scale the image to return in the completion block
+ @param AnnexImageViewCompletionBlock completion block
+ */
+- (void)setImageForURL:(NSURL *)url scaledToSize:(CGSize)size completion:(AnnexImageViewCompletionBlock)completion;
 @end
