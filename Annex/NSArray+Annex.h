@@ -49,6 +49,14 @@
 - (instancetype)arrayByRemovingObjectsOfClass:(Class)aClass;
 
 /**
+ Checks to see if the provided index is within the bounds of the array
+ 
+ @param NSInteger index to check for.
+ @return BOOL returns YES if index >= 0 && index < self.count.
+ */
+- (BOOL)isIndexWithinBounds:(NSInteger)index;
+
+/**
  Returns the object at the index which is a a kind of a specific class.
 
  @param NSUInteger Index of the item

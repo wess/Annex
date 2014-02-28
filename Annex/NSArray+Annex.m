@@ -54,6 +54,15 @@
     return [results copy];
 }
 
+- (BOOL)isIndexWithinBounds:(NSInteger)index
+{
+    if (index >= 0 && index < self.count) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 - (id)objectAtIndex:(NSUInteger)index ifKindOf:(Class)kind
 {
     return [self objectAtIndex:index ifKindOf:kind defaultValue:nil];
