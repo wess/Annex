@@ -52,5 +52,19 @@ do { \
 #define ALog(fmt, ...)
 #endif
 
+#ifndef weakify
+#define weakify(o) try {} @finally {} \
+__weak typeof(o) nf_weak_ ## o = o
+#endif
+
+#ifndef strongify
+#define strongify(o) try {} @finally {} \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+typeof(nf_weak_ ## o) o = nf_weak_ ## o \
+_Pragma("clang diagnostic pop")
+#endif
+
+
 #endif
 

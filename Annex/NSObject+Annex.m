@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+Annex.h"
+#import "Annex.h"
 #import <objc/runtime.h>
 
 @implementation NSObject (Annex)
@@ -110,6 +111,17 @@
 	dispatch_after(popTime, queue, block);
 }
 
+
+#pragma mark -
+#pragma mark - Block based Change Methods
+- (void)changingValueForKey:(NSString *)key handler:(AnnexWeakReferencedBlock)handler
+{
+    [self willChangeValueForKey:key];
+    if(handler)
+        handler(self);
+    [self didChangeValueForKey:key];
+}
+
 @end
 
 #pragma mark -
@@ -136,5 +148,6 @@
 {
 	[self executeBlockInBackground:block afterDelay:delay];
 }
+
 
 @end

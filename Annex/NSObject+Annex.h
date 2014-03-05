@@ -79,6 +79,14 @@ typedef void(^AnnexVoidBlock)(void);
  */
 + (void)executeBlockOnMainThread:(AnnexVoidBlock)block afterDelay:(NSTimeInterval)delay;
 
+/**
+ Block based handling of will/DidChange value for key.
+ 
+ @params key    Name of key that is changing in the object.
+ @params Block  Executed when change occurs.
+ */
+- (void)changingValueForKey:(NSString *)key handler:(AnnexWeakReferencedBlock)handler;
+
 @end
 
 @interface NSObject (AnnexDeprecatedMethods)
