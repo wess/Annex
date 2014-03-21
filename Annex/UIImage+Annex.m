@@ -47,8 +47,6 @@
     CGFloat scaledWidth = targetSize.width;
     CGFloat scaledHeight = targetSize.height;
     
-    CGPoint thumbnailPoint = CGPointZero;
-    
     if (proportionally) {
         // get the proportional target size
         CGSize imageSize = self.size;
@@ -72,19 +70,12 @@
             
             scaledWidth = width * scaleFactor;
             scaledHeight = height * scaleFactor;
-            
-            if (widthFactor < heightFactor) {
-                thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
-            } else if (widthFactor > heightFactor) {
-                thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
-            }
         }
     }
     
     CGSize scaledSize = CGSizeMake(scaledWidth, scaledHeight);
     
     CGRect imageFrame = CGRectZero;
-    imageFrame.origin = thumbnailPoint;
     imageFrame.size = scaledSize;
     
     UIGraphicsBeginImageContextWithOptions(scaledSize, opaque, 0.0);
