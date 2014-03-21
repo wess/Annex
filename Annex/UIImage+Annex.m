@@ -39,9 +39,57 @@
 
 - (UIImage *)imageScaledToSize:(CGSize)size opaque:(BOOL)opaque
 {
-    UIGraphicsBeginImageContextWithOptions(size, opaque, 0.0);
+    return [self imageScaledToSize:size opaque:opaque proportionally:YES];
+}
+
+- (UIImage *)imageScaledToSize:(CGSize)targetSize opaque:(BOOL)opaque proportionally:(BOOL)proportionally
+{
+    CGFloat scaledWidth = targetSize.width;
+    CGFloat scaledHeight = targetSize.height;
     
-    [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    CGPoint thumbnailPoint = CGPointZero;
+    
+    if (proportionally) {
+        // get the proportional target size
+        CGSize imageSize = self.size;
+        CGFloat width = imageSize.width;
+        CGFloat height = imageSize.height;
+        
+        CGFloat targetWidth = targetSize.width;
+        CGFloat targetHeight = targetSize.height;
+        
+        CGFloat scaleFactor = 0.0;
+        
+        if (CGSizeEqualToSize(imageSize, targetSize) == NO) {
+            CGFloat widthFactor = targetWidth/width;
+            CGFloat heightFactor = targetHeight/height;
+            
+            if (widthFactor < heightFactor) {
+                scaleFactor = widthFactor;
+            } else {
+                scaleFactor = heightFactor;
+            }
+            
+            scaledWidth = width * scaleFactor;
+            scaledHeight = height * scaleFactor;
+            
+            if (widthFactor < heightFactor) {
+                thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+            } else if (widthFactor > heightFactor) {
+                thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
+            }
+        }
+    }
+    
+    CGSize scaledSize = CGSizeMake(scaledWidth, scaledHeight);
+    
+    CGRect imageFrame = CGRectZero;
+    imageFrame.origin = thumbnailPoint;
+    imageFrame.size = scaledSize;
+    
+    UIGraphicsBeginImageContextWithOptions(scaledSize, opaque, 0.0);
+    
+    [self drawInRect:imageFrame];
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     

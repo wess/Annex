@@ -33,7 +33,7 @@
 - (UIImage *)fillImageWithColor:(UIColor *)color;
 
 /**
- Returns a new image scaled to size.
+ Returns a new image scaled proportionally to size.
  
  @param CGSize size to scale image to.
  
@@ -42,7 +42,7 @@
 - (UIImage *)imageScaledToSize:(CGSize)size;
 
 /**
- Returns a new image scaled to size. Can set if image is opaque or not
+ Returns a new image scaled proportionally to size. Can set if image is opaque or not
  
  @param CGSize size to scale image to.
  @param BOOL whether the image is opaque or not
@@ -50,4 +50,15 @@
  @return UIImage image scaled to size.
  */
 - (UIImage *)imageScaledToSize:(CGSize)size opaque:(BOOL)opaque;
+
+/**
+ Returns a new image scaled to size. Can set if image is opaque and/or proportionally
+ 
+ @param CGSize size to scale image to.
+ @param BOOL whether the image is opaque or not.
+ @param BOOL whether the image should be proportionally sized to set size.
+ 
+ @return UIImage image scaled to size.
+ */
+- (UIImage *)imageScaledToSize:(CGSize)targetSize opaque:(BOOL)opaque proportionally:(BOOL)proportionally;
 @end
