@@ -19,7 +19,6 @@
 @end
 
 @implementation AnnexImageCache
-static NSTimeInterval   const AnnexImageCacheTimeoutInterval    = 10;
 static NSInteger        const AnnexImageCacheMaxConnections     = 5;
 static NSString        *const AnnexImageCacheTimestampKey       = @"AnnexImageCacheTimestampKey";
 static NSString        *const AnnexImageCacheImageKey           = @"AnnexImageCacheImageKey";

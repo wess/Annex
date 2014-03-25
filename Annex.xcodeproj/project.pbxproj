@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0829136C18B556DB00836807 /* UITableView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0829136A18B556DB00836807 /* UITableView+Annex.h */; };
 		0829136D18B556DB00836807 /* UITableView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0829136B18B556DB00836807 /* UITableView+Annex.m */; };
+		083A71F018E217EB00204B58 /* NSNumberFormatter+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 083A71EE18E217EB00204B58 /* NSNumberFormatter+Annex.h */; };
+		083A71F118E217EB00204B58 /* NSNumberFormatter+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 083A71EF18E217EB00204B58 /* NSNumberFormatter+Annex.m */; };
 		083F8D9E16E917FF0025A312 /* UIButton+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 083F8D9C16E917FF0025A312 /* UIButton+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 083F8D9D16E917FF0025A312 /* UIButton+Annex.m */; };
 		083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 083F8DB416EA2F8B0025A312 /* AnnexKeyChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -97,6 +99,8 @@
 /* Begin PBXFileReference section */
 		0829136A18B556DB00836807 /* UITableView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Annex.h"; sourceTree = "<group>"; };
 		0829136B18B556DB00836807 /* UITableView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Annex.m"; sourceTree = "<group>"; };
+		083A71EE18E217EB00204B58 /* NSNumberFormatter+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumberFormatter+Annex.h"; sourceTree = "<group>"; };
+		083A71EF18E217EB00204B58 /* NSNumberFormatter+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumberFormatter+Annex.m"; sourceTree = "<group>"; };
 		083F8D9C16E917FF0025A312 /* UIButton+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Annex.h"; sourceTree = "<group>"; };
 		083F8D9D16E917FF0025A312 /* UIButton+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Annex.m"; sourceTree = "<group>"; };
 		083F8DB416EA2F8B0025A312 /* AnnexKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexKeyChain.h; sourceTree = "<group>"; };
@@ -197,6 +201,15 @@
 			name = UITableView;
 			sourceTree = "<group>";
 		};
+		083A71ED18E217E100204B58 /* NSNumberFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				083A71EE18E217EB00204B58 /* NSNumberFormatter+Annex.h */,
+				083A71EF18E217EB00204B58 /* NSNumberFormatter+Annex.m */,
+			);
+			name = NSNumberFormatter;
+			sourceTree = "<group>";
+		};
 		083F8D9B16E917E40025A312 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +303,7 @@
 		08BE563A16D52C3A006A16D2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				083A71ED18E217E100204B58 /* NSNumberFormatter */,
 				0829136918B556D000836807 /* UITableView */,
 				08FCE44D18A1968300F9B131 /* UIBarButtonItem */,
 				D753C22917ECBEDE009852F8 /* NSNumber */,
@@ -540,6 +554,7 @@
 				083F8DB616EA2F8B0025A312 /* AnnexKeyChain.h in Headers */,
 				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
 				08FCE45018A196E400F9B131 /* UIBarButtonItem+Annex.h in Headers */,
+				083A71F018E217EB00204B58 /* NSNumberFormatter+Annex.h in Headers */,
 				D753C22C17ECBEE9009852F8 /* NSNumber+Annex.h in Headers */,
 				D771BDDF17A16367005F9845 /* AnnexImageCache.h in Headers */,
 				D771BDE417A17E6C005F9845 /* UIImageView+Annex.h in Headers */,
@@ -644,6 +659,7 @@
 				0D8E2057187DBBFB00DAA08D /* UIImage+ImageEffects.m in Sources */,
 				08BE564816D52CA0006A16D2 /* NSDictionary+Annex.m in Sources */,
 				08BE564B16D52CB3006A16D2 /* UIColor+Annex.m in Sources */,
+				083A71F118E217EB00204B58 /* NSNumberFormatter+Annex.m in Sources */,
 				08BE564E16D52CBD006A16D2 /* UIView+Annex.m in Sources */,
 				08FCE45118A196E400F9B131 /* UIBarButtonItem+Annex.m in Sources */,
 				D753C22D17ECBEE9009852F8 /* NSNumber+Annex.m in Sources */,
