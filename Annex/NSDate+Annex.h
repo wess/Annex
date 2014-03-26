@@ -5,7 +5,7 @@
 //  Created by Wess Cope on 2/20/13.
 //  Copyright (c) 2013 Wess Cope. All rights reserved.
 //
-// Provided by Erica Sadun's https://github.com/erica/NSDate-Extensions
+// Inspired by Erica Sadun's https://github.com/erica/NSDate-Extensions
 //
 
 #import <Foundation/Foundation.h>
@@ -29,7 +29,7 @@
 /**
  Provides a short cut to get to get the next, closest, hour with a calendar.
  */
-- (NSInteger) nearestHourWithCalendar:(NSCalendar *)calendar;
+- (NSInteger)nearestHourWithCalendar:(NSCalendar *)calendar;
 
 /**
  Provides a short cut to get a date's hour.
@@ -594,7 +594,7 @@
  
  @return Date object created from provided month, day, year and calendar.
  **/
-+ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year calendar:(NSString *)calendar;
++ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year calendarIdentifier:(NSString *)calendarIdentifier;
 
 /**
  Creates a natural language date from current date to another date.
@@ -640,5 +640,10 @@
 + (NSDate *)dateWithRFC3339String:(NSString *)dateString forLocal:(NSLocale *)locale;
 
 @end
+
+@interface NSDate (Annex_Deprecated)
++ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year calendar:(NSString *)calendar __deprecated_msg("Use +dateWithMonth:day:year:calendarIdentifier: instead.");
+@end
+
 
 

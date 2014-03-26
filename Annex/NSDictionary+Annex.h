@@ -138,4 +138,5 @@
  */
 - (NSDate*)dateForKey:(id)key defaultValue:(NSDate*)defaultValue;
 
+- (instancetype)filterObjectsUsingBlock:(BOOL (^)(id<NSCopying>, id))block;
 @end

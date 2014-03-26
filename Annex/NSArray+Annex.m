@@ -123,4 +123,13 @@
     return [self objectAtIndex:index ifKindOf:[NSDate class] defaultValue:defaultValue];
 }
 
+- (instancetype)filterObjectsUsingBlock:(BOOL (^)(id))block
+{
+    return [[self combineWithObject:[NSMutableArray array] block:^NSMutableArray*(NSMutableArray* array, id object) {
+        if(block(object))
+            [array addObject:object];
+        return array;
+    }] copy];
+}
+
 @end

@@ -138,4 +138,5 @@
  */
 - (NSDate*)dateAtIndex:(NSUInteger)index defaultValue:(NSDate*)defaultValue;
 
+- (instancetype)filterObjectsUsingBlock:(BOOL (^)(id))block;
 @end

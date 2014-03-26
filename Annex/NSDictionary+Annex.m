@@ -150,4 +150,16 @@
     return [self objectForKey:key ifKindOf:[NSDate class] defaultValue:defaultValue];
 }
 
+- (instancetype)filterObjectsUsingBlock:(BOOL (^)(id<NSCopying>, id))block
+{
+    return [[self combineWithObject:[NSMutableDictionary dictionary] block:^ NSMutableDictionary* (NSMutableDictionary* dictionary, id<NSCopying> key, id value) {
+        if(block(key, value))
+            dictionary[key] = value;
+        
+        return dictionary;
+    }] copy];
+}
+
+
+
 @end

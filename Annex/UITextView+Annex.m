@@ -21,7 +21,7 @@
     CGSize textSize;
     if(ANNEX_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0.0"))
     {
-        CGRect textBound        = [text boundingRectWithSize:constraintSize options:0 attributes:nil context:nil];
+        CGRect textBound = [text boundingRectWithSize:constraintSize options:0 attributes:nil context:nil];
         textSize         = textBound.size;
     }
     else

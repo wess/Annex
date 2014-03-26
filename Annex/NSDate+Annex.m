@@ -600,7 +600,7 @@
 
 + (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year
 {
-    return [NSDate dateWithMonth:month day:day year:year calendar:NSGregorianCalendar];
+    return [NSDate dateWithMonth:month day:day year:year calendarIdentifier:NSGregorianCalendar];
 }
 
 + (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year withCalendar:(NSCalendar *)calendar
@@ -613,14 +613,14 @@
     return [calendar dateFromComponents:dateComponents];
 }
 
-+ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year calendar:(NSString *)calendar
++ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year calendarIdentifier:(NSString *)calendarIdentifier
 {
     NSDateComponents *dateComponents    = [[NSDateComponents alloc] init];
     dateComponents.year                 = year;
     dateComponents.month                = month;
     dateComponents.day                  = day;
     
-    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:calendar];
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:calendarIdentifier];
     
     return [cal dateFromComponents:dateComponents];
 }
@@ -693,3 +693,12 @@
 
 
 @end
+
+
+@implementation NSDate (Annex_Deprecated)
++ (NSDate *)dateWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year calendar:(NSString *)calendar
+{
+    return [NSDate dateWithMonth:month day:day year:year calendarIdentifier:calendar];
+}
+@end
+

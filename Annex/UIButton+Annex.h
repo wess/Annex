@@ -31,12 +31,4 @@
  */
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
 
-/**
- Asyncronously sets the image for a Button from a URL/Image path.
- 
- @param NSURL           URL of image to load.
- @param UIControlState  State of button that will display image.
- */
-- (void)setImageForURL:(NSURL *)url forState:(UIControlState)state;
-
 @end
