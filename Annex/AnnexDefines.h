@@ -28,5 +28,18 @@ code; \
 _Pragma("clang diagnostic pop"); \
 } while(0);
 
+#ifndef weakify
+#define weakify(context) try {} @finally {} \
+__weak typeof(context) nf_weak_ ## context = context
+#endif
+
+#ifndef strongify
+#define strongify(o) try {} @finally {} \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+typeof(nf_weak_ ## o) o = nf_weak_ ## o \
+_Pragma("clang diagnostic pop")
+#endif
+
 
 #endif
