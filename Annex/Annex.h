@@ -28,6 +28,7 @@
 #import "UITableView+Annex.h"
 #import "UIBarButtonItem+Annex.h"
 #import "UIActionSheet+Annex.h"
+#import "UIScrollView+Annex.h"
 #import "AnnexLog.h"
 #import "AnnexDefines.h"
 
