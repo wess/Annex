@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080F3B2818F59F6600FD9402 /* UIScrollView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 080F3B2618F59F6600FD9402 /* UIScrollView+Annex.h */; };
+		080F3B2918F59F6600FD9402 /* UIScrollView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 080F3B2718F59F6600FD9402 /* UIScrollView+Annex.m */; };
 		0813D3C718E319D800A85178 /* AnnexLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 0813D3C618E319D800A85178 /* AnnexLog.h */; };
 		0813D3CA18E31A0D00A85178 /* AnnexDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 0813D3C918E31A0D00A85178 /* AnnexDefines.h */; };
 		0829136C18B556DB00836807 /* UITableView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0829136A18B556DB00836807 /* UITableView+Annex.h */; };
@@ -87,6 +89,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		080F3B2618F59F6600FD9402 /* UIScrollView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Annex.h"; sourceTree = "<group>"; };
+		080F3B2718F59F6600FD9402 /* UIScrollView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Annex.m"; sourceTree = "<group>"; };
 		0813D3C618E319D800A85178 /* AnnexLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexLog.h; sourceTree = "<group>"; };
 		0813D3C918E31A0D00A85178 /* AnnexDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexDefines.h; sourceTree = "<group>"; };
 		0829136A18B556DB00836807 /* UITableView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Annex.h"; sourceTree = "<group>"; };
@@ -172,6 +176,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080F3B2518F59F3500FD9402 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				080F3B2618F59F6600FD9402 /* UIScrollView+Annex.h */,
+				080F3B2718F59F6600FD9402 /* UIScrollView+Annex.m */,
+			);
+			name = UIScrollView;
+			sourceTree = "<group>";
+		};
 		0829136918B556D000836807 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +276,7 @@
 		08BE563A16D52C3A006A16D2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				080F3B2518F59F3500FD9402 /* UIScrollView */,
 				083A71ED18E217E100204B58 /* NSNumberFormatter */,
 				D753C22917ECBEDE009852F8 /* NSNumber */,
 				D742334718219D2000A33E4E /* NSURL */,
@@ -462,6 +476,7 @@
 				083F8D9E16E917FF0025A312 /* UIButton+Annex.h in Headers */,
 				D782F7F7173E87CE0070F967 /* UIAlertView+Annex.h in Headers */,
 				0D35259118AD444800DACE4E /* UIActionSheet+Annex.h in Headers */,
+				080F3B2818F59F6600FD9402 /* UIScrollView+Annex.h in Headers */,
 				D742334A18219D3500A33E4E /* NSURL+Annex.h in Headers */,
 				D7E71B1E1796EAF4005A76AB /* NSManagedObjectContext+Annex.h in Headers */,
 				0813D3CA18E31A0D00A85178 /* AnnexDefines.h in Headers */,
@@ -579,6 +594,7 @@
 				D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */,
 				4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */,
 				D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */,
+				080F3B2918F59F6600FD9402 /* UIScrollView+Annex.m in Sources */,
 				0829136D18B556DB00836807 /* UITableView+Annex.m in Sources */,
 				D743B06017A1C8710068D596 /* NSArray+Annex.m in Sources */,
 				D7E31C4917BA829700BA7AC2 /* UIImage+Annex.m in Sources */,
