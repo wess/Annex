@@ -68,6 +68,9 @@
 /**
  Returns the object at the index which is a a kind of a specific class or a default
  value if the type of class differs.
+ 
+ Note: Out of bounds access returns the default value, and will not throw an
+       exception like `objectAtIndex:ifKindOf:` will.
 
  @param NSUInteger Index of the item
  @param Class The kind of class we expect

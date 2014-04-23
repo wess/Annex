@@ -65,11 +65,15 @@
 
 - (id)objectAtIndex:(NSUInteger)index ifKindOf:(Class)kind
 {
-    return [self objectAtIndex:index ifKindOf:kind defaultValue:nil];
+    id obj = self[index];
+    return [obj isKindOfClass:kind] ? obj : nil;
 }
 
 - (id)objectAtIndex:(NSUInteger)index ifKindOf:(Class)kind defaultValue:(id)defaultValue
 {
+    if([self count] <= index)
+        return defaultValue;
+
     id obj = self[index];
     return [obj isKindOfClass:kind] ? obj : defaultValue;
 }
