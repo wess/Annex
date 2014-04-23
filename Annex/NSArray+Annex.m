@@ -71,7 +71,7 @@
 
 - (id)objectAtIndex:(NSUInteger)index ifKindOf:(Class)kind defaultValue:(id)defaultValue
 {
-    if([self count] <= index)
+    if([self isIndexWithinBounds:index])
         return defaultValue;
 
     id obj = self[index];
