@@ -32,6 +32,15 @@
 - (NSArray *)mapObjectsWithBlock:(id(^)(id object))block;
 
 /**
+ Filter objects in an array using a block and returns a subset of the array after
+ the filter has been applied.
+
+ @param Block called with every object inside the array and returns object.
+ @return Array Subset of self after the filter has been applied to all items.
+ */
+- (NSArray *)filterObjectsWithBlock:(BOOL (^)(id object))block;
+
+/**
  Removes all NSNull objects and invokes -withoutNulls on any object contained in
  the array with the assumption that it will perform the same task: Iteratively
  remove NSNulls from the collection.

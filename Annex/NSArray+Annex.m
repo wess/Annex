@@ -26,6 +26,17 @@
     }] copy];
 }
 
+- (NSArray *)filterObjectsWithBlock:(BOOL (^)(id object))block
+{
+    return [[self combineWithObject:[NSMutableArray array] block:^NSMutableArray* (NSMutableArray* acc, id object) {
+        BOOL keep = block(object);
+        if(keep)
+            return [acc addObject:object];
+        else
+            return acc;
+    }] copy];
+}
+
 - (NSArray *)withoutNulls
 {
     NSArray* temp = [self arrayByRemovingObjectsOfClass:[NSNull class]];
