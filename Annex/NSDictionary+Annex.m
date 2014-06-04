@@ -92,6 +92,17 @@
     return [obj isKindOfClass:kind] ? obj : defaultValue;
 }
 
+- (id)valueForKeyPath:(NSString*)keypath ifKindOf:(Class)kind
+{
+    return [self valueForKeyPath:keypath ifKindOf:kind defaultValue:nil];
+}
+
+- (id)valueForKeyPath:(NSString*)keypath ifKindOf:(Class)kind defaultValue:(id)defaultValue
+{
+    id obj = [self valueForKeyPath:keypath];
+    return [obj isKindOfClass:kind] ? obj : defaultValue;
+}
+
 #pragma mark - Type specific helpers
 
 - (NSArray*)arrayForKey:(id)key
@@ -104,6 +115,16 @@
     return [self objectForKey:key ifKindOf:[NSArray class] defaultValue:defaultValue];
 }
 
+- (NSArray*)arrayForKeyPath:(NSString*)keypath
+{
+    return [self arrayForKeyPath:keypath defaultValue:@[]];
+}
+
+- (NSArray*)arrayForKeyPath:(NSString*)keypath defaultValue:(NSArray*)defaultValue
+{
+    return [self valueForKeyPath:keypath ifKindOf:[NSArray class] defaultValue:defaultValue];
+}
+
 - (NSDictionary*)dictionaryForKey:(id)key
 {
     return [self dictionaryForKey:key defaultValue:@{}];
@@ -112,6 +133,16 @@
 - (NSDictionary*)dictionaryForKey:(id)key defaultValue:(NSDictionary*)defaultValue
 {
     return [self objectForKey:key ifKindOf:[NSDictionary class] defaultValue:defaultValue];
+}
+
+- (NSDictionary*)dictionaryForKeyPath:(NSString*)keypath
+{
+    return [self dictionaryForKeyPath:keypath defaultValue:@{}];
+}
+
+- (NSDictionary*)dictionaryForKeyPath:(NSString*)keypath defaultValue:(NSDictionary*)defaultValue
+{
+    return [self valueForKeyPath:keypath ifKindOf:[NSDictionary class] defaultValue:defaultValue];
 }
 
 - (NSString*)stringForKey:(id)key
@@ -124,6 +155,16 @@
     return [self objectForKey:key ifKindOf:[NSString class] defaultValue:defaultValue];
 }
 
+- (NSString*)stringForKeyPath:(NSString*)keypath
+{
+    return [self stringForKeyPath:keypath defaultValue:@""];
+}
+
+- (NSString*)stringForKeyPath:(NSString*)keypath defaultValue:(NSString*)defaultValue
+{
+    return [self valueForKeyPath:keypath ifKindOf:[NSString class] defaultValue:@""];
+}
+
 - (NSNumber*)numberForKey:(id)key
 {
     return [self numberForKey:key defaultValue:nil];
@@ -134,10 +175,26 @@
     return [self objectForKey:key ifKindOf:[NSNumber class] defaultValue:defaultValue];
 }
 
+- (NSNumber*)numberForKeyPath:(NSString*)keypath
+{
+    return [self numberForKeyPath:keypath defaultValue:nil];
+}
+
+- (NSNumber*)numberForKeyPath:(NSString*)keypath defaultValue:(NSNumber*)defaultValue
+{
+    return [self valueForKeyPath:keypath ifKindOf:[NSNumber class] defaultValue:defaultValue];
+}
+
 - (BOOL)boolForKey:(id)key defaultValue:(BOOL)defaultValue
 {
     NSNumber* defVal = @(defaultValue);
     return [[self objectForKey:key ifKindOf:[NSNumber class] defaultValue:defVal] boolValue];
+}
+
+- (BOOL)boolForKeyPath:(NSString*)keypath defaultValue:(BOOL)defaultValue
+{
+    NSNumber* defVal = @(defaultValue);
+    return [[self valueForKeyPath:keypath ifKindOf:[NSNumber class] defaultValue:defVal] boolValue];
 }
 
 - (NSDate*)dateForKey:(id)key
@@ -148,6 +205,16 @@
 - (NSDate*)dateForKey:(id)key defaultValue:(NSDate*)defaultValue
 {
     return [self objectForKey:key ifKindOf:[NSDate class] defaultValue:defaultValue];
+}
+
+- (NSDate*)dateForKeyPath:(NSString*)keypath
+{
+    return [self dateForKeyPath:keypath defaultValue:nil];
+}
+
+- (NSDate*)dateForKeyPath:(NSString*)keypath defaultValue:(NSDate*)defaultValue
+{
+    return [self valueForKeyPath:keypath ifKindOf:[NSDate class] defaultValue:defaultValue];
 }
 
 @end

@@ -84,6 +84,26 @@
 - (id)objectForKey:(id)key ifKindOf:(Class)kind defaultValue:(id)defaultValue;
 
 /**
+ Returns the object at the specified key path if it matches a specific class.
+ 
+ @param keypath Keypath of the item
+ @param kind The kind of class we expect
+ @return The object at that keypath or nil if not found.
+ */
+- (id)valueForKeyPath:(NSString*)keypath ifKindOf:(Class)kind;
+
+/**
+ Returns the object with the key which is a kind of a given class or a default
+ value if the type of the class differs.
+
+ @param keypath Keypath of the item
+ @param kind The kind of class we expect
+ @param defaultValue The default value to return if typechecking fails
+ @return The object at the keypath or nil if not found.
+ */
+- (id)valueForKeyPath:(NSString*)keypath ifKindOf:(Class)kind defaultValue:(id)defaultValue;
+
+/**
  See arrayForKey:defaultValue: where defaultValue is empty array.
  */
 - (NSArray*)arrayForKey:(id)key;
