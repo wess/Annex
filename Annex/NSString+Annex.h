@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern const NSString *AnnexStringCreditCardFormat;
+extern const NSString *AnnexStringUSPhoneNumberFormat;
+
 @interface NSString (Annex)
 @property (readonly, nonatomic) NSString *camelCaseString;
 @property (readonly, nonatomic) NSString *underscoreString;
@@ -125,6 +128,63 @@
  */
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone;
 
+/**
+ Formats a string with a pattern.
+ 
+ @param string  String to format.
+ @param pattern Pattern to use to format string ( ###-###-#### )
+ @return        String formatted against pattern
+ */
++ (NSString *)formatString:(NSString *)string withPattern:(NSString *)pattern;
+
+/**
+ Formats a string with a pattern.
+ 
+ @param string      String to format.
+ @param pattern     Pattern to use to format string ( ###-###-#### )
+ @param character   String (character) to replace in pattern.
+ @return            String formatted against pattern
+ */
++ (NSString *)formatString:(NSString *)string withPattern:(NSString *)pattern patternCharacter:(NSString *)character;
+
+/**
+ Formats a string with a pattern.
+ 
+ @param string      String to format.
+ @param pattern     Pattern to use to format string ( ###-###-#### )
+ @param character   String (character) to replace in pattern.
+ @param placeholder String to use for empty spaces in pattern.
+ @return            String formatted against pattern
+ */
++ (NSString *)formatString:(NSString *)string withPattern:(NSString *)pattern patternCharacter:(NSString *)character placeholder:(NSString *)placeholder;
+
+/**
+ Formats a string with a pattern.
+ 
+ @param pattern Pattern to use to format current string ( ###-###-#### )
+ @return        String formatted against pattern
+ */
+- (NSString *)formatStringWithPattern:(NSString *)pattern;
+
+/**
+ Formats a string with a pattern.
+ 
+ @param pattern     Pattern to use to format current string ( ###-###-#### )
+ @param character   String (character) to replace in pattern.
+ @return            String formatted against pattern
+ */
+- (NSString *)formatStringWithPattern:(NSString *)pattern patternCharacter:(NSString *)character;
+
+/**
+ Formats a string with a pattern.
+ 
+ @param pattern     Pattern to use to format current string ( ###-###-#### )
+ @param character   String (character) to replace in pattern.
+ @param placeholder String to use for empty spaces in pattern.
+ @return            String formatted against pattern
+ */
+- (NSString *)formatStringWithPattern:(NSString *)pattern patternCharacter:(NSString *)character placeholder:(NSString *)placeholder;
+
 @end
 
 @interface NSString (DeprecatedMethods)
@@ -135,5 +195,6 @@
  @return    String created by the system.
  */
 + (NSString *)uuid __deprecated_msg("Use [NSString UUIDString] instead");
+
 
 @end

@@ -10,6 +10,9 @@
 #import <CommonCrypto/CommonCrypto.h>
 #import "NSArray+Annex.h"
 
+NSString *AnnexStringCreditCardFormat       = @"#### #### #### ####";
+NSString *AnnexStringUSPhoneNumberFormat    = @"(###) ###-####";
+
 @implementation NSString (Annex)
 
 - (NSString *)camelCaseString
@@ -208,6 +211,64 @@
     return nil;
 }
 
+# pragma mark - Masking
+static NSString *defaultPatternCharacter    = @"#";
+static NSString *defaultPlaceHolder         = @"";
+
++ (NSString *)formatString:(NSString *)string withPattern:(NSString *)pattern
+{
+    return [[self class] formatString:string withPattern:pattern patternCharacter:defaultPatternCharacter];
+}
+
++ (NSString *)formatString:(NSString *)string withPattern:(NSString *)pattern patternCharacter:(NSString *)character
+{
+    return [[self class] formatString:string withPattern:pattern patternCharacter:character placeholder:defaultPlaceHolder];
+}
+
++ (NSString *)formatString:(NSString *)string withPattern:(NSString *)pattern patternCharacter:(NSString *)character placeholder:(NSString *)placeholder
+{
+    if([pattern isEqualToString:AnnexStringCreditCardFormat] || [pattern isEqualToString:AnnexStringUSPhoneNumberFormat])
+        pattern = [pattern stringByReplacingOccurrencesOfString:defaultPatternCharacter withString:character];
+    
+    NSMutableString *result     = [pattern mutableCopy];
+    NSUInteger formattedIndex   = 0;
+    
+    for (NSUInteger index = 0; index < pattern.length; index++)
+    {
+        NSRange range               = NSMakeRange(index, 1);
+        NSString *currentMaskChar   = [pattern substringWithRange:range];
+        
+        if([currentMaskChar isEqualToString:character] && formattedIndex < string.length)
+        {
+            NSString *replaceCharacter = [string substringWithRange:NSMakeRange(formattedIndex, 1)];
+            [result replaceCharactersInRange:range withString:replaceCharacter];
+            
+            formattedIndex++;
+        }
+        
+    }
+    
+    [result replaceOccurrencesOfString:character withString:placeholder options:0 range:NSMakeRange(0, result.length)];
+
+    return [result copy];
+}
+
+- (NSString *)formatStringWithPattern:(NSString *)pattern
+{
+    return [[self class] formatString:self withPattern:pattern];
+}
+
+- (NSString *)formatStringWithPattern:(NSString *)pattern patternCharacter:(NSString *)character
+{
+    return [[self class] formatString:self withPattern:pattern patternCharacter:character];
+}
+
+- (NSString *)formatStringWithPattern:(NSString *)pattern patternCharacter:(NSString *)character placeholder:(NSString *)placeholder
+{
+    return [[self class] formatString:self withPattern:pattern patternCharacter:character placeholder:placeholder];
+}
+
+
 @end
 
 @implementation NSString (DeprecatedMethods)
@@ -218,3 +279,18 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
