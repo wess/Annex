@@ -19,8 +19,6 @@
 		083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 083F8D9D16E917FF0025A312 /* UIButton+Annex.m */; };
 		08697C4718FF100900E1E2B3 /* UIDevice+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08697C4518FF100900E1E2B3 /* UIDevice+Annex.h */; };
 		08697C4818FF100900E1E2B3 /* UIDevice+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08697C4618FF100900E1E2B3 /* UIDevice+Annex.m */; };
-		089768BD190E8CAC0005BC27 /* AnnexUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 089768BB190E8CAC0005BC27 /* AnnexUserDefaults.h */; };
-		089768BE190E8CAC0005BC27 /* AnnexUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 089768BC190E8CAC0005BC27 /* AnnexUserDefaults.m */; };
 		08ACF0CB16E4F8D000A491AD /* UITextView+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ACF0CA16E4F8D000A491AD /* UITextView+Annex.m */; };
 		08BE562D16D52C32006A16D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BE562C16D52C32006A16D2 /* Foundation.framework */; };
@@ -105,8 +103,6 @@
 		083F8D9D16E917FF0025A312 /* UIButton+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Annex.m"; sourceTree = "<group>"; };
 		08697C4518FF100900E1E2B3 /* UIDevice+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Annex.h"; sourceTree = "<group>"; };
 		08697C4618FF100900E1E2B3 /* UIDevice+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Annex.m"; sourceTree = "<group>"; };
-		089768BB190E8CAC0005BC27 /* AnnexUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnexUserDefaults.h; sourceTree = "<group>"; };
-		089768BC190E8CAC0005BC27 /* AnnexUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnexUserDefaults.m; sourceTree = "<group>"; };
 		08ACF0C916E4F8D000A491AD /* UITextView+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Annex.h"; sourceTree = "<group>"; };
 		08ACF0CA16E4F8D000A491AD /* UITextView+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Annex.m"; sourceTree = "<group>"; };
 		08BE562916D52C32006A16D2 /* libAnnex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAnnex.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,23 +225,6 @@
 			name = UIDevice;
 			sourceTree = "<group>";
 		};
-		089768B9190E8C880005BC27 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				089768BA190E8C8F0005BC27 /* UserDefaults */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		089768BA190E8C8F0005BC27 /* UserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				089768BB190E8CAC0005BC27 /* AnnexUserDefaults.h */,
-				089768BC190E8CAC0005BC27 /* AnnexUserDefaults.m */,
-			);
-			name = UserDefaults;
-			sourceTree = "<group>";
-		};
 		08ACF0C816E4F8B900A491AD /* UITextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,7 +269,6 @@
 		08BE562E16D52C32006A16D2 /* Annex */ = {
 			isa = PBXGroup;
 			children = (
-				089768B9190E8C880005BC27 /* Classes */,
 				08BE563A16D52C3A006A16D2 /* Categories */,
 				08BE563116D52C32006A16D2 /* Annex.h */,
 				08BE562F16D52C32006A16D2 /* Supporting Files */,
@@ -504,7 +482,6 @@
 				08697C4718FF100900E1E2B3 /* UIDevice+Annex.h in Headers */,
 				0D8E2056187DBBFB00DAA08D /* UIImage+ImageEffects.h in Headers */,
 				08F6B82316D56C54006F12EB /* NSDate+Annex.h in Headers */,
-				089768BD190E8CAC0005BC27 /* AnnexUserDefaults.h in Headers */,
 				08F6B82416D56C54006F12EB /* NSString+Annex.h in Headers */,
 				08F6B82516D56C54006F12EB /* NSDictionary+Annex.h in Headers */,
 				08F6B82616D56C54006F12EB /* UIColor+Annex.h in Headers */,
@@ -631,7 +608,6 @@
 				083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */,
 				D782F7F8173E87CE0070F967 /* UIAlertView+Annex.m in Sources */,
 				4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */,
-				089768BE190E8CAC0005BC27 /* AnnexUserDefaults.m in Sources */,
 				D7E71B1F1796EAF4005A76AB /* NSManagedObjectContext+Annex.m in Sources */,
 				080F3B2918F59F6600FD9402 /* UIScrollView+Annex.m in Sources */,
 				08697C4818FF100900E1E2B3 /* UIDevice+Annex.m in Sources */,
