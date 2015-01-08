@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = "Annex"
-  s.version                 = "2.0"
+  s.version                 = "2.1"
   s.summary                 = "A small collection of categories and classes to make Objective-C more comfortable."
   s.homepage                = "http://github.com/wess/Annex"
   s.license                 = "MIT"

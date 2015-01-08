@@ -18,7 +18,9 @@
 #define AnnexSystemVersion      [[UIDevice currentDevice] systemVersion]
 #define AnnexDeviceType         [[UIDevice currentDevice] model]
 
-#define ANNEX_IS_IPHONE_5             (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)568 ) < DBL_EPSILON)
+#define ANNEX_IS_IPAD       (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define ANNEX_IS_IPHONE_5   (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)568 ) < DBL_EPSILON)
+
 #define ANNEX_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define ANNEX_SUPPRESS_DEPRECIATED_DECLARATIONS(code) \
 do { \
