@@ -31,4 +31,13 @@
  @return UIImage created by filling provided image with a color.
  */
 - (UIImage *)fillImageWithColor:(UIColor *)color;
+
+/**
+ Creates and returns an animated image object.
+ 
+ @param NSData Data that represents the GIF
+ 
+ @return UIImage created from GIF data.
+ */
++ (UIImage *)GifImageWithDate:(NSData *)data;
 @end
