@@ -234,6 +234,15 @@
 - (BOOL) isEqualToDateIgnoringTime: (NSDate *) aDate withCalendar:(NSCalendar *)calendar;
 
 /**
+ Test to see if two dates are between each other, inclusive.
+
+ @param startDate Date to begin wtih.
+ @param endDate   Date to end with.
+ @return          YES if self is between startDate and endDate
+ */
+- (BOOL)isBetweenDate:(NSDate *)startDate and:(NSDate*)endDate;
+
+/**
  Test to see if current date is today.
  
  @return YES or NO result from comparing current date, with today's date.

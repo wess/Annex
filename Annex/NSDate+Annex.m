@@ -135,6 +135,11 @@
 			(components1.day == components2.day));
 }
 
+- (BOOL)isBetweenDate:(NSDate *)startDate and:(NSDate*)endDate
+{
+    return [self compare:startDate] == NSOrderedAscending && [self compare:endDate] == NSOrderedDescending;
+}
+
 - (BOOL) isToday
 {
 	return [self isEqualToDateIgnoringTime:[NSDate date]];
