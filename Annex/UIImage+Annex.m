@@ -114,4 +114,27 @@
 
 }
 
+- (void)applyFilter:(CIFilter *)filter completion:(void(^)(UIImage *image))handler
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        CIContext *context  = [CIContext contextWithOptions:nil];
+        CIImage *output     = filter.outputImage;
+        CGImageRef imageRef = [context createCGImage:output fromRect:[output extent]];
+        UIImage *image      = [UIImage imageWithCGImage:imageRef];
+        
+        CGImageRelease(imageRef);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+           if(handler)
+               handler([image copy]);
+        });
+    });
+}
+
++ (void)applyFilter:(CIFilter *)filter toImage:(UIImage *)image completion:(void(^)(UIImage *image))handler
+{
+    [image applyFilter:filter completion:handler];
+}
+
+
 @end

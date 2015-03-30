@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreImage/CoreImage.h>
+
+
 
 @interface UIImage (Annex)
 /**
@@ -40,4 +43,23 @@
  @return UIImage created from GIF data.
  */
 + (UIImage *)GifImageWithDate:(NSData *)data;
+
+/**
+ Apply a CIFilter to an image asyncronously.
+ 
+ @param filter Filter object to appy to current instance.
+ @param handler Callback executed after filter has been applied to image
+ */
+
+- (void)applyFilter:(CIFilter *)filter completion:(void(^)(UIImage *image))handler;
+
+/**
+ Apply a CIFilter to an image asyncronously.
+ 
+ @param filter Filter object to appy to image.
+ @param image Image to apply filter to.
+ @param handler Callback executed after filter has been applied to image
+ */
++ (void)applyFilter:(CIFilter *)filter toImage:(UIImage *)image completion:(void(^)(UIImage *image))handler;
+
 @end
