@@ -137,7 +137,7 @@
 
 - (BOOL)isBetweenDate:(NSDate *)startDate and:(NSDate*)endDate
 {
-    return [self compare:startDate] == NSOrderedAscending && [self compare:endDate] == NSOrderedDescending;
+    return [self compare:startDate] == NSOrderedDescending && [self compare:endDate] == NSOrderedAscending;
 }
 
 - (BOOL) isToday
