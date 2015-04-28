@@ -8,21 +8,77 @@
 
 #import "UIButton+Annex.h"
 #import <objc/runtime.h>
+#import "AnnexDefines.h"
+
+@interface ANNEX_HANDLER_PROXY : NSObject
+@property (strong, nonatomic) NSArray   *handlers;
+@property (strong, nonatomic) UIButton  *button;
+
+- (instancetype)initWithButton:(UIButton *)button;
+- (void)addHandler:(AnnexActionHandler)handler;
+- (void)executeHandlers;
+@end
+
+@implementation ANNEX_HANDLER_PROXY
+- (instancetype)initWithButton:(UIButton *)button
+{
+    self = [super init];
+    if(self)
+        self.button = button;
+
+    return self;
+}
+
+- (void)addHandler:(AnnexActionHandler)handler
+{
+    NSMutableArray *handlers = [(self.handlers?: @[]) mutableCopy];
+
+    [handlers addObject:handler];
+
+    self.handlers = [handlers copy];
+    
+    [self.button addTarget:self action:@selector(executeHandlers) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)executeHandlers
+{
+    UIButton *button = self.button;
+    
+    @weakify(button);
+    [self.handlers enumerateObjectsUsingBlock:^(AnnexActionHandler handler, NSUInteger idx, BOOL *stop) {
+        @strongify(button);
+        
+        handler(button);
+    }];
+}
+
+@end
 
 @implementation UIButton (Annex)
-static char ANNEX_BUTTON_BACKGROUNDS_KEY;
+static const void *ANNEX_BUTTON_BACKGROUNDS_KEY = &ANNEX_BUTTON_BACKGROUNDS_KEY;
+static const void *ANNEX_ACTION_HANDLER_KEY     = &ANNEX_ACTION_HANDLER_KEY;
 
 @dynamic backgroundColors;
 @dynamic placeholderImage;
 
+static void AddHandlerToProxy(UIButton *this, AnnexActionHandler handler) {
+    static ANNEX_HANDLER_PROXY *proxy = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        proxy = [[ANNEX_HANDLER_PROXY alloc] initWithButton:this];
+    });
+    
+    [proxy addHandler:handler];
+}
+
 - (void)setBackgroundColors:(NSMutableDictionary *)backgroundColors
 {
-    objc_setAssociatedObject(self, &ANNEX_BUTTON_BACKGROUNDS_KEY, backgroundColors, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, ANNEX_BUTTON_BACKGROUNDS_KEY, backgroundColors, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSMutableDictionary *)backgroundColors
 {
-    return (NSMutableDictionary *)objc_getAssociatedObject(self, &ANNEX_BUTTON_BACKGROUNDS_KEY);
+    return (NSMutableDictionary *)objc_getAssociatedObject(self, ANNEX_BUTTON_BACKGROUNDS_KEY);
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state
@@ -62,6 +118,11 @@ static char ANNEX_BUTTON_BACKGROUNDS_KEY;
 {
     [super touchesEnded:touches withEvent:event];
     [self animateBackgroundToColor:[NSNumber numberWithInt:UIControlStateNormal]];
+}
+
+- (void)addActionHandler:(AnnexActionHandler)handler
+{
+    AddHandlerToProxy(self, handler);
 }
 
 @end
