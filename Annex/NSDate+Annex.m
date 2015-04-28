@@ -180,7 +180,7 @@
 	if (components1.week != components2.week) return NO;
 	
 	// Must have a time interval under 1 week. Thanks @aclark
-	return (abs([self timeIntervalSinceDate:aDate]) < AnnexWeek);
+	return (fabs([self timeIntervalSinceDate:aDate]) < AnnexWeek);
 }
 
 - (BOOL) isSameWeekAsDate: (NSDate *) aDate withCalendar:(NSCalendar *)calendar
@@ -192,7 +192,7 @@
 	if (components1.week != components2.week) return NO;
 
 	// Must have a time interval under 1 week. Thanks @aclark
-	return (abs([self timeIntervalSinceDate:aDate]) < AnnexWeek);
+	return (fabs([self timeIntervalSinceDate:aDate]) < AnnexWeek);
 }
 
 - (BOOL) isThisWeek

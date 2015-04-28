@@ -9,6 +9,7 @@
 #import "UIScrollView+Annex.h"
 #import <objc/runtime.h>
 #import "UIView+Annex.h"
+#import "AnnexDefines.h"
 
 @interface UIScrollView(AnnexPrivate)
 - (void)floatingHeaderViewWillBeReplaced;
@@ -17,6 +18,8 @@
 @end
 
 @implementation UIScrollView (Annex)
+
+#pragma mark - FLOATING HEADER (DEPRECATED)
 static void *topHeaderViewKey;
 static void *topheaderViewContext;
 
@@ -55,6 +58,8 @@ static void *topheaderViewContext;
 #pragma mark - topHeader setup
 - (void)floatingHeaderViewWillBeReplaced
 {
+    ANNEX_SUPPRESS_DEPRECIATED_DECLARATIONS({
+        
     if(self.floatingHeaderView)
     {
         UIEdgeInsets contentInset   = self.contentInset;
@@ -74,6 +79,9 @@ static void *topheaderViewContext;
         }
         @catch (NSException *__unused exception) {}
     }
+
+    });
+
 }
 
 - (void)floatingHeaderViewWasReplaced
@@ -99,7 +107,7 @@ static void *topheaderViewContext;
 - (void)scrolledFromTop:(CGFloat)fromTop toTop:(CGFloat)toTop
 {
     CGPoint velocity        = [self.panGestureRecognizer velocityInView:self];
-    BOOL isQuick            = (abs(velocity.y) > 1000);
+    BOOL isQuick            = (fabs(velocity.y) > 1000);
     BOOL isDisplayingHeader = (self.floatingHeaderView.top + self.floatingHeaderView.height) > toTop;
     BOOL allHeaderIsShowing = self.floatingHeaderView.top >= fromTop;
     CGRect frame            = self.floatingHeaderView.frame;

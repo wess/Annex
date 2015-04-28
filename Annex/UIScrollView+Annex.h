@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIScrollView (Annex)
-@property (strong, nonatomic) UIView *floatingHeaderView;
+@property (strong, nonatomic) UIView *floatingHeaderView DEPRECATED_ATTRIBUTE;
 @end

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^AnnexActionHandler)(id sender);
+
 @interface UIButton (Annex)
 /**
  `UIButton(Annex)` is an extension to UIButton with additional functionality.
@@ -30,5 +32,12 @@
  @param state           Control state that indicates when background color is used.
  */
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
+
+/**
+ Adds a block based action to a UIButton.
+ 
+ @param handler Block called when button is tapped.
+ */
+- (void)addActionHandler:(AnnexActionHandler)handler;
 
 @end

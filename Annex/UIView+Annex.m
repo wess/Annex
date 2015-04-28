@@ -26,6 +26,11 @@
 @implementation UIView (Annex)
 @dynamic gradientBackgroundColors;
 
+static CGFloat radiansFromDegrees(NSUInteger degrees)
+{
+    return degrees * M_PI / 180;
+}
+
 #pragma mark - Getters -
 - (CGPoint)origin
 {
@@ -274,6 +279,19 @@
     return [UIView viewFromNibWithName:nibName withOwner:owner bundle:nil];
 }
 
+- (void)rotate:(NSUInteger)degrees duration:(NSTimeInterval)duration completion:(void(^)(BOOL finished))handler
+{
+    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.transform = CGAffineTransformRotate(self.transform, radiansFromDegrees(degrees));
+    } completion:handler];
+}
+
+- (void)scaleTo:(CGPoint)offset duration:(NSTimeInterval)duration  completion:(void(^)(BOOL finished))handler
+{
+    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.transform = CGAffineTransformScale(self.transform, offset.x, offset.y);
+    } completion:handler];
+}
 
 
 @end

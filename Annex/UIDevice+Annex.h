@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface UIDevice (Annex)
+/**
+ A quick test to see if a device is jail broken or not.
+
+ @return Boolean value to indicate jail break status.
+ */
 + (BOOL) jailBroken;
 @end

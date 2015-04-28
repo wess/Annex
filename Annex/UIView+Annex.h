@@ -174,7 +174,23 @@ typedef NS_ENUM(NSInteger, AnnexSnapshotBlurType) {
  */
 + (UIView *)viewFromNibWithName:(NSString *)nibName withOwner:(id)owner;
 
+/**
+ Animates a view rotation to provided degree.
+ 
+ @param degrees     The amount to rotate the view.
+ @param duration    Length of time to animate the rotation
+ @param completion  Handler called when animation is complete.
+ */
+- (void)rotate:(NSUInteger)degrees duration:(NSTimeInterval)duration completion:(void(^)(BOOL finished))handler;
 
+/**
+ Animates a view scale to provided offset.
+ 
+ @param offset      Point to scale the view to.
+ @param duration    Length of time to animate the scaling.
+ @param completion  Handler called when animation is complete.
+ */
+- (void)scaleTo:(CGPoint)offset duration:(NSTimeInterval)duration  completion:(void(^)(BOOL finished))handler;
 @end
 
 @interface UIView (AnnexDeprecatedMethods)
