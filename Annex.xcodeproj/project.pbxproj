@@ -46,6 +46,12 @@
 		0D8E2059187DBC4200DAA08D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8E2058187DBC4200DAA08D /* Accelerate.framework */; };
 		4E00082417E0BC2B00BBBE9C /* NSSet+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */; };
 		4E00082517E0BC2B00BBBE9C /* NSSet+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */; };
+		A97C6D081AEFD00B00735F4A /* UILabel+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = A97C6D061AEFD00B00735F4A /* UILabel+Annex.h */; };
+		A97C6D091AEFD00B00735F4A /* UILabel+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = A97C6D071AEFD00B00735F4A /* UILabel+Annex.m */; };
+		A97C6D0D1AEFD20A00735F4A /* UIBezierPath+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = A97C6D0B1AEFD20A00735F4A /* UIBezierPath+Annex.h */; };
+		A97C6D0E1AEFD20A00735F4A /* UIBezierPath+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = A97C6D0C1AEFD20A00735F4A /* UIBezierPath+Annex.m */; };
+		A97C6D131AEFE4C400735F4A /* UINavigationController+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = A97C6D111AEFE4C400735F4A /* UINavigationController+Annex.h */; };
+		A97C6D141AEFE4C400735F4A /* UINavigationController+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = A97C6D121AEFE4C400735F4A /* UINavigationController+Annex.m */; };
 		D742334A18219D3500A33E4E /* NSURL+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D742334818219D3500A33E4E /* NSURL+Annex.h */; };
 		D742334B18219D3500A33E4E /* NSURL+Annex.m in Sources */ = {isa = PBXBuildFile; fileRef = D742334918219D3500A33E4E /* NSURL+Annex.m */; };
 		D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */ = {isa = PBXBuildFile; fileRef = D743B05D17A1C8710068D596 /* NSArray+Annex.h */; };
@@ -114,6 +120,12 @@
 		0D8E2058187DBC4200DAA08D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		4E00082217E0BC2B00BBBE9C /* NSSet+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Annex.h"; sourceTree = "<group>"; };
 		4E00082317E0BC2B00BBBE9C /* NSSet+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Annex.m"; sourceTree = "<group>"; };
+		A97C6D061AEFD00B00735F4A /* UILabel+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Annex.h"; sourceTree = "<group>"; };
+		A97C6D071AEFD00B00735F4A /* UILabel+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Annex.m"; sourceTree = "<group>"; };
+		A97C6D0B1AEFD20A00735F4A /* UIBezierPath+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Annex.h"; sourceTree = "<group>"; };
+		A97C6D0C1AEFD20A00735F4A /* UIBezierPath+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Annex.m"; sourceTree = "<group>"; };
+		A97C6D111AEFE4C400735F4A /* UINavigationController+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Annex.h"; sourceTree = "<group>"; };
+		A97C6D121AEFE4C400735F4A /* UINavigationController+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Annex.m"; sourceTree = "<group>"; };
 		D742334818219D3500A33E4E /* NSURL+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Annex.h"; sourceTree = "<group>"; };
 		D742334918219D3500A33E4E /* NSURL+Annex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Annex.m"; sourceTree = "<group>"; };
 		D743B05D17A1C8710068D596 /* NSArray+Annex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Annex.h"; sourceTree = "<group>"; };
@@ -249,26 +261,8 @@
 		08BE563A16D52C3A006A16D2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				08697C4418FF0FFD00E1E2B3 /* UIDevice */,
-				080F3B2518F59F3500FD9402 /* UIScrollView */,
-				0829136918B556D000836807 /* UITableView */,
-				08FCE44D18A1968300F9B131 /* UIBarButtonItem */,
-				D7E31C4517BA828C00BA7AC2 /* UIImage */,
-				08BE563C16D52C5C006A16D2 /* UIColor */,
-				08ACF0C816E4F8B900A491AD /* UITextView */,
-				08BE563B16D52C52006A16D2 /* UIView */,
-				083F8D9B16E917E40025A312 /* UIButton */,
-				D782F7F4173E87840070F967 /* UIAlertView */,
-				0D35258E18AD443300DACE4E /* UIActionSheet */,
-				083A71ED18E217E100204B58 /* NSNumberFormatter */,
-				D753C22917ECBEDE009852F8 /* NSNumber */,
-				D742334718219D2000A33E4E /* NSURL */,
-				D743B05C17A1C8660068D596 /* NSArray */,
-				08BE563F16D52C6A006A16D2 /* NSObject */,
-				08BE565516D550DD006A16D2 /* NSDate */,
-				08BE563E16D52C67006A16D2 /* NSString */,
-				08BE563D16D52C60006A16D2 /* NSDictionary */,
-				4E00082117E0BC1300BBBE9C /* NSSet */,
+				A97C6D161AEFEE0900735F4A /* Foundation */,
+				A97C6D151AEFEDFD00735F4A /* UIKit */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -354,6 +348,70 @@
 			name = NSSet;
 			sourceTree = "<group>";
 		};
+		A97C6D051AEFCFF600735F4A /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				A97C6D061AEFD00B00735F4A /* UILabel+Annex.h */,
+				A97C6D071AEFD00B00735F4A /* UILabel+Annex.m */,
+			);
+			name = UILabel;
+			sourceTree = "<group>";
+		};
+		A97C6D0A1AEFD20000735F4A /* UIBezierPath */ = {
+			isa = PBXGroup;
+			children = (
+				A97C6D0B1AEFD20A00735F4A /* UIBezierPath+Annex.h */,
+				A97C6D0C1AEFD20A00735F4A /* UIBezierPath+Annex.m */,
+			);
+			name = UIBezierPath;
+			sourceTree = "<group>";
+		};
+		A97C6D101AEFE4B300735F4A /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				A97C6D111AEFE4C400735F4A /* UINavigationController+Annex.h */,
+				A97C6D121AEFE4C400735F4A /* UINavigationController+Annex.m */,
+			);
+			name = UINavigationController;
+			sourceTree = "<group>";
+		};
+		A97C6D151AEFEDFD00735F4A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				A97C6D101AEFE4B300735F4A /* UINavigationController */,
+				A97C6D0A1AEFD20000735F4A /* UIBezierPath */,
+				A97C6D051AEFCFF600735F4A /* UILabel */,
+				08697C4418FF0FFD00E1E2B3 /* UIDevice */,
+				080F3B2518F59F3500FD9402 /* UIScrollView */,
+				0829136918B556D000836807 /* UITableView */,
+				08FCE44D18A1968300F9B131 /* UIBarButtonItem */,
+				D7E31C4517BA828C00BA7AC2 /* UIImage */,
+				08BE563C16D52C5C006A16D2 /* UIColor */,
+				08ACF0C816E4F8B900A491AD /* UITextView */,
+				08BE563B16D52C52006A16D2 /* UIView */,
+				083F8D9B16E917E40025A312 /* UIButton */,
+				D782F7F4173E87840070F967 /* UIAlertView */,
+				0D35258E18AD443300DACE4E /* UIActionSheet */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		A97C6D161AEFEE0900735F4A /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				083A71ED18E217E100204B58 /* NSNumberFormatter */,
+				D753C22917ECBEDE009852F8 /* NSNumber */,
+				D742334718219D2000A33E4E /* NSURL */,
+				D743B05C17A1C8660068D596 /* NSArray */,
+				08BE563F16D52C6A006A16D2 /* NSObject */,
+				08BE565516D550DD006A16D2 /* NSDate */,
+				08BE563E16D52C67006A16D2 /* NSString */,
+				08BE563D16D52C60006A16D2 /* NSDictionary */,
+				4E00082117E0BC1300BBBE9C /* NSSet */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
 		D742334718219D2000A33E4E /* NSURL */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,12 +482,15 @@
 				080F3B2818F59F6600FD9402 /* UIScrollView+Annex.h in Headers */,
 				D742334A18219D3500A33E4E /* NSURL+Annex.h in Headers */,
 				0813D3CA18E31A0D00A85178 /* AnnexDefines.h in Headers */,
+				A97C6D081AEFD00B00735F4A /* UILabel+Annex.h in Headers */,
 				08FCE45018A196E400F9B131 /* UIBarButtonItem+Annex.h in Headers */,
 				0813D3C718E319D800A85178 /* AnnexLog.h in Headers */,
 				083A71F018E217EB00204B58 /* NSNumberFormatter+Annex.h in Headers */,
 				D753C22C17ECBEE9009852F8 /* NSNumber+Annex.h in Headers */,
+				A97C6D131AEFE4C400735F4A /* UINavigationController+Annex.h in Headers */,
 				D743B05F17A1C8710068D596 /* NSArray+Annex.h in Headers */,
 				D7E31C4817BA829700BA7AC2 /* UIImage+Annex.h in Headers */,
+				A97C6D0D1AEFD20A00735F4A /* UIBezierPath+Annex.h in Headers */,
 				0829136C18B556DB00836807 /* UITableView+Annex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A97C6D141AEFE4C400735F4A /* UINavigationController+Annex.m in Sources */,
 				08BE564216D52C87006A16D2 /* NSObject+Annex.m in Sources */,
 				D742334B18219D3500A33E4E /* NSURL+Annex.m in Sources */,
 				08BE564516D52C95006A16D2 /* NSString+Annex.m in Sources */,
@@ -497,6 +559,8 @@
 				08FCE45118A196E400F9B131 /* UIBarButtonItem+Annex.m in Sources */,
 				D753C22D17ECBEE9009852F8 /* NSNumber+Annex.m in Sources */,
 				0D35259218AD444800DACE4E /* UIActionSheet+Annex.m in Sources */,
+				A97C6D091AEFD00B00735F4A /* UILabel+Annex.m in Sources */,
+				A97C6D0E1AEFD20A00735F4A /* UIBezierPath+Annex.m in Sources */,
 				08BE565816D550EE006A16D2 /* NSDate+Annex.m in Sources */,
 				08ACF0CC16E4F8D000A491AD /* UITextView+Annex.m in Sources */,
 				083F8D9F16E917FF0025A312 /* UIButton+Annex.m in Sources */,
