@@ -16,7 +16,14 @@
  `UIImage(Annex)` is an extension to UIImage with additional functionality.
  */
 
+/**
+    Creates an image for a color.
 
+    @param UIColor Color of the image.
+    @param CGSize Size of image to create
+
+    @return UIImage for color and size.
+ */
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
 
 /**
