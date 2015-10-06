@@ -7,6 +7,7 @@
 //
 
 #import "NSDate+Annex.h"
+#import "AnnexDefines.h"
 
 #define DATE_COMPONENTS (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit)
 #define CURRENT_CALENDAR [NSCalendar currentCalendar]
@@ -173,6 +174,7 @@
 // This hard codes the assumption that a week is 7 days
 - (BOOL) isSameWeekAsDate: (NSDate *) aDate
 {
+    ANNEX_SUPRESS_DEPRECIATION
 	NSDateComponents *components1 = [CURRENT_CALENDAR components:DATE_COMPONENTS fromDate:self];
 	NSDateComponents *components2 = [CURRENT_CALENDAR components:DATE_COMPONENTS fromDate:aDate];
 	
@@ -180,6 +182,8 @@
 	if (components1.week != components2.week) return NO;
 	
 	// Must have a time interval under 1 week. Thanks @aclark
+    ANNEX_SUPRESS_DEPRECIATION_END
+    
 	return (fabs([self timeIntervalSinceDate:aDate]) < AnnexWeek);
 }
 
@@ -540,8 +544,12 @@
 
 - (NSInteger) week
 {
-	NSDateComponents *components = [CURRENT_CALENDAR components:DATE_COMPONENTS fromDate:self];
-	return components.week;
+ANNEX_SUPRESS_DEPRECIATION
+	NSDateComponents *components    = [CURRENT_CALENDAR components:DATE_COMPONENTS fromDate:self];
+    NSInteger weekday               = components.weekday;
+ANNEX_SUPRESS_DEPRECIATION_END
+
+    return weekday;
 }
 
 - (NSInteger) weekWithCalendar:(NSCalendar *)calendar
